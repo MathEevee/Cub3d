@@ -6,15 +6,23 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/02 13:41:27 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/02 15:52:28 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ##################################### NAME #####################################
 NAME := cub3d
+
+WATI_HDRS := libwati.h
 WATI_NAME := libwati.a
-WATI_RULES := libwati-
-MINI_RULES := mini-
+WATI_RULES := wati-
+
+MLX_HDRS := mlx.h
+MLX_INT := mlx_int.h
+MLX_NAME := libmlx.a
+MLX_RULES := mlx-
+
+EXT_RULES := ext-
 
 ################################### COMPILER ###################################
 CC := clang
@@ -23,7 +31,7 @@ CC := clang
 
 DIR_OBJS := objs/
 DIR_WATI := libwati/
-DIR_MINI := minilibx-linux/
+DIR_MLX := minilibx-linux/
 DIR_LIBS := libs/
 
 DIR_SRCS := srcs/
@@ -61,69 +69,68 @@ $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
-clean: $(WATI_RULES)clean
+clean: $(EXT_RULES)clean
 	@printf "$(RED)clean objs$(NC)\n"
 	@rm -rf $(DIR_OBJS)
 
-fclean: $(WATI_RULES)fclean
+fclean: $(EXT_RULES)clean
 	@printf "$(RED)clean $(NAME)$(NC)\n"
 	@rm -rf $(DIR_OBJS)
 	@rm -f $(NAME)
 
 re: fclean debug
 
-all:	$(WATI_RULES)all $(NAME)
+all:	$(EXT_RULES)all $(NAME)
 debug:	CFLAGS += -g
-debug:	$(WATI_RULES)debug $(NAME)
+debug:	$(EXT_RULES)debug $(NAME)
 
 dir: $(DIR)
 	mkdir -p $^
+
+################################# EXT_RULES ###################################
+
+$(EXT_RULES)all: $(MLX_RULES)all $(WATI_RULES)all
+$(EXT_RULES)debug: $(MLX_RULES)all $(WATI_RULES)debug
+$(EXT_RULES)clean: $(MLX_RULES)clean $(WATI_RULES)fclean
+$(EXT_RULES)re: $(MLX_RULES)re $(WATI_RULES)re
+$(EXT_RULES)git: $(MLX_RULES)git $(WATI_RULES)git
 
 ################################# WATI_RULES ###################################
 
 $(WATI_RULES)all:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) -j
-	@mkdir -p $(DIR_LIBS)
 	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
-	@cp $(DIR_SRCS)$(DIR_WATI)libwati.h $(DIR_HDRS)libwati.h
+	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS)
 $(WATI_RULES)debug:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) debug -j
-	@mkdir -p $(DIR_LIBS)
 	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
-	@cp $(DIR_SRCS)$(DIR_WATI)libwati.h $(DIR_HDRS)libwati.h
+	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS)$(WATI_HDRS)
 $(WATI_RULES)clean:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) clean
 $(WATI_RULES)fclean:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) fclean
-	@rm -f $(DIR_HDRS)libwati.h $(DIR_LIBS)$(WATI_NAME)
+	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME)
 $(WATI_RULES)re:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) re
 $(WATI_RULES)git:
-	@printf "$(RED)clean wati_git$(NC)\n"
+	@printf "$(RED)clean $@ $(NC)\n"
 	@rm -rf $(DIR_SRCS)$(DIR_WATI).git
 
-################################# MINI_RULES ###################################
+################################# MLX_RULES ###################################
 
-# $(WATI_RULES)all:
-# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) -j
-# 	@mkdir -p $(DIR_LIBS)
-# 	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
-# 	@cp $(DIR_SRCS)$(DIR_WATI)libwati.h $(DIR_HDRS)libwati.h
-# $(WATI_RULES)debug:
-# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) debug -j
-# 	@mkdir -p $(DIR_LIBS)
-# 	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
-# 	@cp $(DIR_SRCS)$(DIR_WATI)libwati.h $(DIR_HDRS)libwati.h
-# $(WATI_RULES)clean:
-# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) clean
-# $(WATI_RULES)fclean:
-# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) fclean
-# 	@rm -f $(DIR_HDRS)libwati.h $(DIR_LIBS)$(WATI_NAME)
-# $(WATI_RULES)re:
-# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) re
-$(MINI_RULES)git:
-	@printf "$(RED)clean mini-git$(NC)\n"
-	@rm -rf $(DIR_SRCS)$(DIR_MINI).git
+$(MLX_RULES)all:
+	@$(MAKE) $(DIR_SRCS)$(DIR_MLX) -j
+	@cp $(DIR_SRCS)$(DIR_MLX)$(MLX_NAME) $(DIR_LIBS)
+	@cp $(DIR_SRCS)$(DIR_MLX)$(MLX_HDRS) $(DIR_HDRS)$(MLX_HDRS)
+	@cp $(DIR_SRCS)$(DIR_MLX)$(MLX_INT) $(DIR_HDRS)$(MLX_INT)
+$(MLX_RULES)clean:
+	@$(MAKE) $(DIR_SRCS)$(DIR_MLX) clean
+	@rm -f $(DIR_HDRS)$(MLX_HDRS) $(DIR_HDRS)$(MLX_INT) $(DIR_LIBS)$(WATI_NAME)
+$(MLX_RULES)re:
+	@$(MAKE) $(DIR_SRCS)$(DIR_MLX) re
+$(MLX_RULES)git:
+	@printf "$(RED)clean $@$(NC)\n"
+	@rm -rf $(DIR_SRCS)$(DIR_MLX).git
 
 #################################### PHONY #####################################
 .PHONY: all clean fclean debug dir git
