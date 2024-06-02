@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/02 13:26:17 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/02 13:26:56 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,12 +96,9 @@ $(WATI_RULES)fclean:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) fclean
 $(WATI_RULES)re:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) re
-git:
-	@printf "$(RED)clean wati_git$(NC)\n"
-	@rm -rf $(DIR_SRCS)$(DIR_WATI).git
 
 #################################### PHONY #####################################
-.PHONY: all clean fclean debug dir git
+.PHONY: all clean fclean debug dir
 
 #################################### COLORS ####################################
 RED = \033[0;31m
