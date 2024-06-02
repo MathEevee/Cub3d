@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/02 13:26:56 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/02 13:41:27 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 NAME := cub3d
 WATI_NAME := libwati.a
 WATI_RULES := libwati-
+MINI_RULES := mini-
 
 ################################### COMPILER ###################################
 CC := clang
@@ -22,6 +23,7 @@ CC := clang
 
 DIR_OBJS := objs/
 DIR_WATI := libwati/
+DIR_MINI := minilibx-linux/
 DIR_LIBS := libs/
 
 DIR_SRCS := srcs/
@@ -67,7 +69,6 @@ fclean: $(WATI_RULES)fclean
 	@printf "$(RED)clean $(NAME)$(NC)\n"
 	@rm -rf $(DIR_OBJS)
 	@rm -f $(NAME)
-	@rm -rf $(DIR_LIBS)
 
 re: fclean debug
 
@@ -94,11 +95,38 @@ $(WATI_RULES)clean:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) clean
 $(WATI_RULES)fclean:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) fclean
+	@rm -f $(DIR_HDRS)libwati.h $(DIR_LIBS)$(WATI_NAME)
 $(WATI_RULES)re:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) re
+$(WATI_RULES)git:
+	@printf "$(RED)clean wati_git$(NC)\n"
+	@rm -rf $(DIR_SRCS)$(DIR_WATI).git
+
+################################# MINI_RULES ###################################
+
+# $(WATI_RULES)all:
+# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) -j
+# 	@mkdir -p $(DIR_LIBS)
+# 	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
+# 	@cp $(DIR_SRCS)$(DIR_WATI)libwati.h $(DIR_HDRS)libwati.h
+# $(WATI_RULES)debug:
+# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) debug -j
+# 	@mkdir -p $(DIR_LIBS)
+# 	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
+# 	@cp $(DIR_SRCS)$(DIR_WATI)libwati.h $(DIR_HDRS)libwati.h
+# $(WATI_RULES)clean:
+# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) clean
+# $(WATI_RULES)fclean:
+# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) fclean
+# 	@rm -f $(DIR_HDRS)libwati.h $(DIR_LIBS)$(WATI_NAME)
+# $(WATI_RULES)re:
+# 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) re
+$(MINI_RULES)git:
+	@printf "$(RED)clean mini-git$(NC)\n"
+	@rm -rf $(DIR_SRCS)$(DIR_MINI).git
 
 #################################### PHONY #####################################
-.PHONY: all clean fclean debug dir
+.PHONY: all clean fclean debug dir git
 
 #################################### COLORS ####################################
 RED = \033[0;31m
