@@ -3,5 +3,6 @@
 *.a
 cub3d
 .nfs*
+hdrs/libwati.h
 hdrs/mlx_int.h
 hdrs/mlx.h
