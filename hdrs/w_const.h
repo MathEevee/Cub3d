@@ -6,13 +6,15 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:25:29 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/03 13:26:01 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/03 15:00:23 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef W_CONST_H
 # define W_CONST_H
 
-
+# ifndef FOV
+#  define FOV 45
+# endif
 
 #endif // W_CONST_H
