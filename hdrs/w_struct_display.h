@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   w_struct_display.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/02 16:55:46 by bedarenn         ###   ########.fr       */
+/*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
+/*   Updated: 2024/06/03 13:26:40 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "mlx.h"
-#include <stdlib.h>
+#ifndef W_STRUCT_DISPLAY_H
+# define W_STRUCT_DISPLAY_H
 
-int	main(void)
-{
-	void	*mlx;
+# include "w_typedef.h"
+# include "w_const.h"
 
-	mlx = mlx_init();
-	mlx_destroy_display(mlx);
-	free(mlx);
-	return (0);
-}
+#endif // W_STRUCT_DISPLAY_H

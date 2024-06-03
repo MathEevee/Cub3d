@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   cub3d_parsing.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/02 16:55:46 by bedarenn         ###   ########.fr       */
+/*   Created: 2024/06/03 13:21:50 by bedarenn          #+#    #+#             */
+/*   Updated: 2024/06/03 13:22:40 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "mlx.h"
-#include <stdlib.h>
+#ifndef CUB3D_PARSING_H
+# define CUB3D_PARSING_H
 
-int	main(void)
-{
-	void	*mlx;
+# include "w_struct.h"
 
-	mlx = mlx_init();
-	mlx_destroy_display(mlx);
-	free(mlx);
-	return (0);
-}
+#endif // CUB3D_PARSING_H
