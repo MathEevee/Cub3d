@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/03 13:29:41 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/03 14:56:31 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,7 @@ dir: $(DIR)
 ################################# EXT_RULES ###################################
 
 $(EXT_RULES)all: $(MLX_RULES)all $(WATI_RULES)all
-$(EXT_RULES)debug: $(MLX_RULES)all $(WATI_RULES)debug
+$(EXT_RULES)debug: 	$(MLX_RULES)all $(WATI_RULES)debug
 $(EXT_RULES)clean: $(MLX_RULES)clean $(WATI_RULES)fclean
 $(EXT_RULES)re: $(MLX_RULES)re $(WATI_RULES)re
 $(EXT_RULES)git: $(MLX_RULES)git $(WATI_RULES)git
@@ -99,6 +99,7 @@ $(EXT_RULES)git: $(MLX_RULES)git $(WATI_RULES)git
 
 $(WATI_RULES)all:
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) -j
+	@mkdir -p $(DIR_LIBS)
 	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
 	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS)
 $(WATI_RULES)debug:
@@ -120,6 +121,7 @@ $(WATI_RULES)git:
 
 $(MLX_RULES)all:
 	@$(MAKE) $(DIR_SRCS)$(DIR_MLX) -j
+	@mkdir -p $(DIR_LIBS)
 	@cp $(DIR_SRCS)$(DIR_MLX)$(MLX_NAME) $(DIR_LIBS)
 	@cp $(DIR_SRCS)$(DIR_MLX)$(MLX_HDRS) $(DIR_HDRS)$(MLX_HDRS)
 	@cp $(DIR_SRCS)$(DIR_MLX)$(MLX_INT) $(DIR_HDRS)$(MLX_INT)
