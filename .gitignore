@@ -4,3 +4,5 @@
 cub3d
 .nfs*
 *.git*
+hdrs/mlx_int.h
+hdrs/mlx.h
