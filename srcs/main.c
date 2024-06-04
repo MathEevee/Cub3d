@@ -3,23 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/02 16:55:46 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:34:53 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "mlx.h"
-#include <stdlib.h>
+#include "cub3d.h"
 
 int	main(void)
 {
-	void	*mlx;
+	t_info	info;
 
-	mlx = mlx_init();
-	mlx_destroy_display(mlx);
-	free(mlx);
-	return (0);
+	init_info(&info);
+	wati_printf("%d\n", check_path("NO ./wall_ne.xpm", &info));
 }

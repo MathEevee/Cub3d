@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   w_struct.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:24:01 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/03 14:59:50 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:19:16 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,20 @@ typedef struct s_player
 	double	angle;
 }	t_player;
 
+typedef	struct s_fimg
+{
+	void	*img;
+	t_coord	coord;
+}	t_fimg;
+
 typedef struct s_info
 {
 	char		**map;
 	t_player	base;
-	t_wimg		img_no;
-	t_wimg		img_so;
-	t_wimg		img_we;
-	t_wimg		img_ea;
+	t_fimg		img_no;
+	t_fimg		img_so;
+	t_fimg		img_we;
+	t_fimg		img_ea;
 	t_color		color_f;
 	t_color		color_c;
 }	t_info;
