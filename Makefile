@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/03 15:02:54 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/04 12:00:20 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ fclean: $(EXT_RULES)clean
 
 re: fclean debug
 
-all:	$(EXT_RULES)all $(NAME)
+all:	$(MLX_NAME) $(WATI_NAME) $(NAME)
 debug:	CFLAGS += -g
 debug:	$(EXT_RULES)debug $(NAME)
 
@@ -97,7 +97,8 @@ $(EXT_RULES)git: $(MLX_RULES)git $(WATI_RULES)git
 
 ################################# WATI_RULES ###################################
 
-$(WATI_RULES)all:
+$(WATI_RULES)all: $(WATI_NAME)
+$(WATI_NAME):
 	@$(MAKE) $(DIR_SRCS)$(DIR_WATI) -j
 	@mkdir -p $(DIR_LIBS)
 	@cp $(DIR_SRCS)$(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
@@ -119,7 +120,8 @@ $(WATI_RULES)git:
 
 ################################# MLX_RULES ###################################
 
-$(MLX_RULES)all:
+$(MLX_RULES)all: $(MLX_NAME)
+$(MLX_NAME):
 	@$(MAKE) $(DIR_SRCS)$(DIR_MLX) -j
 	@mkdir -p $(DIR_LIBS)
 	@cp $(DIR_SRCS)$(DIR_MLX)$(MLX_NAME) $(DIR_LIBS)

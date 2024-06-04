@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 13:36:33 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/03 13:21:36 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:04:33 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "cub3d_parsing.h"
 # include "cub3d_map.h"
-# include "cub3d_diplay.h"
+# include "cub3d_display.h"
 
 #endif // CUB3D_H
