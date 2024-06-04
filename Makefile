@@ -6,7 +6,7 @@
 #    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/04 14:35:55 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/06/04 14:44:01 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ DIR := \
 #################################### FILES #####################################
 
 SRCS = \
-	main.c \
+	main_matde-ol.c \
 	parsing/path_register.c \
 	parsing/init_struct.c
 
