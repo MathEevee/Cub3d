@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/04 12:00:20 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/04 12:36:05 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,8 @@ DIR := \
 #################################### FILES #####################################
 
 SRCS = \
+	wmlx/wmlx_init.c \
+	wmlx/wkey_hook.c \
 	main.c
 
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))

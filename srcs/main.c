@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/04 12:14:19 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:13:04 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 int	main(void)
 {
-	t_mlx	mlx;
+	t_joe_mama	var;
 
-	mlx.ptr = mlx_init();
-	mlx.win = mlx_new_window(mlx.ptr, WIN_X, WIN_Y, WIN_N);
-	mlx_loop(mlx.ptr);
+	var.mlx = wmlx_init();
+	wkey_init_hook(&var);
+	mlx_loop(var.mlx.ptr);
 	return (0);
 }
