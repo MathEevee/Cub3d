@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bedarenn <bedarenn@student.42.fr>          +#+  +:+       +#+         #
+#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 07:12:45 by bedarenn          #+#    #+#              #
-#    Updated: 2024/04/02 15:21:55 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/04 15:45:14 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ SRCS = \
 	btree_level_count.c btree_apply_by_level.c \
 	btree_clean.c btree_clear.c \
 	wati_printf.c wati_printf_arg.c wati_printf_utils_nbr.c wati_printf_utils_str.c \
-	wati_joinf.c
+	get_next_line.c new_buffer.c manage_buffer.c read_file.c wati_joinf.c
 
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
 

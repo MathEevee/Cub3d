@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   w_struct.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:24:01 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/04 14:19:16 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:38:11 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_player
 	double	angle;
 }	t_player;
 
-typedef	struct s_fimg
+typedef struct s_fimg
 {
 	void	*img;
 	t_coord	coord;
@@ -45,5 +45,11 @@ typedef struct s_info
 	t_color		color_f;
 	t_color		color_c;
 }	t_info;
+
+typedef struct s_joe_mama
+{
+	t_mlx	mlx;
+	t_info	info;
+}	t_joe_mama;
 
 #endif // W_STRUCT_H

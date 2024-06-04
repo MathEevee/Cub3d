@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   new_buffer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/04 14:48:15 by bedarenn         ###   ########.fr       */
+/*   Created: 2023/11/16 15:31:55 by bedarenn          #+#    #+#             */
+/*   Updated: 2024/06/04 15:53:10 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libwati.h"
 #include <stdlib.h>
 
-#include "cub3d.h"
-#include "mlx.h"
-
-int	main(void)
+t_cbuf	*new_buffer(int fd)
 {
-	t_joe_mama	var;
+	t_cbuf	*buffer;
 
-	var.mlx = wmlx_init();
-	wkey_init_hook(&var);
-	mlx_loop(var.mlx.ptr);
-	return (0);
+	buffer = malloc(sizeof(t_cbuf));
+	if (!buffer)
+		return (NULL);
+	buffer->buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buffer->buffer)
+	{
+		free(buffer);
+		return (NULL);
+	}
+	buffer->fd = fd;
+	buffer->r = BUFFER_SIZE;
+	buffer->cursor = BUFFER_SIZE;
+	buffer->next = NULL;
+	return (buffer);
 }

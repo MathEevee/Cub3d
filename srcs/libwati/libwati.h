@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:50:39 by ehalliez          #+#    #+#             */
-/*   Updated: 2024/05/22 12:52:23 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:52:41 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,29 @@ t_list	*wati_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*wati_lstjoin(t_list *list);
 void	wati_lstclean(t_list **lst);
 char	**wati_lstsplit(t_list *list);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
+
+typedef struct s_cbuf
+{
+	int				fd;
+	char			*buffer;
+	int				cursor;
+	int				r;
+	struct s_cbuf	*next;
+}	t_cbuf;
+
+char	*get_next_line(int fd);
+char	*read_file(t_cbuf *b);
+t_cbuf	*new_buffer(int fd);
+
+t_cbuf	*get_buffer(int fd);
+void	delete_buffer(int fd);
+
+void	print_file(int fd);
+char	**get_file(int fd);
 
 typedef struct s_btree
 {

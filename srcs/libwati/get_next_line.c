@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/04 14:48:15 by bedarenn         ###   ########.fr       */
+/*   Created: 2023/11/16 14:54:49 by bedarenn          #+#    #+#             */
+/*   Updated: 2024/06/04 15:53:31 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libwati.h"
+#include <stddef.h>
 
-#include "cub3d.h"
-#include "mlx.h"
-
-int	main(void)
+char	*get_next_line(int fd)
 {
-	t_joe_mama	var;
+	t_cbuf	*b;
+	char	*str;
 
-	var.mlx = wmlx_init();
-	wkey_init_hook(&var);
-	mlx_loop(var.mlx.ptr);
-	return (0);
+	if (BUFFER_SIZE <= 0)
+		return (NULL);
+	b = get_buffer(fd);
+	if (!b)
+		return (NULL);
+	str = read_file(b);
+	if (b->r < BUFFER_SIZE && b->cursor >= b->r)
+		delete_buffer(fd);
+	return (str);
 }
