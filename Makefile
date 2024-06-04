@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
+#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/04 14:38:39 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/06/04 14:41:50 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,9 +43,11 @@ DIR := \
 #################################### FILES #####################################
 
 SRCS = \
-	main.c \
 	parsing/path_register.c \
-	parsing/init_struct.c
+	parsing/init_struct.c \
+	wmlx/wmlx_init.c \
+	wmlx/wkey_hook.c \
+	main.c
 
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
 

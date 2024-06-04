@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/03 13:26:40 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:19:15 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,26 @@
 
 # include "w_typedef.h"
 # include "w_const.h"
+
+typedef struct s_data
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_data;
+
+typedef struct s_mlx
+{
+	t_wptr	ptr;
+	t_wwin	win;
+	t_data	img;
+}	t_mlx;
+
+typedef struct s_joe_mama
+{
+	t_mlx	mlx;
+}	t_joe_mama;
 
 #endif // W_STRUCT_DISPLAY_H

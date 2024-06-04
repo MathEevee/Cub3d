@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   w_const.h                                          :+:      :+:    :+:   */
+/*   wkey_hook.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 13:25:29 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/04 14:41:12 by bedarenn         ###   ########.fr       */
+/*   Created: 2024/06/04 12:32:38 by bedarenn          #+#    #+#             */
+/*   Updated: 2024/06/04 13:13:20 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef W_CONST_H
-# define W_CONST_H
+#include <stdlib.h>
 
-# ifndef FOV
-#  define FOV 45
-# endif
+#include "cub3d.h"
+#include "mlx.h"
 
-# define WIN_X 640
-# define WIN_Y 480
-# define WIN_N "Cub3D"
+void	wkey_init_hook(t_joe_mama *var)
+{
+	mlx_hook(var->mlx.win, 17, 1L << 17, wmlx_destroy, var);
+	mlx_key_hook(var->mlx.win, wkey_hook, var);
+}
 
-#endif // W_CONST_H
+int	wkey_hook(int keycode, t_joe_mama *var)
+{
+	if (keycode == 65307)
+		wmlx_free_exit(var, EXIT_SUCCESS);
+	return (0);
+}
