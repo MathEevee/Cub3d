@@ -6,22 +6,26 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/05 11:06:14 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:45:58 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include <stdio.h>
 
 static bool	init_path(t_fimg *img, t_info *map, char *line)
 {
-	if (map->img_no.img == NULL && wati_strncmp(line, "NO", 2) == 0)
+	int	i;
+
+	i = 0;
+	while (wati_isspace(line[i]) != 0)
+		i++;
+	if (map->img_no.img == NULL && wati_strncmp(line + i, "NO", 2) == 0)
 		map->img_no = *img;
-	else if (map->img_so.img == NULL && wati_strncmp(line, "SO", 2) == 0)
+	else if (map->img_so.img == NULL && wati_strncmp(line + i, "SO", 2) == 0)
 		map->img_so = *img;
-	else if (map->img_we.img == NULL && wati_strncmp(line, "WE", 2) == 0)
+	else if (map->img_we.img == NULL && wati_strncmp(line + i, "WE", 2) == 0)
 		map->img_we = *img;
-	else if (map->img_ea.img == NULL && wati_strncmp(line, "EA", 2) == 0)
+	else if (map->img_ea.img == NULL && wati_strncmp(line + i, "EA", 2) == 0)
 		map->img_ea = *img;
 	else
 		return (false);
@@ -30,7 +34,7 @@ static bool	init_path(t_fimg *img, t_info *map, char *line)
 
 static bool	register_path(char *line, t_info *map)
 {
-	int	i;
+	int		i;
 	void	*mlx;
 	t_fimg	img;
 
@@ -40,7 +44,7 @@ static bool	register_path(char *line, t_info *map)
 	while (wati_isspace(line[i]) != 0)
 		i++;
 	img = create_wimg();
-	mlx = mlx_init();
+	mlx = mlx_init(); //a init dans le main
 	if (mlx == NULL)
 		return (false);
 	img.img = mlx_xpm_file_to_image(mlx, line + i, &img.coord.x, &img.coord.y);
@@ -111,7 +115,8 @@ bool	check_path(char *line, t_info *map)
 		i++;
 	if (line[i] == '0' || line[i] == '1')
 		return (false);
-	if (wati_strncmp(line + i, "NO", 2) == 0 || wati_strncmp(line + i, "SO", 2) == 0
+	if (wati_strncmp(line + i, "NO", 2) == 0
+			|| wati_strncmp(line + i, "SO", 2) == 0
 			|| wati_strncmp(line + i, "WE", 2) == 0
 			|| wati_strncmp(line + i, "EA", 2) == 0)
 	{

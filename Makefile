@@ -6,7 +6,7 @@
 #    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/05 11:09:10 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/06/05 17:33:37 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,10 +45,13 @@ DIR := \
 SRCS = \
 	parsing/path_register.c \
 	parsing/init_struct.c \
+	register_fd/register_data.c \
+	register_fd/format_fd.c \
+	clear/free_img.c \
 	wmlx/wmlx_init.c \
 	wmlx/wkey_hook.c \
 	wmlx/wmlx_print.c \
-	main_display.c
+	main_matde-ol.c
 
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
 
