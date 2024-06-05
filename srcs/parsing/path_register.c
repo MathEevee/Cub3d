@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/04 17:12:20 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/05 10:08:20 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,35 +57,29 @@ static bool	register_path(char *line, t_info *map)
 bool	convert_color(char *line, t_color_def *color)
 {
 	int	i;
-	int	vir;
 
 	i = 0;
-	*color = 0;
-	vir = 0;
-	wati_printf("test1 |%c| %d |%s|\n", line[i], i, line +i);
+	*color = 255;
 	while (wati_isspace(line[i]) != 0)
 		i++;
 	while (line[i] != '\n' && line[i] != '\0')
 	{
 		while (wati_isspace(line[i]) != 0)
 			i++;
-		*color *= 256;
-		printf("test in while 1 : %lx\n", *(color));
-		*color += wati_atoi(line + i);
-		wati_printf("atoi solo : %d\n", wati_atoi(line + i));
-		printf("test in while 2 : %lx\n", *(color));
-		printf("test in while %s\n", line+i);
-		vir++;
-		if (wati_strchr(line + i, ',') != 0)
-			i = wati_strlen((wati_strchr(line + i, ','))) + (*line + i);
-		else
-			break;
+		*color = *color * 256 + wati_atoi(line + i);
+		while (line[i] != ',')
+		{
+			if (line[i] == '\0')
+				break;
+			i++;
+		}
+		if (line[i] == ',')
+			i++;
 	}
-	printf("test %lx\n", *(color));
 	if (*color < 0)
 		return (false);
 	return (true);
-} // reparer l'addition pour l'hexa
+}
 
 static bool	register_color(char *line, t_info *map)
 {
