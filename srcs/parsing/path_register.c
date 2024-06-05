@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/04 14:33:07 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/05 11:06:14 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,21 @@ bool	convert_color(char *line, t_color_def *color)
 	int	i;
 
 	i = 0;
-	if (wati_isspace(line[i]) == 0)
-		return (false);
 	while (wati_isspace(line[i]) != 0)
 		i++;
-	while (wati_isdigit(line[i]) != 0)
+	while (line[i] != '\n' && line[i] != '\0')
 	{
-		*color = *color * 255 + wati_atoi(line);
-		if (((wati_strchr(line + i, ',')) - (line + i)) == '-')
-			return (false);
-		i += (wati_strchr(line + i, ',') + 1) - (line + i);
+		while (wati_isspace(line[i]) != 0)
+			i++;
+		*color = *color * 256 + wati_atoi(line + i);
+		while (line[i] != ',')
+		{
+			if (line[i] == '\0')
+				break;
+			i++;
+		}
+		if (line[i] == ',')
+			i++;
 	}
 	if (*color < 0)
 		return (false);
@@ -89,9 +94,9 @@ static bool	register_color(char *line, t_info *map)
 	if (convert_color(line + i, &tmp) == false)
 		return (false);
 	if (line[0] == 'C')
-		map->color_c = convert_color(line + i, &tmp);
+		map->color_c = tmp;
 	else if (line[0] == 'F')
-		map->color_f = convert_color(line + i, &tmp);
+		map->color_f = tmp;
 	return (true);
 }
 
