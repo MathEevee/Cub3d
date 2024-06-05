@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/05 10:08:20 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/05 11:06:14 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ bool	convert_color(char *line, t_color_def *color)
 	int	i;
 
 	i = 0;
-	*color = 255;
 	while (wati_isspace(line[i]) != 0)
 		i++;
 	while (line[i] != '\n' && line[i] != '\0')
