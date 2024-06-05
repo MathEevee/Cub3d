@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:20:34 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/04 15:37:56 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:57:02 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	wmlx_free_exit(t_joe_mama *var, int code)
 	mlx_destroy_window(var->mlx.ptr, var->mlx.win);
 	mlx_destroy_display(var->mlx.ptr);
 	free(var->mlx.ptr);
+	wati_free_tab(var->info.map);
 	exit(code);
 }

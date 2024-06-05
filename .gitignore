@@ -6,3 +6,4 @@ cub3d
 hdrs/libwati.h
 hdrs/mlx_int.h
 hdrs/mlx.h
+test*
