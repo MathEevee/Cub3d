@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
+#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/05 11:09:10 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/06/05 16:18:15 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,17 +43,20 @@ DIR := \
 #################################### FILES #####################################
 
 SRCS = \
+	struct_manager/coord_manager.c \
 	parsing/path_register.c \
 	parsing/init_struct.c \
 	wmlx/wmlx_init.c \
 	wmlx/wkey_hook.c \
+	wmlx/wmlx_loop.c \
 	wmlx/wmlx_print.c \
+	display_map/display_map.c \
 	main_display.c
 
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
 
 #################################### FLAGS #####################################
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra #-Werror
 LFLAGS := -L$(DIR_LIBS) -lwati -lmlx -lXext -lX11 -lm -lz
 IFLAGS := -I$(DIR_HDRS)
 
@@ -62,8 +65,8 @@ MAKE := make --no-print-directory -C
 
 #################################### RULES #####################################
 
-all:
 debug:
+all:
 
 $(NAME): $(OBJS)
 	@printf "$(GREEN)compile $@                                         $(NC)\n"
