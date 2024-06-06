@@ -6,36 +6,40 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/05 17:45:58 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/06 09:34:31 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static bool	init_path(t_fimg *img, t_info *map, char *line)
+static bool	init_path(t_fimg *img, t_joe_mama *var, char *line)
 {
 	int	i;
 
 	i = 0;
 	while (wati_isspace(line[i]) != 0)
 		i++;
-	if (map->img_no.img == NULL && wati_strncmp(line + i, "NO", 2) == 0)
-		map->img_no = *img;
-	else if (map->img_so.img == NULL && wati_strncmp(line + i, "SO", 2) == 0)
-		map->img_so = *img;
-	else if (map->img_we.img == NULL && wati_strncmp(line + i, "WE", 2) == 0)
-		map->img_we = *img;
-	else if (map->img_ea.img == NULL && wati_strncmp(line + i, "EA", 2) == 0)
-		map->img_ea = *img;
+	if (var->info.img_no.img == NULL && wati_strncmp(line + i, "NO", 2) == 0)
+		var->info.img_no = *img;
+	else if (var->info.img_so.img == NULL && wati_strncmp(line + i, "SO", 2) == 0)
+		var->info.img_so = *img;
+	else if (var->info.img_we.img == NULL && wati_strncmp(line + i, "WE", 2) == 0)
+		var->info.img_we = *img;
+	else if (var->info.img_ea.img == NULL && wati_strncmp(line + i, "EA", 2) == 0)
+		var->info.img_ea = *img;
 	else
+	{
+		wati_fprintf(2, "Argument : ");
+		write(2, line + 2, 2);
+		wati_fprintf(2, "\nError\n");
 		return (false);
+	}
 	return (true);
 }
 
-static bool	register_path(char *line, t_info *map)
+static bool	register_path(char *line, t_joe_mama *var)
 {
 	int		i;
-	void	*mlx;
 	t_fimg	img;
 
 	i = 2;
@@ -44,16 +48,10 @@ static bool	register_path(char *line, t_info *map)
 	while (wati_isspace(line[i]) != 0)
 		i++;
 	img = create_wimg();
-	mlx = mlx_init(); //a init dans le main
-	if (mlx == NULL)
-		return (false);
-	img.img = mlx_xpm_file_to_image(mlx, line + i, &img.coord.x, &img.coord.y);
+	img.img = mlx_xpm_file_to_image(var->mlx.ptr, line + i, &img.coord.x, &img.coord.y);
 	if (img.img == NULL)
-	{
-		free(mlx);
 		return(false);
-	}
-	if (init_path(&img, map, line) == true)
+	if (init_path(&img, var, line) == true)
 		return (true);
 	return (false);
 }
@@ -84,7 +82,7 @@ bool	convert_color(char *line, t_color_def *color)
 	return (true);
 }
 
-static bool	register_color(char *line, t_info *map)
+static bool	register_color(char *line, t_joe_mama *var)
 {
 	int			i;
 	t_color_def	tmp;
@@ -98,13 +96,13 @@ static bool	register_color(char *line, t_info *map)
 	if (convert_color(line + i, &tmp) == false)
 		return (false);
 	if (line[0] == 'C')
-		map->color_c = tmp;
+		var->info.color_c = tmp;
 	else if (line[0] == 'F')
-		map->color_f = tmp;
+		var->info.color_f = tmp;
 	return (true);
 }
 
-bool	check_path(char *line, t_info *map)
+bool	check_path(char *line, t_joe_mama *var)
 {
 	int	i;
 
@@ -120,13 +118,13 @@ bool	check_path(char *line, t_info *map)
 			|| wati_strncmp(line + i, "WE", 2) == 0
 			|| wati_strncmp(line + i, "EA", 2) == 0)
 	{
-		if (register_path(line + i, map) == true)
+		if (register_path(line + i, var) == true)
 			return (true);
 	}
 	else if (wati_strncmp(line + i, "C", 1) == 0
 			|| (wati_strncmp(line + i, "F", 1) == 0))
 	{
-		if (register_color(line + i, map) == true)
+		if (register_color(line + i, var) == true)
 			return (true);
 	}
 	return (false);

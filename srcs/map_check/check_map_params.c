@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   check_map_params.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/02 13:36:33 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/06 08:46:58 by matde-ol         ###   ########.fr       */
+/*   Created: 2024/06/06 09:44:11 by matde-ol          #+#    #+#             */
+/*   Updated: 2024/06/06 10:00:37 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "cub3d.h"
 
-# include <stddef.h>
-# include <unistd.h>
-# include "libwati.h"
-# include "cub3d_parsing.h"
-# include "cub3d_map.h"
-# include "cub3d_display.h"
-
-#endif // CUB3D_H
+bool	map_checker(t_info *info)
+{
+	wati_printf("x : %d | y : %d\n", info->base.pos.x, info->base.pos.y);
+	return (false);
+}
