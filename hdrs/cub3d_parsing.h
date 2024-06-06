@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:21:50 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/06 10:09:02 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:44:39 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "w_struct.h"
 
 bool		check_path(char *line, t_joe_mama *info);
-void		init_player(t_player *player, int x, int y, int radiant);
+void		init_player(t_player *player, int x, int y, long double radiant);
 t_fimg		create_wimg(void);
 void		init_info(t_info *info);
 void		init_wimg(t_info *info);

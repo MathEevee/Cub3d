@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:16:58 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/06 10:08:28 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/06 11:43:38 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,12 @@ static int	map_register(char **file, int i, t_joe_mama *var)
 		i++;
 	while (file[i + j] != NULL)
 		j++;
+	if (j > 1000 || map_size(i, file) > 1000)
+	{
+		wati_fprintf(2, "Map too big\nError\n");
+		wati_free_tab(file);
+		return (-1);
+	}
 	map_copy(i, j, var, file);
 	return (0);
 }

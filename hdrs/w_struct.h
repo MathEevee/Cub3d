@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   w_struct.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:24:01 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/05 11:39:39 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:42:51 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_player
 {
-	t_coord	pos;
+	t_coord_f	pos;
 	double	angle;
 }	t_player;
 

@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/06 09:34:31 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:47:49 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static bool	init_path(t_fimg *img, t_joe_mama *var, char *line)
 	else
 	{
 		wati_fprintf(2, "Argument : ");
-		write(2, line + 2, 2);
+		write(2, &line, 2);
 		wati_fprintf(2, "\nError\n");
 		return (false);
 	}

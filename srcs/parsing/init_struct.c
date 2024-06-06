@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:32:24 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/06 10:09:59 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:50:37 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	init_wimg(t_info *info)
 	info->img_ea = create_wimg();
 }
 
-void	init_player(t_player *player,int x, int y, int radiant)
+void	init_player(t_player *player, int x, int y, long double radiant)
 {
 	player->pos.x = x;
 	player->pos.y = y;
