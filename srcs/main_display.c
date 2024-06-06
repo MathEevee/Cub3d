@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:44:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/04 16:55:46 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:21:23 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 	if (!var.info.map)
 		return (1);
 	var.mlx = wmlx_init();
+	display_map(&var.mlx.i_win, var.info);
 	wkey_init_hook(&var);
 	mlx_loop(var.mlx.ptr);
 	return (0);

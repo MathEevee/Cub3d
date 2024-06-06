@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:24:01 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/04 15:38:11 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/05 11:39:39 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 # include "w_struct_parsing.h"
 # include "w_struct_display.h"
 
-typedef struct s_coord
-{
-	int	x;
-	int	y;
-}	t_coord;
 
 typedef struct s_player
 {
