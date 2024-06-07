@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
+#    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/06 10:13:53 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/07 10:37:45 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SRCS = \
 	register_fd/register_data.c \
 	register_fd/format_fd.c \
 	map_check/check_map_params.c \
+	map_check/map_border.c \
 	clear/free_img.c \
 	wmlx/wmlx_init.c \
 	wmlx/wkey_hook.c \
