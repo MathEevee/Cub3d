@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:44:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/05 16:21:23 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/07 14:54:03 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ t_info	test_info(char *name)
 		info.map = NULL;
 	close(file);
 	info.base.angle = 0;
-	info.base.pos.x = 2 * IMG_SIZE;
-	info.base.pos.y = 2 * IMG_SIZE;
+	info.base.pos.x = 2;
+	info.base.pos.y = 2;
 	info.color_c = 0x00c0c0ff;
 	info.color_f = 0x006060ff;
 	return (info);
@@ -47,9 +47,13 @@ int	main(int argc, char **argv)
 		var.info = test_info("test.cub");
 	if (!var.info.map)
 		return (1);
+	joe_mama_init(&var);
 	var.mlx = wmlx_init();
-	display_map(&var.mlx.i_win, var.info);
+	wmlx_loop_draw(&var);
+	wmlx_update_win(var.mlx);
 	wkey_init_hook(&var);
 	mlx_loop(var.mlx.ptr);
+	wmlx_destroy(var.mlx);
+	wati_free_tab(var.info.map);
 	return (0);
 }

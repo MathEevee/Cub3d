@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/06 10:10:05 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:26:01 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ typedef struct s_coord
 
 typedef struct s_coord_f
 {
-	long double	x;
-	long double	y;
+	t_float	x;
+	t_float	y;
 }	t_coord_f;
 
 typedef struct s_data
@@ -38,6 +38,14 @@ typedef struct s_data
 	int		endian;
 	t_coord	max;
 }	t_data;
+
+typedef struct s_key_press
+{
+	bool	key_W;
+	bool	key_A;
+	bool	key_S;
+	bool	key_D;
+}	t_key_press;
 
 typedef struct s_mlx
 {

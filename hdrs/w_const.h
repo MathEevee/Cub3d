@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:25:29 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/05 16:11:00 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:41:07 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,30 @@
 # define MAP_X 150
 # define MAP_Y 150
 
+# define MAP_MARGE 10
+
 # define IMG_SIZE 1500
 
-# define FPS 60
-# define S_US 1000000
+# define FPS 60.0
+# define S_US 1000000.0
+# define FMS 16666.67 // FPS / S_US
+
+# define MV_SPEED 4.0
+
+typedef enum s_key
+{
+	KEY_ESC = 65307,
+	KEY_TAB = 65289,
+	KEY_W = 119,
+	KEY_A = 97,
+	KEY_S = 115,
+	KEY_D = 100
+}	t_key;
+
+typedef enum s_mode
+{
+	MODE_MAIN = 1,
+	MODE_MINIMAP = 2
+}	t_mode;
 
 #endif // W_CONST_H
