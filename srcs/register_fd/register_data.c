@@ -6,11 +6,13 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:16:58 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/06 11:43:38 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:32:50 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	printf_tab(char **map);
 
 static int	map_size(int i, char **file)
 {

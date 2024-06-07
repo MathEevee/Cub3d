@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:34:22 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/07 16:07:41 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/07 18:04:06 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,10 @@
 
 void	printf_tab(char **map)
 {
-	int	y;
-
-	y = 0;
-	while (map[y])
+	while (*map != NULL)
 	{
-		printf("%s\n", map[y]);
-		y++;
+		wati_printf("%s\n", *map);
+		map++;
 	}
 }
 
@@ -47,77 +44,81 @@ char	**copy_tab(char **tab)
 		}
 		i++;
 	}
+	cpy_tab[i] = NULL;
 	return (cpy_tab);
 }
 
-bool	check_pos(char **map, int *x, int *y, int status)
+void	check_pos(char **map, int *x, int *y)
 {
-	int	x_bis;
-	int	y_bis;
-
-	x_bis = 0;
-	y_bis = 0;
 	while (map[*y] != NULL)
 	{
-		(*x) = 0;
+		*x = 0;
 		while (map[*y][*x] != '\0')
 		{
-			if (status == 1 && (map[*y][*x] == '0' || wati_isalpha(map[*y][*x]) != 0))
-				return (true);
+			if (wati_isalpha(map[*y][*x]) != 0 || map[*y][*x] == '0')
+				return ;
 			(*x)++;
 		}
 		(*y)++;
 	}
-	if (status == 2)
-	{
-		check_pos(map, &x_bis, &y_bis, 2);
-		return (true);
-	}
-	else if (status == 1)
-		return (true);
-	return (false);
 }
 
-int	span_check(char **map)
+bool	span_check(char **map)
 {
 	int	x;
 	int	y;
 
 	x = 0;
 	y = 0;
-	check_pos(map, &x, &y, 1);
+	check_pos(map, &x, &y);
+	if (map[y] == NULL)
+		return (false);
 	while (map[y][x] != '\0')
 	{
+		if (map[y][x] == '1')
+			return (true);
+		if (map[y][x] == ' ' || map[y][x + 1] == '\0')
+			return (false);
 		if (map[y][x] == '0' && (x == 0 || y == 0))
-			return (false);
-		if (map[y][x] == '0' && (map[y][x + 1] == '\0' || map[y][x + 1] == ' '))
 		{
+			wati_printf("test1\n");
 			return (false);
 		}
-		else if (map[y][x] == '0' && (map[y + 1][x] == ' '))
-		{
-			return (false);
-		}
-			printf("|%c|\n", map[y][x]);
 		if (map[y][x] == '0' || wati_isalpha(map[y][x]) != 0)
 			map[y][x] = '1';
+		if (((map[y + 1] != NULL) && (map[y + 1][x] == ' ')) || map[y - 1][x] != '1')
+		{
+			wati_printf("map[y + 1][x] == '%c' | map[y - 1][x] == '%c' | %s\n", map[y + 1][x],map[y - 1][x], map[y]);
+			wati_printf("test2\n");
+			return (false);
+		}
 		x++;
 	}
-	if (map[y] == NULL || map[y][x] == '\0')
-		return (true);
-	return (false);
+	if (map[y + 1] == NULL)
+	{
+		wati_printf("test3\n");
+		return (false);
+	}
+	return (true);
 }
 
 bool	map_span_fill(char **map)
 {
 	int	x;
 	int	y;
+	int	x_bis;
+	int	y_bis;
 
 	x = 0;
 	y = 0;
-	if (span_check(map) == true)
+	if (span_check(map) == true && map[y] != NULL)
 	{
-		if (check_pos(map, &x ,&y ,2) == true)
+		x_bis = 0;
+		y_bis = 0;
+		printf_tab(map);
+		check_pos(map, &x_bis, &y_bis);
+		wati_printf("test : |%s|\n", map[y_bis]);
+		if (map[y_bis] == NULL)
 			return (true);
 		return(map_span_fill(map));
 	}
@@ -129,6 +130,7 @@ bool	map_close(char **map)
 	char	**cpy_map;
 
 	cpy_map = copy_tab(map);
+	printf_tab(cpy_map);
 	if (cpy_map == NULL)
 	{
 		wati_fprintf(2, "Malloc failed\nError\n");
