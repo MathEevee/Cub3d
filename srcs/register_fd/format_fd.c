@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:05:36 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/07 17:14:50 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/08 15:13:24 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	count_tab(char	**tab)
 	return (i);
 }
 
-char	*copy_any_nl(char *old)
+static char	*copy_any_nl(char *old)
 {
 	int		i;
 	char	*new;

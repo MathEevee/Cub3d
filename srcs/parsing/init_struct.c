@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:32:24 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/06 10:50:37 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/08 16:01:31 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	init_player(t_player *player, int x, int y, long double radiant)
 	player->angle = radiant;
 }
 
-
 void	init_info(t_info *info)
 {
 	info->map = NULL;
@@ -46,4 +45,3 @@ void	init_info(t_info *info)
 	info->color_f = -1;
 	info->color_c = -1;
 }
-
