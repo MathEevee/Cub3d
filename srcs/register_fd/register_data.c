@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:16:58 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/07 17:32:50 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/08 14:25:10 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,10 @@ static int	map_register(char **file, int i, t_joe_mama *var)
 
 	j = 0;
 	if (file[i] == NULL)
+	{
+		wati_fprintf(2, "Map doesn't exist\nError\n");
 		return (-1);
+	}
 	while (file[i][0] == '\n')
 		i++;
 	while (file[i + j] != NULL)
