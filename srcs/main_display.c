@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:44:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/08 16:49:44 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/08 17:03:14 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 {
 	t_joe_mama	var;
 
-	joe_mama_init(&var);
+	var.mlx = wmlx_init();
 	if (argc > 1)
 		var.info = test_info(argv[1]);
 	else
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 		wmlx_destroy(var.mlx);
 		return (1);
 	}
-	var.mlx = wmlx_init();
+	joe_mama_init(&var);
 	wmlx_loop_draw(&var);
 	wmlx_update_win(var.mlx);
 	wkey_init_hook(&var);
