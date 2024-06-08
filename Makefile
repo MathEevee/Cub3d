@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
+#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/07 10:37:45 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/06/08 16:51:13 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,12 +51,17 @@ SRCS = \
 	map_check/check_map_params.c \
 	map_check/map_border.c \
 	clear/free_img.c \
+	struct_manager/key_manager.c \
+	struct_manager/joe_mama_manager.c \
+	struct_manager/tv_manager.c \
 	wmlx/wmlx_init.c \
 	wmlx/wkey_hook.c \
 	wmlx/wmlx_loop.c \
 	wmlx/wmlx_print.c \
+	wmlx/wmlx_update.c \
+	ray_casting/ray_casting.c \
 	display_map/display_map.c \
-	main_matde-ol.c
+	main_display.c
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
 
 #################################### FLAGS #####################################
