@@ -6,47 +6,12 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:34:22 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/08 14:20:30 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/08 15:37:13 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include "stdio.h"
-
-void	printf_tab(char **map)
-{
-	while (*map != NULL)
-	{
-		wati_printf("%s\n", *map);
-		map++;
-	}
-}
-
-char	**copy_tab(char **tab)
-{
-	char	**cpy_tab;
-	int		i;
-
-	i = 0;
-	while (tab[i] != NULL)
-		i++;
-	cpy_tab = malloc(sizeof(char *) * (i + 1));
-	if (cpy_tab == NULL)
-		return (NULL);
-	i = 0;
-	while (tab[i] != NULL)
-	{
-		cpy_tab[i] = wati_strdup(tab[i]);
-		if (cpy_tab[i] == NULL)
-		{
-			wati_free_tab(&cpy_tab);
-			return (NULL);
-		}
-		i++;
-	}
-	cpy_tab[i] = NULL;
-	return (cpy_tab);
-}
 
 void	check_pos(char **map, int *x, int *y)
 {
@@ -71,7 +36,8 @@ bool	span_check_conditions(char **map, int x, int y)
 		return (false);
 	if (map[y + 1] == NULL)
 		return (false);
-	if (((map[y + 1] != NULL) && (map[y + 1][x] == ' ')) || map[y - 1][x] != '1')
+	if (((map[y + 1] != NULL) && (map[y + 1][x] == ' '))
+			|| map[y - 1][x] != '1')
 		return (false);
 	return (true);
 }
@@ -116,10 +82,9 @@ bool	map_span_fill(char **map)
 		y_bis = 0;
 		printf_tab(map);
 		check_pos(map, &x_bis, &y_bis);
-		wati_printf("test : |%s|\n", map[y_bis]);
 		if (map[y_bis] == NULL)
 			return (true);
-		return(map_span_fill(map));
+		return (map_span_fill(map));
 	}
 	return (false);
 }
@@ -129,8 +94,6 @@ bool	map_close(char **map)
 	char	**cpy_map;
 
 	cpy_map = copy_tab(map);
-	printf_tab(cpy_map);
-	printf("%s\n", cpy_map[0]);
 	if (cpy_map == NULL)
 	{
 		wati_fprintf(2, "Malloc failed\nError\n");

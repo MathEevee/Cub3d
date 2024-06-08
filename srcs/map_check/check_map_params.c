@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:44:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/06 12:34:07 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/08 16:00:33 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 bool	maps_params_accepted(char c)
 {
 	if (c == '0' || c == '1' || c == ' ' || c == 'N' || c == 'W' || c == 'S'
-			|| c == 'E')
+		|| c == 'E')
 		return (true);
 	return (false);
 }
@@ -30,11 +30,11 @@ bool	is_player(int x, int y, char c, t_info *info)
 			return (false);
 		}
 		if (c == 'N' && info->base.angle == -1)
-			init_player(&info->base, x, y, PI/2);
+			init_player(&info->base, x, y, PI / 2);
 		else if (c == 'W' && info->base.angle == -1)
 			init_player(&info->base, x, y, PI);
 		else if (c == 'S' && info->base.angle == -1)
-			init_player(&info->base, x, y, -PI/2);
+			init_player(&info->base, x, y, -PI / 2);
 		else if (c == 'E' && info->base.angle == -1)
 			init_player(&info->base, x, y, 0);
 		return (true);

@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/06 10:47:49 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/08 16:07:10 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ static bool	init_path(t_fimg *img, t_joe_mama *var, char *line)
 		i++;
 	if (var->info.img_no.img == NULL && wati_strncmp(line + i, "NO", 2) == 0)
 		var->info.img_no = *img;
-	else if (var->info.img_so.img == NULL && wati_strncmp(line + i, "SO", 2) == 0)
+	else if (var->info.img_so.img == NULL
+		&& wati_strncmp(line + i, "SO", 2) == 0)
 		var->info.img_so = *img;
-	else if (var->info.img_we.img == NULL && wati_strncmp(line + i, "WE", 2) == 0)
+	else if (var->info.img_we.img == NULL
+		&& wati_strncmp(line + i, "WE", 2) == 0)
 		var->info.img_we = *img;
-	else if (var->info.img_ea.img == NULL && wati_strncmp(line + i, "EA", 2) == 0)
+	else if (var->info.img_ea.img == NULL
+		&& wati_strncmp(line + i, "EA", 2) == 0)
 		var->info.img_ea = *img;
 	else
 	{
@@ -48,9 +51,10 @@ static bool	register_path(char *line, t_joe_mama *var)
 	while (wati_isspace(line[i]) != 0)
 		i++;
 	img = create_wimg();
-	img.img = mlx_xpm_file_to_image(var->mlx.ptr, line + i, &img.coord.x, &img.coord.y);
+	img.img = mlx_xpm_file_to_image(var->mlx.ptr, line + i, \
+		&img.coord.x, &img.coord.y);
 	if (img.img == NULL)
-		return(false);
+		return (false);
 	if (init_path(&img, var, line) == true)
 		return (true);
 	return (false);
@@ -71,7 +75,7 @@ bool	convert_color(char *line, t_color_def *color)
 		while (line[i] != ',')
 		{
 			if (line[i] == '\0')
-				break;
+				break ;
 			i++;
 		}
 		if (line[i] == ',')
@@ -114,15 +118,15 @@ bool	check_path(char *line, t_joe_mama *var)
 	if (line[i] == '0' || line[i] == '1')
 		return (false);
 	if (wati_strncmp(line + i, "NO", 2) == 0
-			|| wati_strncmp(line + i, "SO", 2) == 0
-			|| wati_strncmp(line + i, "WE", 2) == 0
-			|| wati_strncmp(line + i, "EA", 2) == 0)
+		|| wati_strncmp(line + i, "SO", 2) == 0
+		|| wati_strncmp(line + i, "WE", 2) == 0
+		|| wati_strncmp(line + i, "EA", 2) == 0)
 	{
 		if (register_path(line + i, var) == true)
 			return (true);
 	}
 	else if (wati_strncmp(line + i, "C", 1) == 0
-			|| (wati_strncmp(line + i, "F", 1) == 0))
+		|| (wati_strncmp(line + i, "F", 1) == 0))
 	{
 		if (register_color(line + i, var) == true)
 			return (true);
