@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   w_typedef.h                                        :+:      :+:    :+:   */
+/*   joe_mama_manager.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 13:27:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/06 11:04:50 by bedarenn         ###   ########.fr       */
+/*   Created: 2024/06/06 12:30:13 by bedarenn          #+#    #+#             */
+/*   Updated: 2024/06/06 13:01:57 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef W_TYPEDEF_H
-# define W_TYPEDEF_H
+#include "cub3d.h"
 
-# include <sys/time.h>
-# include <stdint.h>
-
-typedef int				t_fd;
-typedef __uint32_t		t_color;
-typedef __int64_t		t_color_def;
-
-typedef void *			t_wptr;
-typedef void *			t_wwin;
-typedef void *			t_wimg;
-
-typedef long int		t_ltime;
-typedef struct timeval	t_tv;
-
-typedef float			t_float;
-
-#endif // W_TYPEDEF_H
+void	joe_mama_init(t_joe_mama *var)
+{
+	var->mode = MODE_MINIMAP;
+	var->press = key_press_init();
+}

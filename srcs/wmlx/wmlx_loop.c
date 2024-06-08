@@ -6,34 +6,53 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/05 16:11:03 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/08 16:18:39 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <math.h>
+
 #include "cub3d.h"
 
-static t_ltime	diff_timeval(t_tv t1, t_tv t2)
+void	move_toward(t_player *player, float mv)
 {
-	t_ltime	t;
-
-	t = (t1.tv_sec - t2.tv_sec) * S_US + (t1.tv_usec - t2.tv_usec);
-	return (t);
+	player->pos.x = player->pos.x + (mv * cos(player->angle));
+	player->pos.y = player->pos.y + (mv * sin(player->angle));
 }
 
-bool	fps_manager(int fps)
+bool	wmlx_key_update(t_joe_mama *var)
 {
 	static t_tv	last;
 	t_tv		actu;
+	t_ltime		diff;
+	float		mv;
+	double		rotate;
 
 	gettimeofday(&actu, NULL);
-	if (diff_timeval(actu, last) < S_US / fps)
+	diff = diff_timeval(actu, last);
+	if (diff < FMS)
 		return (false);
+	last = actu;
+	mv = MV_SPEED / FPS * (diff / FMS);
+	rotate = (FOV_INCR * (PI / 180.0)) / FPS * (diff / FMS);
+	if (var->press.key_a)
+		var->info.base.angle -= rotate;
+	if (var->press.key_d)
+		var->info.base.angle += rotate;
+	if (var->press.key_w)
+		move_toward(&var->info.base, -mv);
+	if (var->press.key_s)
+		move_toward(&var->info.base, mv);
 	return (true);
 }
 
 int	wmlx_loop(t_joe_mama *var)
 {
-	if (fps_manager(FPS))
+	if (wmlx_key_update(var))
+	{
+		wmlx_loop_draw(var);
 		wmlx_update_win(var->mlx);
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/08 15:58:49 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/06/08 18:04:05 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,12 +53,17 @@ SRCS = \
 	map_check/map_border.c \
 	utils/cpy_tab.c \
 	clear/free_img.c \
+	struct_manager/key_manager.c \
+	struct_manager/joe_mama_manager.c \
+	struct_manager/tv_manager.c \
 	wmlx/wmlx_init.c \
 	wmlx/wkey_hook.c \
 	wmlx/wmlx_loop.c \
 	wmlx/wmlx_print.c \
+	wmlx/wmlx_update.c \
+	ray_casting/ray_casting.c \
 	display_map/display_map.c \
-	main_matde-ol.c
+	main.c
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
 
 #################################### FLAGS #####################################
