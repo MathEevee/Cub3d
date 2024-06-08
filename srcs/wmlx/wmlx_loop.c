@@ -6,13 +6,20 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/07 15:39:09 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/08 16:18:39 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <math.h>
 
 #include "cub3d.h"
+
+void	move_toward(t_player *player, float mv)
+{
+	player->pos.x = player->pos.x + (mv * cos(player->angle));
+	player->pos.y = player->pos.y + (mv * sin(player->angle));
+}
 
 bool	wmlx_key_update(t_joe_mama *var)
 {
@@ -20,6 +27,7 @@ bool	wmlx_key_update(t_joe_mama *var)
 	t_tv		actu;
 	t_ltime		diff;
 	float		mv;
+	double		rotate;
 
 	gettimeofday(&actu, NULL);
 	diff = diff_timeval(actu, last);
@@ -27,14 +35,15 @@ bool	wmlx_key_update(t_joe_mama *var)
 		return (false);
 	last = actu;
 	mv = MV_SPEED / FPS * (diff / FMS);
-	if (var->press.key_W)
-		var->info.base.pos.y -= mv;
-	if (var->press.key_A)
-		var->info.base.pos.x -= mv;
-	if (var->press.key_S)
-		var->info.base.pos.y += mv;
-	if (var->press.key_D)
-		var->info.base.pos.x += mv;
+	rotate = (FOV_INCR * (PI / 180.0)) / FPS * (diff / FMS);
+	if (var->press.key_a)
+		var->info.base.angle -= rotate;
+	if (var->press.key_d)
+		var->info.base.angle += rotate;
+	if (var->press.key_w)
+		move_toward(&var->info.base, -mv);
+	if (var->press.key_s)
+		move_toward(&var->info.base, mv);
 	return (true);
 }
 

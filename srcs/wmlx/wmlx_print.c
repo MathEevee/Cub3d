@@ -6,14 +6,14 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:49:41 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/07 14:07:50 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/08 14:35:18 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include <unistd.h>
 
-inline void	wmlx_put_pixel(t_data *data, t_coord coord, t_color color)
+void	wmlx_put_pixel(t_data *data, t_coord coord, t_color color)
 {
 	char	*dst;
 

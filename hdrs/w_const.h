@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:25:29 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/07 15:41:07 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/08 16:18:50 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define W_CONST_H
 
 # ifndef FOV
-#  define FOV 45
+#  define FOV 80
 # endif
+
+# define FOV_INCR 180
 
 # define PI 3.14159265358979323846
 
@@ -27,7 +29,9 @@
 # define MAP_X 150
 # define MAP_Y 150
 
+# define SQRT_SIZE 50
 # define MAP_MARGE 10
+# define PLAYER_SIZE 10
 
 # define IMG_SIZE 1500
 

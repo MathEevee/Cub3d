@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:44:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/07 14:54:03 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/08 16:49:44 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_info	test_info(char *name)
 	else
 		info.map = NULL;
 	close(file);
-	info.base.angle = 0;
+	info.base.angle = PI / 8;
 	info.base.pos.x = 2;
 	info.base.pos.y = 2;
 	info.color_c = 0x00c0c0ff;
@@ -41,13 +41,16 @@ int	main(int argc, char **argv)
 {
 	t_joe_mama	var;
 
+	joe_mama_init(&var);
 	if (argc > 1)
 		var.info = test_info(argv[1]);
 	else
 		var.info = test_info("test.cub");
 	if (!var.info.map)
+	{
+		wmlx_destroy(var.mlx);
 		return (1);
-	joe_mama_init(&var);
+	}
 	var.mlx = wmlx_init();
 	wmlx_loop_draw(&var);
 	wmlx_update_win(var.mlx);

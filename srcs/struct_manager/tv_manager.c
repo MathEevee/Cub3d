@@ -6,13 +6,12 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:26:53 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/07 15:23:36 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/07 15:55:52 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "cub3d.h"
+#include <stdio.h>
 
 t_ltime	diff_timeval(t_tv t1, t_tv t2)
 {
