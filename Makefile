@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/08 16:51:13 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/08 16:57:11 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ SRCS = \
 	wmlx/wmlx_update.c \
 	ray_casting/ray_casting.c \
 	display_map/display_map.c \
-	main_display.c
+	main.c
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
 
 #################################### FLAGS #####################################
