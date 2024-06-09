@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/08 16:18:34 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/09 15:37:58 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,31 @@
 
 #include "cub3d.h"
 
+// int	dist_wall(t_coord player, char **map, double angle)
+// {
+// 	int		dist;
+// 	float	a;
+// 	float	b;
+// 	float	delta_a;
+// 	float	delta_b;
+
+// 	if (angle >= PI / 2 || angle <= 0)
+// 		return (100);
+// 	a = player.y - (int) player.y;
+// 	b = player.x - (int) player.x;
+// 	delta_a = 50 / tan(angle);
+// 	delta_b = tan(angle) * 50;
+// 	return (200);
+// }
+
 void	ray(t_data *data, double angle, t_coord player)
 {
 	t_coord	pxl;
 	int		i;
+	// int		dist;
 
 	i = 0;
+	// dist = dist_wall(player, map, angle);
 	while (i < 100)
 	{
 		pxl.x = player.x - (int)(i * cos(angle));

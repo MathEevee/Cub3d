@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/08 16:57:36 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/09 09:55:44 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,7 @@ int	main(int argc, char **argv)
 	if (fd <= 2)
 		return (1);
 	joe_mama_init(&var);
-	begin_cub3d(fd);
-	if (!var.info.map)
-	{
-		wmlx_destroy(var.mlx);
-		return (1);
-	}
 	var.mlx = wmlx_init();
-	wmlx_loop_draw(&var);
-	wmlx_update_win(var.mlx);
-	wkey_init_hook(&var);
-	mlx_loop(var.mlx.ptr);
-	wmlx_destroy(var.mlx);
-	wati_free_tab(var.info.map);
+	begin_cub3d(fd, &var);
 	return (0);
 }

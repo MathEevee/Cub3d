@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:34:22 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/08 15:37:13 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/09 09:27:30 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ bool	map_span_fill(char **map)
 	{
 		x_bis = 0;
 		y_bis = 0;
-		printf_tab(map);
 		check_pos(map, &x_bis, &y_bis);
 		if (map[y_bis] == NULL)
 			return (true);
