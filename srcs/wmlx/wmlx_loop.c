@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wmlx_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/08 16:18:39 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/10 13:54:21 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,17 @@
 
 #include "cub3d.h"
 
-void	move_toward(t_player *player, float mv)
+void	move_toward(t_player *player, float mv, char **map)
 {
-	player->pos.x = player->pos.x + (mv * cos(player->angle));
-	player->pos.y = player->pos.y + (mv * sin(player->angle));
+	float	tmp_x;
+	float	tmp_y;
+
+	tmp_x = player->pos.x + (mv * cos(player->angle));
+	tmp_y = player->pos.y + (mv * sin(player->angle));
+	if (map[(int)tmp_y][(int)tmp_x] == '1')
+		return ;
+	player->pos.x = tmp_x;
+	player->pos.y = tmp_y;
 }
 
 bool	wmlx_key_update(t_joe_mama *var)
@@ -41,9 +48,9 @@ bool	wmlx_key_update(t_joe_mama *var)
 	if (var->press.key_d)
 		var->info.base.angle += rotate;
 	if (var->press.key_w)
-		move_toward(&var->info.base, -mv);
+		move_toward(&var->info.base, -mv, var->info.map);
 	if (var->press.key_s)
-		move_toward(&var->info.base, mv);
+		move_toward(&var->info.base, mv, var->info.map);
 	return (true);
 }
 

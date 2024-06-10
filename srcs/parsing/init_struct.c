@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:32:24 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/10 13:07:21 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/10 13:51:59 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ void	init_player(t_info *info, int x, int y, long double radiant)
 	info->base.pos.y = y;
 	info->base.angle = radiant;
 	if (info->map != NULL)
+	{
 		info->map[y][x] = '0';
+		info->base.pos.x += 0.5;
+		info->base.pos.y += 0.5;
+	}
 }
 
 void	init_info(t_info *info)

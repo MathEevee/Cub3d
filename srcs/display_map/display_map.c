@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/10 13:09:11 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/10 13:47:51 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	display_map(t_data *data, t_coord base, t_info info)
 	char	**strs;
 	char	*str;
 
-	pos.y = base.y;
+	pos.y = base.y + SQRT_SIZE / 2;
 	strs = info.map;
 	while (*strs)
 	{
 		str = *strs;
-		pos.x = base.x;
+		pos.x = base.x + SQRT_SIZE / 2;
 		while (*str && *str != '\n')
 		{
 			if (*str == '0')
