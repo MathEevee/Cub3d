@@ -6,13 +6,11 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:16:58 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/08 14:25:10 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/08 15:26:24 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	printf_tab(char **map);
 
 static int	map_size(int i, char **file)
 {
@@ -58,7 +56,25 @@ static void	map_copy(int i, int j, t_joe_mama *var, char **file)
 	var->info.map[map_j] = NULL;
 }
 
-static int	map_register(char **file, int i, t_joe_mama *var)
+static int	loop_file(int *i, char **file, int count, t_joe_mama *var)
+{
+	while (file[*i] != NULL)
+	{
+		if (file[*i][0] == '\0')
+			(*i)++;
+		else
+		{
+			if (check_path(file[*i], var) == true)
+				count++;
+			else
+				break ;
+			(*i)++;
+		}
+	}
+	return (count);
+}
+
+int	map_register(char **file, int i, t_joe_mama *var)
 {
 	int	j;
 
@@ -82,25 +98,7 @@ static int	map_register(char **file, int i, t_joe_mama *var)
 	return (0);
 }
 
-static int	loop_file(int *i, char **file, int count, t_joe_mama *var)
-{
-	while (file[*i] != NULL)
-	{
-		if (file[*i][0] == '\0')
-			(*i)++;
-		else
-		{
-			if (check_path(file[*i], var) == true)
-				count++;
-			else
-				break;
-			(*i)++;
-		}
-	}
-	return (count);
-}
-
-static int	set_info(char **file, t_joe_mama *var)
+int	set_info(char **file, t_joe_mama *var)
 {
 	int	i;
 	int	count;
@@ -116,31 +114,4 @@ static int	set_info(char **file, t_joe_mama *var)
 	if (map_register(file, i, var) == -1)
 		return (-1);
 	return (0);
-}
-
-void	begin_cub3d(int fd)
-{
-	char		**file;
-	t_joe_mama	var;
-
-	init_info(&var.info);
-	var.mlx = wmlx_init();
-	file = format_fd_no_nl(fd);
-	if (file == NULL)
-	{
-		wati_fprintf(2, "This file is empty\nError\n");
-		return;
-	}
-	if (set_info(file, &var) == -1)
-	{
-		//addfree
-		return ;
-	}
-	wati_free_tab(file);
-	if (map_checker(&var.info) == true)
-	{
-		wati_printf("good\n");
-		// start_game();
-	}
-	// freeall dans tous les cas
 }
