@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/09 15:43:54 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/10 13:09:11 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	display_map(t_data *data, t_coord base, t_info info)
 		pos.x = base.x;
 		while (*str && *str != '\n')
 		{
-			if (*str == '0' || wati_isalpha(*str) != 0)
+			if (*str == '0')
 				wmlx_put_square(data, pos, SQRT_SIZE, info.color_f);
 			else if (*str == '1')
 				wmlx_put_square(data, pos, SQRT_SIZE, info.color_c);
