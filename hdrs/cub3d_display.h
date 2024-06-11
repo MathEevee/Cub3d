@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/08 14:42:39 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:27:51 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include "w_struct.h"
 
 t_coord		set_coord(int x, int y);
+t_coord_f	set_coord_f(int x, int y);
+t_coord		cast_to_coord(t_coord_f pos);
+t_coord_f	cast_to_coord_f(t_coord pos);
 
 t_mlx		wmlx_init(void);
 void		wmlx_destroy(t_mlx mlx);
@@ -34,6 +37,8 @@ void		wmlx_put_rect(t_data *data, t_coord begin, t_coord end,
 void		wmlx_put_rect(t_data *data, t_coord begin, t_coord end,
 				t_color color);
 void		wmlx_put_square(t_data *data, t_coord coord, int size,
+				t_color color);
+void		wmlx_put_line(t_data *data, t_coord start, t_coord end,
 				t_color color);
 void		wmlx_clear_img(t_data *data);
 
