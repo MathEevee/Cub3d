@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   w_const.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:25:29 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/10 15:49:48 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/11 16:23:59 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define MAP_X 150
 # define MAP_Y 150
 
-# define SQRT_SIZE 50
+# define SQRT_SIZE 10
 # define MAP_MARGE 10
 # define PLAYER_SIZE 10
 
@@ -39,7 +39,7 @@
 # define S_US 1000000.0
 # define FMS 16666.67 // FPS / S_US
 
-# define MV_SPEED 4.0
+# define MV_SPEED 8.0
 
 typedef enum s_key
 {
@@ -50,11 +50,5 @@ typedef enum s_key
 	KEY_S = 115,
 	KEY_D = 100
 }	t_key;
-
-typedef enum s_mode
-{
-	MODE_MAIN = 1,
-	MODE_MINIMAP = 2
-}	t_mode;
 
 #endif // W_CONST_H

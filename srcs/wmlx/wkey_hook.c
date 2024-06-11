@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:32:38 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 14:48:25 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:35:08 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,7 @@ int	wkey_hook_press(int keycode, t_joe_mama *var)
 	else if (keycode == KEY_D)
 		var->press.key_d = true;
 	else if (keycode == KEY_TAB)
-	{
-		if (var->mode == MODE_MAIN)
-			var->mode = MODE_MINIMAP;
-		else if (var->mode == MODE_MINIMAP)
-			var->mode = MODE_MAIN;
-		wmlx_loop_draw(var);
-		wmlx_update_win(var->mlx);
-	}
+		change_mode(&var->mlx.pimg);
 	else
 		wati_fprintf(2, "key: %i\n", keycode);
 	return (0);

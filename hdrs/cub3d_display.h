@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/10 15:27:51 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:34:03 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_mlx		wmlx_init(void);
 void		wmlx_destroy(t_mlx mlx);
 
 void		joe_mama_init(t_joe_mama *var);
+void		change_mode(t_pdata *data);
+
 t_key_press	key_press_init(void);
 t_data		wmlx_init_img(t_wptr ptr, int x, int y);
 
@@ -42,7 +44,7 @@ void		wmlx_put_line(t_data *data, t_coord start, t_coord end,
 				t_color color);
 void		wmlx_clear_img(t_data *data);
 
-void		ray_casting(t_data *data, t_coord player, t_info info);
+void		ray_casting(t_data *data, t_info info);
 
 void		wmlx_loop_draw(t_joe_mama *var);
 void		wmlx_update_win(t_mlx mlx);

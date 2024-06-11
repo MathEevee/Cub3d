@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 14:50:33 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:18:02 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ void	display_minimap(t_data *data, t_info info)
 			- SQRT_SIZE / 2, -info.base.pos.y * SQRT_SIZE + data->max.y / 2
 			- SQRT_SIZE / 2);
 	display_map(data, pos_map, info);
-	pos_map = set_coord(data->max.x / 2, data->max.y / 2);
-	ray_casting(data, pos_map, info);
-	pos_map = set_coord(pos_map.x - PLAYER_SIZE / 2,
-			pos_map.y - PLAYER_SIZE / 2);
+	pos_map = set_coord(data->max.x / 2 - PLAYER_SIZE / 2,
+			data->max.y / 2 - PLAYER_SIZE / 2);
 	wmlx_put_square(data, pos_map, PLAYER_SIZE, 0xff0000);
 }

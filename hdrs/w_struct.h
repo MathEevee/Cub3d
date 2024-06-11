@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:24:01 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/08 16:51:37 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:30:21 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ typedef struct s_joe_mama
 	t_mlx		mlx;
 	t_info		info;
 	t_key_press	press;
-	t_mode		mode;
 }				t_joe_mama;
 
 #endif // W_STRUCT_H

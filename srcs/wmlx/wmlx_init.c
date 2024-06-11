@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:20:34 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/07 14:53:49 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:28:42 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ t_mlx	wmlx_init(void)
 
 	mlx.ptr = mlx_init();
 	mlx.win = mlx_new_window(mlx.ptr, WIN_X, WIN_Y, WIN_N);
-	mlx.i_win = wmlx_init_img(mlx.ptr, WIN_X, WIN_Y);
-	mlx.i_map = wmlx_init_img(mlx.ptr, MAP_X, MAP_Y);
+	mlx.img.win = wmlx_init_img(mlx.ptr, WIN_X, WIN_Y);
+	mlx.img.map = wmlx_init_img(mlx.ptr, MAP_X, MAP_Y);
+	mlx.pimg.win = &mlx.img.win;
+	mlx.pimg.map = &mlx.img.map;
 	return (mlx);
 }
 
@@ -40,8 +42,8 @@ t_data	wmlx_init_img(t_wptr ptr, int x, int y)
 
 void	wmlx_destroy(t_mlx mlx)
 {
-	mlx_destroy_image(mlx.ptr, mlx.i_win.img);
-	mlx_destroy_image(mlx.ptr, mlx.i_map.img);
+	mlx_destroy_image(mlx.ptr, mlx.img.win.img);
+	mlx_destroy_image(mlx.ptr, mlx.img.map.img);
 	mlx_destroy_window(mlx.ptr, mlx.win);
 	mlx_destroy_display(mlx.ptr);
 	free(mlx.ptr);

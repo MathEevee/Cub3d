@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:30:13 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/06 13:01:57 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:33:36 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 void	joe_mama_init(t_joe_mama *var)
 {
-	var->mode = MODE_MINIMAP;
 	var->press = key_press_init();
+}
+
+void	change_mode(t_pdata *data)
+{
+	t_data	*tmp;
+
+	tmp = data->map;
+	data->map = data->win;
+	data->win = tmp;
 }
