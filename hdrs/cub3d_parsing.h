@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:21:50 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/08 15:58:11 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/09 09:35:28 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init_player(t_player *player, int x, int y, long double radiant);
 t_fimg	create_wimg(void);
 void	init_info(t_info *info);
 void	init_wimg(t_info *info);
-void	begin_cub3d(int fd);
+void	begin_cub3d(int fd, t_joe_mama *var);
 char	**format_fd_no_nl(int fd);
 bool	map_checker(t_info *info);
 bool	map_close(char **map);

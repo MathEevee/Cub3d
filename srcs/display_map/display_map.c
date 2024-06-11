@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/08 16:11:43 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:31:12 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	display_map(t_data *data, t_coord base, t_info info)
 		pos.x = base.x;
 		while (*str && *str != '\n')
 		{
-			if (*str == '0')
+			if (*str == '0' || wati_isalpha(*str) != 0)
 				wmlx_put_square(data, pos, SQRT_SIZE, info.color_f);
-			else
+			else if (*str == '1')
 				wmlx_put_square(data, pos, SQRT_SIZE, info.color_c);
 			str++;
 			pos.x += SQRT_SIZE;
@@ -40,14 +40,15 @@ void	display_map(t_data *data, t_coord base, t_info info)
 
 void	display_minimap(t_data *data, t_info info)
 {
-	t_coord	player;
+	t_coord	pos_map;
 
-	player = set_coord(-info.base.pos.x * SQRT_SIZE + data->max.x / 2
+	pos_map = set_coord(-info.base.pos.x * SQRT_SIZE + data->max.x / 2
 			- SQRT_SIZE / 2, -info.base.pos.y * SQRT_SIZE + data->max.y / 2
 			- SQRT_SIZE / 2);
-	display_map(data, player, info);
-	player = set_coord(data->max.x / 2, data->max.y / 2);
-	ray_casting(data, player, info);
-	player = set_coord(player.x - PLAYER_SIZE / 2, player.y - PLAYER_SIZE / 2);
-	wmlx_put_square(data, player, PLAYER_SIZE, 0xff0000);
+	display_map(data, pos_map, info);
+	pos_map = set_coord(data->max.x / 2, data->max.y / 2);
+	ray_casting(data, pos_map, info);
+	pos_map = set_coord(pos_map.x - PLAYER_SIZE / 2,
+			pos_map.y - PLAYER_SIZE / 2);
+	wmlx_put_square(data, pos_map, PLAYER_SIZE, 0xff0000);
 }

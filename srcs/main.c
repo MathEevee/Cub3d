@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/08 17:03:29 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/10 12:07:12 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,8 @@ int	main(int argc, char **argv)
 	fd = check_fd(argv[1]);
 	if (fd <= 2)
 		return (1);
-	var.mlx = wmlx_init();
-	begin_cub3d(fd);
-	if (!var.info.map)
-	{
-		wmlx_destroy(var.mlx);
-		return (1);
-	}
 	joe_mama_init(&var);
-	wmlx_loop_draw(&var);
-	wmlx_update_win(var.mlx);
-	wkey_init_hook(&var);
-	mlx_loop(var.mlx.ptr);
-	wmlx_destroy(var.mlx);
-	wati_free_tab(var.info.map);
+	var.mlx = wmlx_init();
+	begin_cub3d(fd, &var);
 	return (0);
 }
