@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 15:23:45 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/11 16:35:19 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,17 @@ typedef struct s_mlx
 	t_wdata	img;
 	t_pdata	pimg;
 }			t_mlx;
+
+typedef struct s_coord_part
+{
+	t_coord	min;
+	t_coord	max;
+}			t_coord_part;
+
+typedef struct s_tab_str_incr
+{
+	char	**strs;
+	char	*str;
+}			t_tab_str_incr;
 
 #endif // W_STRUCT_DISPLAY_H

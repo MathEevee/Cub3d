@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 14:50:24 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:33:06 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,39 @@
 
 #include "cub3d.h"
 
+#define TMP 0.9
+
+char	get_place(char **tab, float x, float y)
+{
+	t_coord	coord;
+
+	coord.x = x;
+	coord.y = y;
+	return (tab[coord.y][coord.x]);
+}
+
 void	move_toward(t_player *player, float mv, char **map)
 {
 	float	tmp_x;
 	float	tmp_y;
+	int		tmp;
 
 	tmp_x = player->pos.x + (mv * cos(player->angle));
 	tmp_y = player->pos.y + (mv * sin(player->angle));
-	if (map[(int)player->pos.y][(int)tmp_x] != '1')
+	if (get_place(map, tmp_x, player->pos.y) != '1')
 		player->pos.x = tmp_x;
-	if (map[(int)tmp_y][(int)player->pos.x] != '1')
+	else
+	{
+		tmp = tmp_x;
+		printf("x: %i %f\n", tmp, tmp_x);
+	}
+	if (get_place(map, player->pos.x, tmp_y) != '1')
 		player->pos.y = tmp_y;
+	else
+	{
+		tmp = tmp_y;
+		printf("x: %i %f\n", tmp, tmp_y);
+	}
 }
 
 bool	wmlx_key_update(t_joe_mama *var)

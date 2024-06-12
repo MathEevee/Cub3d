@@ -1,7 +1,7 @@
 import random
 
-WIDTH = 100
-HEIGHT = 100
+WIDTH = 200
+HEIGHT = 200
 
 def generate_maze():
     maze = [['1' for _ in range(WIDTH)] for _ in range(HEIGHT)]
