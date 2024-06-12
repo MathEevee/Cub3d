@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/12 15:36:44 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:53:02 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	display_map(t_data *data, t_coord base, t_coord_part part, t_info info)
 	{
 		pos.x = base.x + SQRT_SIZE / 2 + part.min.x * SQRT_SIZE;
 		i.str = *i.strs + part.min.x;
-		while (*i.str && *i.str != '\n' && i.str < *i.strs + part.max.x)
+		while (*i.str && i.str < *i.strs + part.max.x)
 		{
 			if (*i.str == '0')
 				wmlx_put_square(data, pos, SQRT_SIZE, info.color_f);
@@ -36,8 +36,6 @@ void	display_map(t_data *data, t_coord base, t_coord_part part, t_info info)
 		i.strs++;
 		pos.y += SQRT_SIZE;
 	}
-	printf("base.x = %d | base.y = %d\n", base.x, base.y);
-	printf("pos.x = %d | pos.y = %d\n", pos.x, pos.y);
 }
 
 t_coord_part	map_coord_part(t_coord img_max, t_coord_f player)
