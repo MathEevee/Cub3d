@@ -6,7 +6,7 @@
 #    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/08 18:04:05 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/06/12 16:37:41 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ DIR := \
 SRCS = \
 	struct_manager/coord_manager.c \
 	parsing/path_register.c \
+	parsing/check_color.c \
 	parsing/init_struct.c \
 	register_fd/register_data.c \
 	register_fd/format_fd.c \

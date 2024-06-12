@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/12 13:39:19 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:39:05 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ bool	convert_color(char *line, t_color_def *color)
 		if (line[i] == ',')
 			i++;
 	}
-	if (*color <= 0)
+	if (*color <= 0 || color_check(line) == false)
 		return (false);
 	return (true);
 }
