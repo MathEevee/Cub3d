@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:25:29 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 14:46:16 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:37:39 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 # define S_US 1000000.0
 # define FMS 16666.67 // FPS / S_US
 
-# define MV_SPEED 4.0
+# define MV_SPEED 8.0
 
 typedef enum s_key
 {
@@ -50,11 +50,5 @@ typedef enum s_key
 	KEY_S = 115,
 	KEY_D = 100
 }	t_key;
-
-typedef enum s_mode
-{
-	MODE_MAIN = 1,
-	MODE_MINIMAP = 2
-}	t_mode;
 
 #endif // W_CONST_H

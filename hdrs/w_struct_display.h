@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/07 15:55:42 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/11 16:35:19 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,36 @@ typedef struct s_key_press
 	bool	key_d;
 }			t_key_press;
 
+typedef struct s_wdata
+{
+	t_data	win;
+	t_data	map;
+}			t_wdata;
+
+typedef struct s_pdata
+{
+	t_data	*win;
+	t_data	*map;
+}			t_pdata;
+
 typedef struct s_mlx
 {
 	t_wptr	ptr;
 	t_wwin	win;
-	t_data	i_win;
-	t_data	i_map;
+	t_wdata	img;
+	t_pdata	pimg;
 }			t_mlx;
+
+typedef struct s_coord_part
+{
+	t_coord	min;
+	t_coord	max;
+}			t_coord_part;
+
+typedef struct s_tab_str_incr
+{
+	char	**strs;
+	char	*str;
+}			t_tab_str_incr;
 
 #endif // W_STRUCT_DISPLAY_H
