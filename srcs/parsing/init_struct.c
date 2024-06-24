@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:32:24 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/10 13:51:59 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:34:46 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	init_wimg(t_info *info)
 	info->img_ea = create_wimg();
 }
 
-void	init_player(t_info *info, int x, int y, long double radiant)
+void	init_player(t_info *info, int x, int y, t_angle radiant)
 {
 	info->base.pos.x = x;
 	info->base.pos.y = y;

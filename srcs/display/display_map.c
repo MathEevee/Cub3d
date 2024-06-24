@@ -6,7 +6,11 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
+<<<<<<< HEAD:srcs/display_map/display_map.c
 /*   Updated: 2024/06/12 15:59:23 by matde-ol         ###   ########.fr       */
+=======
+/*   Updated: 2024/06/12 17:08:37 by bedarenn         ###   ########.fr       */
+>>>>>>> main:srcs/display/display_map.c
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +61,8 @@ t_coord_part	map_coord_part(t_coord img_max, t_coord_f player)
 	return (part);
 }
 
-void	display_minimap(t_data *data, t_info info)
+void	display_minimap(t_data *data, t_coord pos_map, t_info info)
 {
-	t_coord			pos_map;
 	t_coord_part	part;
 
 	pos_map = set_coord(-info.base.pos.x * SQRT_SIZE + data->max.x / 2

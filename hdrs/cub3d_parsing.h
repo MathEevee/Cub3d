@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_parsing.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:21:50 by bedarenn          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/06/12 16:39:09 by matde-ol         ###   ########.fr       */
+=======
+/*   Updated: 2024/06/12 17:35:00 by bedarenn         ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +23,7 @@
 # include "w_struct.h"
 
 bool	check_path(char *line, t_joe_mama *info);
-void	init_player(t_info *info, int x, int y, long double radiant);
+void	init_player(t_info *info, int x, int y, t_angle radiant);
 t_fimg	create_wimg(void);
 void	init_info(t_info *info);
 void	init_wimg(t_info *info);

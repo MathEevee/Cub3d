@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:39:20 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 15:29:51 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:14:03 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	wmlx_loop_draw(t_joe_mama *var)
 {
 	wmlx_clear_img(var->mlx.pimg.win);
 	wmlx_clear_img(var->mlx.pimg.map);
-	display_minimap(var->mlx.pimg.map, var->info);
-	ray_casting(var->mlx.pimg.map, var->info);
+	display(var->mlx.pimg, var->info);
 }
 
 void	wmlx_update_win(t_mlx mlx)
