@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
+#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/08 18:04:05 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/06/12 17:14:49 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,8 @@ SRCS = \
 	wmlx/wmlx_print.c \
 	wmlx/wmlx_update.c \
 	ray_casting/ray_casting.c \
-	display_map/display_map.c \
+	display/display.c \
+	display/display_map.c \
 	main.c
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
 

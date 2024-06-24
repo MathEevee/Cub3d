@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 15:22:53 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:34:35 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "cub3d.h"
 
-void	ray(t_data *data, double angle, t_coord player);
+void	ray(t_data *data, t_angle angle, t_coord player);
 void	_ray_casting(t_data *data, t_coord player, t_info info);
 
 void	ray_casting(t_data *data, t_info info)
@@ -24,9 +24,9 @@ void	ray_casting(t_data *data, t_info info)
 
 void	_ray_casting(t_data *data, t_coord player, t_info info)
 {
-	double	fov;
-	double	begin;
-	double	incr;
+	t_angle	fov;
+	t_angle	begin;
+	t_angle	incr;
 	int		i;
 
 	fov = FOV * (PI / 180.0);
@@ -41,7 +41,7 @@ void	_ray_casting(t_data *data, t_coord player, t_info info)
 	}
 }
 
-void	ray(t_data *data, double angle, t_coord player)
+void	ray(t_data *data, t_angle angle, t_coord player)
 {
 	t_coord	pxl;
 	int		i;

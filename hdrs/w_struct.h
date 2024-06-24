@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:24:01 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 15:30:21 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:33:41 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 typedef struct s_player
 {
 	t_coord_f	pos;
-	double		angle;
+	t_angle		angle;
 }				t_player;
 
 typedef struct s_fimg
