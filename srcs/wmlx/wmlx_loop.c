@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/24 12:04:00 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/24 12:13:01 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,12 @@ void	move_toward(t_player *player, t_float mv, char **map)
 {
 	t_coord_f	tmp;
 
-	tmp_x = player->pos.x + (mv * cos(player->angle));
-	tmp_y = player->pos.y + (mv * sin(player->angle));
-	// printf("player->pos.x = %f | player->pos.y = %f \n", player->pos.x, player->pos.y);
-	// printf("tmp.x = %f | tmp.y = %f\n", tmp_x, tmp_y);
-	if (get_place(map, tmp_x, player->pos.y) != '1')
-		player->pos.x = tmp_x;
-	// else if (get_place(map, tmp_x + 1, player->pos.y) == '1')
-		// player->pos.x += (tmp_x - player->pos.x + ((mv * cos(player->angle))));
-	if (get_place(map, player->pos.x, tmp_y) != '1')
-		player->pos.y = tmp_y;
-	// else if (get_place(map, tmp_x, player->pos.y + 1) == '1')
-		// player->pos.y += (tmp_y - player->pos.y + ((mv * sin(player->angle))));
+	tmp.x = player->pos.x + (mv * cos(player->angle));
+	tmp.y = player->pos.y + (mv * sin(player->angle));
+	if (get_place(map, tmp.x, player->pos.y) != '1')
+		player->pos.x = tmp.x;
+	if (get_place(map, player->pos.x, tmp.y) != '1')
+		player->pos.y = tmp.y;
 }
 
 bool	wmlx_key_update(t_joe_mama *var)

@@ -6,11 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-<<<<<<< HEAD:srcs/display_map/display_map.c
-/*   Updated: 2024/06/12 15:59:23 by matde-ol         ###   ########.fr       */
-=======
-/*   Updated: 2024/06/12 17:08:37 by bedarenn         ###   ########.fr       */
->>>>>>> main:srcs/display/display_map.c
+/*   Updated: 2024/06/24 12:14:04 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
