@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:21:50 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/24 12:12:34 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/26 09:47:54 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		map_register(char **file, int i, t_joe_mama *var);
 int		set_info(char **file, t_joe_mama *var);
 char	**copy_tab(char **tab);
 bool	color_check(char *str);
+int		check_img(t_joe_mama *var);
 // void	free_mlx(t_joe_mama *info);
 
 #endif // CUB3D_PARSING_H

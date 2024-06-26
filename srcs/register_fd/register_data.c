@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:16:58 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/08 15:26:24 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/26 09:29:13 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,11 @@ int	set_info(char **file, t_joe_mama *var)
 	if (count != 6)
 	{
 		wati_fprintf(2, "Wrong path or color\nError\n");
+		return (-1);
+	}
+	if (check_img(var) == -1)
+	{
+		wati_fprintf(2, "Wrong size for image\nError\n");
 		return (-1);
 	}
 	if (map_register(file, i, var) == -1)

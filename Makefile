@@ -6,7 +6,7 @@
 #    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/24 12:04:07 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/06/26 09:48:25 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRCS = \
 	parsing/path_register.c \
 	parsing/check_color.c \
 	parsing/init_struct.c \
+	parsing/check_img.c \
 	register_fd/register_data.c \
 	register_fd/format_fd.c \
 	register_fd/start_cub3d.c \
