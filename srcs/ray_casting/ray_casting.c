@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/26 15:45:51 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/27 12:03:52 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,14 @@ static void	_ray_casting(t_data *data, t_info info, t_coord map)
 	fov = fov / WIN_X;
 	i = 0;
 	player = get_pixel_minimap(map, info.base.pos);
-	// while (i < WIN_X)
-	// {
-	// 	pxl = ray(info, alpha);
-	// 	wmlx_put_line(data, player, get_pixel_minimap(map, pxl), 0xff0000);
-	// 	alpha += fov;
-	// 	i++;
-	// }
-	pxl = ray(info, info.base.angle);
-	wmlx_put_line(data, player, get_pixel_minimap(map, pxl), 0xff0000);
+	while (i < WIN_X)
+	{
+		pxl = ray(info, alpha);
+		wmlx_put_line(data, player, get_pixel_minimap(map, pxl), 0xff0000);
+		alpha += fov;
+		i++;
+	}
+
 }
 
 static t_coord_f	ray(t_info info, t_angle angle)
