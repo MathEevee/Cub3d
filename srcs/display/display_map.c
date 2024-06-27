@@ -6,9 +6,11 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/12 17:08:37 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/26 10:27:49 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 #include "cub3d.h"
 
@@ -68,4 +70,13 @@ void	display_minimap(t_data *data, t_coord pos_map, t_info info)
 	pos_map = set_coord(data->max.x / 2 - PLAYER_SIZE / 2,
 			data->max.y / 2 - PLAYER_SIZE / 2);
 	wmlx_put_square(data, pos_map, PLAYER_SIZE, 0xff0000);
+}
+
+t_coord	get_pixel_minimap(t_coord pos_map, t_coord_f coord)
+{
+	t_coord	pos;
+
+	pos = set_coord(pos_map.x + coord.x * SQRT_SIZE + SQRT_SIZE / 2,
+			pos_map.y + coord.y * SQRT_SIZE + SQRT_SIZE / 2);
+	return (pos);
 }

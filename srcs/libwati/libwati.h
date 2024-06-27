@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libwati.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 12:01:12 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/05 12:01:14 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:45:01 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ char	*wati_strupper(char *str0);
 char	*wati_strlower(char *str0);
 
 int		wati_abs(int nb);
-int		wati_abs_f(float nb);
-int		wati_abs_d(double nb);
+float	wati_abs_f(float nb);
+double	wati_abs_d(double nb);
 int		wati_sig(int nb);
 int		wati_sig_f(float nb);
 int		wati_sig_d(double nb);

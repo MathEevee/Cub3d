@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_params.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:44:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/10 13:07:47 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/26 13:58:54 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <math.h>
 
 #include "cub3d.h"
 
@@ -30,11 +32,11 @@ bool	is_player(int x, int y, char c, t_info *info)
 			return (false);
 		}
 		if (c == 'N' && info->base.angle == -1)
-			init_player(info, x, y, PI / 2);
+			init_player(info, x, y, M_PI_2);
 		else if (c == 'W' && info->base.angle == -1)
-			init_player(info, x, y, PI);
+			init_player(info, x, y, M_PI);
 		else if (c == 'S' && info->base.angle == -1)
-			init_player(info, x, y, -PI / 2);
+			init_player(info, x, y, -M_PI / 2);
 		else if (c == 'E' && info->base.angle == -1)
 			init_player(info, x, y, 0);
 		return (true);

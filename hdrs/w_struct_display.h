@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 16:35:19 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:19:47 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,19 @@ typedef struct s_coord_f
 	t_float	x;
 	t_float	y;
 }			t_coord_f;
+
+typedef struct s_trigo
+{
+	t_angle	cos;
+	t_angle	sin;
+}			t_trigo;
+
+typedef struct s_cst
+{
+	t_float	a;
+	t_float	o;
+	t_float	h;
+}			t_cst;
 
 typedef struct s_data
 {

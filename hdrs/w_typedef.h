@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:27:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/12 17:36:12 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:20:35 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef void *			t_wimg;
 typedef long int		t_ltime;
 typedef struct timeval	t_tv;
 
-typedef long double		t_float;
-typedef long double		t_angle;
+typedef float			t_float;
+typedef double			t_angle;
 
 #endif // W_TYPEDEF_H

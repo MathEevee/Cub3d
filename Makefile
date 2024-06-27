@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/12 17:14:49 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/06/26 14:32:52 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,9 @@ SRCS = \
 	wmlx/wmlx_loop.c \
 	wmlx/wmlx_print.c \
 	wmlx/wmlx_update.c \
+	wmlx/wmlx_put_line.c \
 	ray_casting/ray_casting.c \
+	ray_casting/ray_incr_first.c \
 	display/display.c \
 	display/display_map.c \
 	main.c

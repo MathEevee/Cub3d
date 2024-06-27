@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   start_cub3d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/09 13:36:12 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/06/26 13:59:02 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <math.h>
 
 #include "cub3d.h"
 
@@ -21,11 +23,11 @@ void	print_col_wall_coord(t_info *info)
 	x = info->base.pos.x;
 	while (info->map[y][x] != '1')
 	{
-		if (info->base.angle == PI / 2)
+		if (info->base.angle == M_PI / 2)
 			y--;
-		if (info->base.angle == PI)
+		if (info->base.angle == M_PI)
 			x--;
-		if (info->base.angle == -PI / 2)
+		if (info->base.angle == -M_PI / 2)
 			y++;
 		if (info->base.angle == 0)
 			x++;
