@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   w_const.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:25:29 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/12 15:37:39 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:52:54 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,26 @@
 
 # define FOV_INCR 180
 
-# define PI 3.14159265358979323846
-
 # define WIN_N "Cub3D"
 
-# define WIN_X 640
-# define WIN_Y 480
+# define WIN_X 720
+# define WIN_Y 640
 
 # define MAP_X 150
 # define MAP_Y 150
 
-# define SQRT_SIZE 50
+# define SQRT_SIZE 10
 # define MAP_MARGE 10
-# define PLAYER_SIZE 10
+# define PLAYER_SIZE 3
 
 # define IMG_SIZE 1500
 
 # define FPS 60.0
 # define S_US 1000000.0
 # define FMS 16666.67 // FPS / S_US
+# define MV_SPEED 8.0 // 8.0 / FPS
 
-# define MV_SPEED 8.0
+# define HIT_BOX 0.01
 
 typedef enum s_key
 {

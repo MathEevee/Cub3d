@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:35:37 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/10 14:23:51 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/06/26 11:19:40 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_coord	set_coord(int x, int y)
 	return (coord);
 }
 
-t_coord_f	set_coord_f(int x, int y)
+t_coord_f	set_coord_f(t_float x, t_float y)
 {
 	t_coord_f	coord;
 

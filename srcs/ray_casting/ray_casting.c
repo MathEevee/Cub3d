@@ -3,55 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/24 12:03:59 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:53:49 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
+#include <stdio.h>
 
 #include "cub3d.h"
 
-void	ray(t_data *data, t_angle angle, t_coord player);
-void	_ray_casting(t_data *data, t_coord player, t_info info);
+static void			_ray_casting(t_data *data, t_info info, t_coord map);
+static t_ray		ray(t_coord_f player, char **map, t_angle angle);
 
-void	ray_casting(t_data *data, t_info info)
+void	ray_casting(t_data *data, t_info info, t_coord map)
 {
-	_ray_casting(data, set_coord(data->max.x / 2, data->max.y / 2), info);
+	_ray_casting(data, info, map);
 }
 
-void	_ray_casting(t_data *data, t_coord player, t_info info)
+static void	_ray_casting(t_data *data, t_info info, t_coord map)
 {
-	t_angle	fov;
-	t_angle	begin;
-	t_angle	incr;
-	int		i;
+	t_angle		fov;
+	t_angle		alpha;
+	t_ray		pxl;
+	t_coord		player;
+	int			i;
 
-	fov = FOV * (PI / 180.0);
-	begin = info.base.angle - fov / 2;
-	incr = fov / WIN_X;
+	fov = FOV * (M_PI / 180.0);
+	alpha = info.base.angle - fov / 2;
+	fov = fov / WIN_X;
 	i = 0;
+	player = get_pixel_minimap(map, info.base.pos);
 	while (i < WIN_X)
 	{
-		ray(data, begin, player);
-		begin += incr;
+		pxl = ray(info.base.pos, info.map, alpha);
+		wmlx_put_line(data, player, get_pixel_minimap(map, pxl.pos), 0xff0000);
+		alpha += fov;
 		i++;
 	}
 }
 
-void	ray(t_data *data, t_angle angle, t_coord player)
+static t_ray	ray(t_coord_f player, char **map, t_angle angle)
 {
-	t_coord	pxl;
-	int		i;
+	t_trigo	trig;
+	t_ray	x;
+	t_ray	y;
 
-	i = 0;
-	while (i < 100)
-	{
-		pxl.x = player.x - (int)(i * cos(angle));
-		pxl.y = player.y - (int)(i * sin(angle));
-		wmlx_put_pixel(data, pxl, 0xff8080);
-		i++;
-	}
+	trig.cos = -cosf(angle);
+	trig.sin = -sinf(angle);
+	x = ray_init_x(player, trig);
+	y = ray_init_y(player, trig);
+	return (ray_loop(x, y, map));
 }

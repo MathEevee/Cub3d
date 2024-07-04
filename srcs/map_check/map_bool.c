@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display.c                                          :+:      :+:    :+:   */
+/*   map_bool.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 17:06:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/24 12:57:43 by bedarenn         ###   ########.fr       */
+/*   Created: 2024/07/01 11:37:12 by bedarenn          #+#    #+#             */
+/*   Updated: 2024/07/03 14:24:55 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	display(t_pdata pdata, t_info info)
+bool	check_map(t_coord hit, char **map)
 {
-	t_coord	pos_map;
+	return (map[hit.y][hit.x] == '1');
+}
 
-	pos_map = set_coord(-info.base.pos.x * SQRT_SIZE
-			+ pdata.map->max.x / 2 - SQRT_SIZE / 2,
-			-info.base.pos.y * SQRT_SIZE
-			+ pdata.map->max.y / 2 - SQRT_SIZE / 2);
-	display_minimap(pdata.map, pos_map, info);
-	ray_casting(pdata.map, info, pos_map);
+bool	check_map_convert(t_coord_f hit, char **map)
+{
+	return (map[(int)hit.y][(int)hit.x] == '1');
 }

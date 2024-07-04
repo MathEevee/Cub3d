@@ -3,38 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   wmlx_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/24 12:13:01 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:54:13 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
 #include <math.h>
 #include <stdio.h>
 
+#include "cub3d.h"
+
 #define TMP 0.9
-
-char	get_place(char **tab, t_float x, t_float y)
-{
-	t_coord	coord;
-
-	coord.x = x;
-	coord.y = y;
-	return (tab[coord.y][coord.x]);
-}
 
 void	move_toward(t_player *player, t_float mv, char **map)
 {
 	t_coord_f	tmp;
 
-	tmp.x = player->pos.x + (mv * cos(player->angle));
-	tmp.y = player->pos.y + (mv * sin(player->angle));
-	if (get_place(map, tmp.x, player->pos.y) != '1')
+	tmp.x = player->pos.x + (mv * cosf(player->angle));
+	tmp.y = player->pos.y + (mv * sinf(player->angle));
+	if (map[(int)player->pos.y][(int)tmp.x] != '1')
 		player->pos.x = tmp.x;
-	if (get_place(map, player->pos.x, tmp.y) != '1')
+	else
+	{
+		if (tmp.x > player->pos.x)
+			player->pos.x = (int)player->pos.x + (1 - HIT_BOX);
+		else if (tmp.x < player->pos.x)
+			player->pos.x = (int)player->pos.x + HIT_BOX;
+	}
+	if (map[(int)tmp.y][(int)player->pos.x] != '1')
 		player->pos.y = tmp.y;
+	else
+	{
+		if (tmp.y > player->pos.y)
+			player->pos.y = (int)player->pos.y + (1 - HIT_BOX);
+		else if (tmp.y < player->pos.y)
+			player->pos.y = (int)player->pos.y + HIT_BOX;
+	}
 }
 
 bool	wmlx_key_update(t_joe_mama *var)
@@ -50,8 +56,8 @@ bool	wmlx_key_update(t_joe_mama *var)
 	if (diff < FMS)
 		return (false);
 	last = actu;
-	mv = MV_SPEED / FPS * (diff / FMS);
-	rotate = (FOV_INCR * (PI / 180.0)) / FPS * (diff / FMS);
+	mv = (MV_SPEED / FPS) * (diff / FMS);
+	rotate = (FOV_INCR * (M_PI / 180.0)) / FPS * (diff / FMS);
 	if (var->press.key_a)
 		var->info.base.angle -= rotate;
 	if (var->press.key_d)
