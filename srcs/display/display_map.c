@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/26 10:27:49 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/03 14:25:55 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_coord_part	map_coord_part(t_coord img_max, t_coord_f player)
 	t_coord			max;
 	t_coord_part	part;
 
-	max = set_coord(img_max.x / SQRT_SIZE + 4, img_max.y / SQRT_SIZE + 3);
+	max = set_coord(img_max.x / SQRT_SIZE + 4, img_max.y / SQRT_SIZE + 4);
 	part.min = set_coord(player.x - max.x / 2, player.y - max.y / 2);
 	if (part.min.x < 0)
 		part.min.x = 0;

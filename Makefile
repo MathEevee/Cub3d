@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/06/26 14:32:52 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/04 15:51:56 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRCS = \
 	register_fd/start_cub3d.c \
 	map_check/check_map_params.c \
 	map_check/map_border.c \
+	map_check/map_bool.c \
 	utils/cpy_tab.c \
 	clear/free_img.c \
 	struct_manager/key_manager.c \
@@ -63,7 +64,8 @@ SRCS = \
 	wmlx/wmlx_update.c \
 	wmlx/wmlx_put_line.c \
 	ray_casting/ray_casting.c \
-	ray_casting/ray_incr_first.c \
+	ray_casting/ray_loop.c \
+	ray_casting/ray_manager.c \
 	display/display.c \
 	display/display_map.c \
 	main.c

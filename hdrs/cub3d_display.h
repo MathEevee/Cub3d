@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/26 14:32:38 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/03 14:17:04 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,15 @@ void		wmlx_put_line(t_data *data, t_coord start, t_coord end,
 void		wmlx_clear_img(t_data *data);
 
 void		ray_casting(t_data *data, t_info info, t_coord map);
-t_coord_f	first_incr(t_coord_f pxl, t_angle angle);
+t_ray		ray_loop(t_ray x, t_ray y, char **map);
+t_ray		ray_init_x(t_coord_f coord, t_trigo trig);
+t_ray		ray_init_y(t_coord_f coord, t_trigo trig);
+void		ray_incr(t_ray *ray);
+t_float		toprev_int(t_float nb);
+t_float		tonext_int(t_float nb);
+
+t_coord		first_incr(t_coord_f *pxl, t_trigo trig);
+t_coord		incr_loop(t_coord_f *pxl, char **map, t_trigo trig);
 
 void		wmlx_loop_draw(t_joe_mama *var);
 void		wmlx_update_win(t_mlx mlx);
@@ -57,5 +65,9 @@ bool		fps_manager(int fps);
 
 bool		wmlx_key_update(t_joe_mama *var);
 int			wmlx_loop(t_joe_mama *var);
+
+bool		check_map(t_coord hit, char **map);
+bool		check_map_convert(t_coord_f hit, char **map);
+
 
 #endif // CUB3D_DISPLAY_H

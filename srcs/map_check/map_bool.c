@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   w_typedef.h                                        :+:      :+:    :+:   */
+/*   map_bool.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/03 13:27:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/30 17:18:51 by bedarenn         ###   ########.fr       */
+/*   Created: 2024/07/01 11:37:12 by bedarenn          #+#    #+#             */
+/*   Updated: 2024/07/03 14:24:55 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef W_TYPEDEF_H
-# define W_TYPEDEF_H
+#include "cub3d.h"
 
-# include <sys/time.h>
-# include <stdint.h>
+bool	check_map(t_coord hit, char **map)
+{
+	return (map[hit.y][hit.x] == '1');
+}
 
-typedef int				t_fd;
-typedef __uint32_t		t_color;
-typedef __int64_t		t_color_def;
-
-typedef void *			t_wptr;
-typedef void *			t_wwin;
-typedef void *			t_wimg;
-
-typedef long int		t_ltime;
-typedef struct timeval	t_tv;
-
-typedef float			t_float;
-typedef float			t_angle;
-
-#endif // W_TYPEDEF_H
+bool	check_map_convert(t_coord_f hit, char **map)
+{
+	return (map[(int)hit.y][(int)hit.x] == '1');
+}

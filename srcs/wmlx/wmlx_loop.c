@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/26 13:59:34 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/01 11:40:52 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	move_toward(t_player *player, t_float mv, char **map)
 {
 	t_coord_f	tmp;
 
-	tmp.x = player->pos.x + (mv * cos(player->angle));
-	tmp.y = player->pos.y + (mv * sin(player->angle));
+	tmp.x = player->pos.x + (mv * cosf(player->angle));
+	tmp.y = player->pos.y + (mv * sinf(player->angle));
 	if (map[(int)player->pos.y][(int)tmp.x] != '1')
 		player->pos.x = tmp.x;
 	else
@@ -56,7 +56,7 @@ bool	wmlx_key_update(t_joe_mama *var)
 	if (diff < FMS)
 		return (false);
 	last = actu;
-	mv = MV_SPEED / FPS * (diff / FMS);
+	mv = (MV_SPEED / FPS) * (diff / FMS);
 	rotate = (FOV_INCR * (M_PI / 180.0)) / FPS * (diff / FMS);
 	if (var->press.key_a)
 		var->info.base.angle -= rotate;

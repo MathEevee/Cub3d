@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/27 12:03:52 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/04 15:45:42 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "cub3d.h"
 
 static void			_ray_casting(t_data *data, t_info info, t_coord map);
-static t_coord_f	ray(t_info info, t_angle angle);
-static t_coord_f	incr_to_next(t_coord_f pxl, t_angle angle);
+static t_ray		ray(t_coord_f player, char **map, t_angle angle);
 
 void	ray_casting(t_data *data, t_info info, t_coord map)
 {
@@ -28,7 +27,7 @@ static void	_ray_casting(t_data *data, t_info info, t_coord map)
 {
 	t_angle		fov;
 	t_angle		alpha;
-	t_coord_f	pxl;
+	t_ray		pxl;
 	t_coord		player;
 	int			i;
 
@@ -39,27 +38,22 @@ static void	_ray_casting(t_data *data, t_info info, t_coord map)
 	player = get_pixel_minimap(map, info.base.pos);
 	while (i < WIN_X)
 	{
-		pxl = ray(info, alpha);
-		wmlx_put_line(data, player, get_pixel_minimap(map, pxl), 0xff0000);
+		pxl = ray(info.base.pos, info.map, alpha);
+		wmlx_put_line(data, player, get_pixel_minimap(map, pxl.pos), 0xff0000);
 		alpha += fov;
 		i++;
 	}
-
 }
 
-static t_coord_f	ray(t_info info, t_angle angle)
+static t_ray	ray(t_coord_f player, char **map, t_angle angle)
 {
-	t_coord_f	pxl;
+	t_trigo	trig;
+	t_ray	x;
+	t_ray	y;
 
-	pxl = info.base.pos;
-	pxl = first_incr(pxl, angle);
-	incr_to_next(pxl, angle);
-	return (pxl);
-}
-
-static t_coord_f	incr_to_next(t_coord_f pxl, t_angle angle)
-{
-	pxl.x -= cos(angle);
-	pxl.y -= sin(angle);
-	return (pxl);
+	trig.cos = -cosf(angle);
+	trig.sin = -sinf(angle);
+	x = ray_init_x(player, trig);
+	y = ray_init_y(player, trig);
+	return (ray_loop(x, y, map));
 }
