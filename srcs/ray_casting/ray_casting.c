@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/04 15:53:49 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/05 12:46:12 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 #include "cub3d.h"
 
-static void			_ray_casting(t_data *data, t_info info, t_coord map);
+static void			_ray_casting(t_pdata data, t_info info, t_coord map);
 static t_ray		ray(t_coord_f player, char **map, t_angle angle);
 
-void	ray_casting(t_data *data, t_info info, t_coord map)
+void	ray_casting(t_pdata data, t_info info, t_coord map)
 {
 	_ray_casting(data, info, map);
 }
 
-static void	_ray_casting(t_data *data, t_info info, t_coord map)
+static void	_ray_casting(t_pdata data, t_info info, t_coord map)
 {
 	t_angle		fov;
 	t_angle		alpha;
@@ -39,7 +39,8 @@ static void	_ray_casting(t_data *data, t_info info, t_coord map)
 	while (i < WIN_X)
 	{
 		pxl = ray(info.base.pos, info.map, alpha);
-		wmlx_put_line(data, player, get_pixel_minimap(map, pxl.pos), 0xff0000);
+		wmlx_put_line(data.map, player, get_pixel_minimap(map, pxl.pos), 0xff0000);
+		ray_put_image(data.win, pxl, info);
 		alpha += fov;
 		i++;
 	}
