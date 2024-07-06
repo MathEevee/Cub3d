@@ -6,13 +6,12 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 17:43:38 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/04 15:51:55 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:23:26 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libwati.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 void	print_file(int fd)
 {

@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/03 13:49:21 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 19:09:25 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,22 @@ typedef struct s_coord_f
 	t_float	y;
 }			t_coord_f;
 
-typedef struct s_pair_coord_f
+typedef struct s_range
 {
-	t_coord_f	cos;
-	t_coord_f	sin;
-}			t_pair_coord_f;
+	int	min;
+	int	max;
+}			t_range;
+
 
 typedef struct s_ray
 {
 	t_coord_f	pos;
 	t_coord		hit;
 	t_float		len;
+	t_coord_f	v;
 	t_coord_f	i;
 	t_float		i_len;
+	char		dir;
 }			t_ray;
 
 typedef struct s_trigo

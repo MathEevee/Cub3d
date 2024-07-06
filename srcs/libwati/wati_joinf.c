@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   wati_joinf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:45:37 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/03/18 17:34:17 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:23:40 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libwati.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 static size_t	wati_formatlen(size_t nb, va_list arg);
 static char		*wati_formatfill(size_t nb, va_list arg, char *str);

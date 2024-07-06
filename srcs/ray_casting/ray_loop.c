@@ -6,11 +6,9 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:54:57 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/04 15:48:40 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:23:58 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 #include "cub3d.h"
 

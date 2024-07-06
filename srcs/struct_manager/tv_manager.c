@@ -6,12 +6,11 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:26:53 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/07 15:55:52 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:24:50 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include <stdio.h>
 
 t_ltime	diff_timeval(t_tv t1, t_tv t2)
 {
@@ -31,7 +30,6 @@ bool	fps_manager(int fps)
 	diff = diff_timeval(actu, last);
 	if (diff < S_US / fps)
 		return (false);
-	printf("%li\n", diff);
 	last = actu;
 	return (true);
 }

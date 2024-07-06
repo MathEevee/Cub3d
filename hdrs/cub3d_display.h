@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/03 14:17:04 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 19:05:38 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_coord		set_coord(int x, int y);
 t_coord_f	set_coord_f(t_float x, t_float y);
 t_coord		cast_to_coord(t_coord_f pos);
 t_coord_f	cast_to_coord_f(t_coord pos);
+t_coord_f	sum_coord_f(t_coord_f a, t_coord_f b);
 
 t_mlx		wmlx_init(void);
 void		wmlx_destroy(t_mlx mlx);
@@ -42,13 +43,17 @@ void		wmlx_put_line(t_data *data, t_coord start, t_coord end,
 				t_color color);
 void		wmlx_clear_img(t_data *data);
 
-void		ray_casting(t_data *data, t_info info, t_coord map);
+void		ray_casting(t_pdata pdata, t_info info, t_coord map);
+
 t_ray		ray_loop(t_ray x, t_ray y, char **map);
+
 t_ray		ray_init_x(t_coord_f coord, t_trigo trig);
 t_ray		ray_init_y(t_coord_f coord, t_trigo trig);
 void		ray_incr(t_ray *ray);
 t_float		toprev_int(t_float nb);
 t_float		tonext_int(t_float nb);
+
+void		ray_print(t_data *data, t_info info, t_ray ray, int i);
 
 t_coord		first_incr(t_coord_f *pxl, t_trigo trig);
 t_coord		incr_loop(t_coord_f *pxl, char **map, t_trigo trig);

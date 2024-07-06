@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:35:37 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/26 11:19:40 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 19:04:56 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,11 @@ t_coord	cast_to_coord(t_coord_f pos)
 	coord.x = pos.x;
 	coord.y = pos.y;
 	return (coord);
+}
+
+t_coord_f	sum_coord_f(t_coord_f a, t_coord_f b)
+{
+	a.x += b.x;
+	a.y += b.y;
+	return (a);
 }
