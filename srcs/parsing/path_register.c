@@ -6,13 +6,13 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/26 09:27:12 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:41:32 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static bool	init_path(t_fimg *img, t_joe_mama *var, char *line)
+static bool	init_path(t_data *img, t_joe_mama *var, char *line)
 {
 	int	i;
 
@@ -43,18 +43,20 @@ static bool	init_path(t_fimg *img, t_joe_mama *var, char *line)
 static bool	register_path(char *line, t_joe_mama *var)
 {
 	int		i;
-	t_fimg	img;
+	t_data	img;
 
 	i = 2;
 	if (wati_isspace(line[i]) == 0)
 		return (false);
 	while (wati_isspace(line[i]) != 0)
 		i++;
-	img = create_wimg();
 	img.img = mlx_xpm_file_to_image(var->mlx.ptr, line + i, \
-		&img.coord.x, &img.coord.y);
+		&img.max.x, &img.max.y);
 	if (img.img == NULL)
 		return (false);
+	img.addr = mlx_get_data_addr(
+			img.img, &img.bits_per_pixel,
+			&img.line_length, &img.endian);
 	if (init_path(&img, var, line) == true)
 		return (true);
 	return (false);

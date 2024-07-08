@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 09:30:09 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/26 09:49:00 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:16:03 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	check_img(t_joe_mama *var)
 	int i;
 
 	i = 2;
-	if (check_size(var->info.img_no.coord, &i) == false)
-		return (-1);
-	if (!(var->info.img_so.coord.x == var->info.img_so.coord.y
-			&& var->info.img_so.coord.x == i)
-			&& (var->info.img_ea.coord.x == var->info.img_ea.coord.y
-			&& var->info.img_ea.coord.x == i)
-			&& (var->info.img_we.coord.x == var->info.img_we.coord.y
-			&& var->info.img_we.coord.x == i))
+	if (check_size(var->info.img_no.max, &i) == false)
+		return (-1);	
+	if (!(var->info.img_so.max.x == var->info.img_so.max.y
+			&& var->info.img_so.max.x == i)
+			&& (var->info.img_ea.max.x == var->info.img_ea.max.y
+			&& var->info.img_ea.max.x == i)
+			&& (var->info.img_we.max.x == var->info.img_we.max.y
+			&& var->info.img_we.max.x == i))
 		return (-1);
 	return (0);
 }

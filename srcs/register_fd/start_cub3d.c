@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_cub3d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/30 17:44:14 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:54:33 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	print_col_wall_coord(t_info *info)
 		if (info->base.angle == 0)
 			x++;
 	}
-	wati_printf("coord wall = [%d][%d]\n", y,x);
 }
 
 void	begin_cub3d(int fd, t_joe_mama *var)
@@ -58,6 +57,7 @@ void	begin_cub3d(int fd, t_joe_mama *var)
 		wmlx_update_win(var->mlx);
 		wkey_init_hook(var);
 		mlx_loop(var->mlx.ptr);
+		free_mlx(var->mlx.ptr, &var->info);
 		wmlx_destroy(var->mlx);
 		wati_free_tab(var->info.map);
 		// start_game();

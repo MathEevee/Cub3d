@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_manager.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:57:02 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 12:10:41 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/08 14:31:38 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ t_ray	ray_init_x(t_coord_f coord, t_trigo trig)
 		ray.v.x = -tonext_int(ray.pos.x);
 		ray.len = ray.v.x / trig.cos;
 		ray.v.y = trig.sin * ray.len;
-		ray.dir = 'E';
+		ray.dir = 'W';
 	}
 	else
 	{
 		ray.v.x = toprev_int(ray.pos.x);
 		ray.len = ray.v.x / trig.cos;
 		ray.v.y = trig.sin * ray.len;
-		ray.dir = 'W';
+		ray.dir = 'E';
 	}
 	ray.hit = cast_to_coord(sum_coord_f(ray.pos, ray.v));
 	if (ray.i.x < 0)
@@ -53,14 +53,14 @@ t_ray	ray_init_y(t_coord_f coord, t_trigo trig)
 		ray.v.y = -tonext_int(ray.pos.y);
 		ray.len = ray.v.y / trig.sin;
 		ray.v.x = trig.cos * ray.len;
-		ray.dir = 'S';
+		ray.dir = 'N';
 	}
 	else
 	{
 		ray.v.y = toprev_int(ray.pos.y);
 		ray.len = ray.v.y / trig.sin;
 		ray.v.x = trig.cos * ray.len;
-		ray.dir = 'N';
+		ray.dir = 'S';
 	}
 	ray.hit = cast_to_coord(sum_coord_f(ray.pos, ray.v));
 	if (ray.i.y < 0)

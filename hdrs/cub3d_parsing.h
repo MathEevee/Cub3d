@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:21:50 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/26 09:47:54 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:53:19 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 bool	check_path(char *line, t_joe_mama *info);
 void	init_player(t_info *info, int x, int y, t_angle radiant);
-t_fimg	create_wimg(void);
 void	init_info(t_info *info);
 void	init_wimg(t_info *info);
 void	begin_cub3d(int fd, t_joe_mama *var);
@@ -32,6 +31,6 @@ int		set_info(char **file, t_joe_mama *var);
 char	**copy_tab(char **tab);
 bool	color_check(char *str);
 int		check_img(t_joe_mama *var);
-// void	free_mlx(t_joe_mama *info);
+void	free_mlx(t_wptr ptr, t_info *info);
 
 #endif // CUB3D_PARSING_H

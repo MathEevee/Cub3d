@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   wmlx_put_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 10:33:40 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 10:52:30 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/08 14:03:45 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_color	wmlx_get_pixel(t_data *data, t_coord coord, t_color color)
+t_color	wmlx_get_pixel(t_data *data, t_coord coord)
 {
 	char	*dst;
 
@@ -21,7 +21,7 @@ t_color	wmlx_get_pixel(t_data *data, t_coord coord, t_color color)
 		return (0x0);
 	dst = data->addr + (coord.y * data->line_length + coord.x
 			* (data->bits_per_pixel / 8));
-	return (*dst);
+	return (*(unsigned int *)dst);
 }
 
 void	wmlx_put_pixel(t_data *data, t_coord coord, t_color color)

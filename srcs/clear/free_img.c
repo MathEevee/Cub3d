@@ -6,26 +6,16 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:28:34 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/05 17:37:09 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:53:07 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	free_img(t_fimg *img)
+void	free_mlx(t_wptr ptr, t_info *info)
 {
-	if (img != NULL)
-	{
-		if (img->img != NULL)
-			// mlx_destroy_image(img); // todo get mlx
-		free(img);
-	}
-}
-
-void	free_mlx(t_info *info)
-{
-	free_img(&info->img_no);
-	free_img(&info->img_so);
-	free_img(&info->img_we);
-	free_img(&info->img_ea);
+	mlx_destroy_image(ptr, info->img_no.img);
+	mlx_destroy_image(ptr, info->img_so.img);
+	mlx_destroy_image(ptr, info->img_we.img);
+	mlx_destroy_image(ptr, info->img_ea.img);
 }
