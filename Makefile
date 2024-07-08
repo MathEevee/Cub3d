@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/04 15:53:16 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/06 10:36:06 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ SRCS = \
 	ray_casting/ray_casting.c \
 	ray_casting/ray_loop.c \
 	ray_casting/ray_manager.c \
+	ray_casting/ray_print.c \
 	display/display.c \
 	display/display_map.c \
 	main.c

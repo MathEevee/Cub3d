@@ -6,11 +6,9 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 13:00:10 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/26 14:26:47 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:23:50 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	wati_sig(int nb)
 {

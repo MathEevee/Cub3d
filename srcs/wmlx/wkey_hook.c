@@ -6,12 +6,11 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:32:38 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/06/11 15:35:08 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:24:07 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "cub3d.h"
 #include "mlx.h"

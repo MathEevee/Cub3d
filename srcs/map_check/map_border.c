@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_border.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:34:22 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/06/10 13:07:58 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:23:44 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include "stdio.h"
 
 void	check_pos(char **map, int *x, int *y)
 {

@@ -6,14 +6,11 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/04 15:53:39 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 10:23:12 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "cub3d.h"
-#include <stdio.h>
 
 void	display_map(t_data *data, t_coord base, t_coord_part part, t_info info)
 {
