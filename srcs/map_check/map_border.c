@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_border.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:34:22 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/06 10:23:44 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/08 17:25:13 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,10 @@ bool	span_check(char **map)
 
 bool	map_span_fill(char **map)
 {
-	int	x;
 	int	y;
 	int	x_bis;
 	int	y_bis;
 
-	x = 0;
 	y = 0;
 	if (span_check(map) == true && map[y] != NULL)
 	{
@@ -99,10 +97,10 @@ bool	map_close(char **map)
 	}
 	if (map_span_fill(cpy_map) == false)
 	{
-		// wati_free_tab(cpy_map);
+		wati_free_tab(cpy_map);
 		wati_fprintf(2, "Map is not close\nError\n");
 		return (false);
 	}
-	// wati_free_tab(cpy_map);
+	wati_free_tab(cpy_map);
 	return (true);
 }
