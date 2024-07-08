@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/05 12:46:12 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/05 16:49:48 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	_ray_casting(t_pdata data, t_info info, t_coord map)
 	{
 		pxl = ray(info.base.pos, info.map, alpha);
 		wmlx_put_line(data.map, player, get_pixel_minimap(map, pxl.pos), 0xff0000);
-		ray_put_image(data.win, pxl, info);
+		// ray_put_image(data.win, pxl, info);
 		alpha += fov;
 		i++;
 	}
