@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/07 17:23:56 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/08 10:52:55 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int			wkey_hook_press(int keycode, t_joe_mama *yo_mama);
 int			wkey_hook_release(int keycode, t_joe_mama *var);
 
 void		wmlx_put_pixel(t_data *data, t_coord coord, t_color color);
+t_color		wmlx_get_pixel(t_data *data, t_coord coord, t_color color);
 void		wmlx_put_rect(t_data *data, t_coord begin, t_coord end,
 				t_color color);
 void		wmlx_put_square(t_data *data, t_coord coord, int size,

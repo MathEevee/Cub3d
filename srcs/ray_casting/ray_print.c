@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 10:33:07 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 18:45:58 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/08 10:44:24 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	ray_print(t_data *data, t_info info, t_ray ray, int i)
 	{
 		if (j < val.min)
 			wmlx_put_pixel(data, set_coord(i, j), info.color_c);
-		else if (j < val.max)
-			wmlx_put_pixel(data, set_coord(i, j), color);
-		else
+		else if (j >= val.max)
 			wmlx_put_pixel(data, set_coord(i, j), info.color_f);
+		else
+			wmlx_put_pixel(data, set_coord(i, j), color);
 		j++;
 	}
 }
