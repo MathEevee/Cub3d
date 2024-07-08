@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 18:44:19 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/07 17:24:29 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,5 @@ static t_ray	ray(t_coord_f player, char **map, t_angle angle)
 	trig.sin = -sinf(angle);
 	x = ray_init_x(player, trig);
 	y = ray_init_y(player, trig);
-	return (ray_loop(x, y, map));
+	return (ray_loop(x, y, map, trig));
 }

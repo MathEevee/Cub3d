@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 19:09:25 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 19:55:30 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_range
 	int	min;
 	int	max;
 }			t_range;
-
 
 typedef struct s_ray
 {

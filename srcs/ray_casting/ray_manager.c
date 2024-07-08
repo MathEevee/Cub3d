@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:57:02 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 19:17:57 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 20:11:38 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ t_ray	ray_init_x(t_coord_f coord, t_trigo trig)
 		ray.v.y = trig.sin * ray.len;
 		ray.dir = 'W';
 	}
-	ray.pos = sum_coord_f(ray.pos, ray.v);
-	ray.hit = cast_to_coord(ray.pos);
+	if (ray.i.x < 0)
+		ray.hit.x--;
+	ray.hit = cast_to_coord(sum_coord_f(ray.pos, ray.v));
 	return (ray);
 }
 
@@ -61,16 +62,17 @@ t_ray	ray_init_y(t_coord_f coord, t_trigo trig)
 		ray.v.x = trig.cos * ray.len;
 		ray.dir = 'N';
 	}
-	ray.pos = sum_coord_f(ray.pos, ray.v);
-	ray.hit = cast_to_coord(ray.pos);
+	if (ray.i.y < 0)
+		ray.hit.y--;
+	ray.hit = cast_to_coord(sum_coord_f(ray.pos, ray.v));
 	return (ray);
 }
 
 void	ray_incr(t_ray *ray)
 {
-	ray->pos = sum_coord_f(ray->pos, ray->i);
+	ray->v = sum_coord_f(ray->v, ray->i);
 	ray->len += ray->i_len;
-	ray->hit = cast_to_coord(ray->pos);
+	ray->hit = cast_to_coord(sum_coord_f(ray->pos, ray->v));
 }
 
 t_float	toprev_int(t_float nb)

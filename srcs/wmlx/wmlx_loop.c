@@ -6,15 +6,13 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 10:24:11 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/06 19:51:57 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 
 #include "cub3d.h"
-
-#define TMP 0.9
 
 void	move_toward(t_player *player, t_float mv, char **map)
 {

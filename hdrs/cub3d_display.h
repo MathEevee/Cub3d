@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 19:05:38 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/07 17:23:56 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void		wmlx_clear_img(t_data *data);
 
 void		ray_casting(t_pdata pdata, t_info info, t_coord map);
 
-t_ray		ray_loop(t_ray x, t_ray y, char **map);
+t_ray		ray_loop(t_ray x, t_ray y, char **map, t_trigo trig);
 
 t_ray		ray_init_x(t_coord_f coord, t_trigo trig);
 t_ray		ray_init_y(t_coord_f coord, t_trigo trig);
