@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 12:34:22 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/08 14:35:51 by matde-ol         ###   ########.fr       */
+/*   Created: Invalid date        by                   #+#    #+#             */
+/*   Updated: 2024/07/08 17:26:52 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "cub3d.h"
 
@@ -68,12 +69,10 @@ bool	span_check(char **map)
 
 bool	map_span_fill(char **map)
 {
-	int	x;
 	int	y;
 	int	x_bis;
 	int	y_bis;
 
-	x = 0;
 	y = 0;
 	if (span_check(map) == true && map[y] != NULL)
 	{

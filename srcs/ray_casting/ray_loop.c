@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_loop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:54:57 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 12:09:18 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/08 17:12:30 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,3 @@ t_ray	ray_loop(t_ray x, t_ray y, char **map, t_trigo trig)
 	ray->pos = sum_coord_f(ray->pos, ray->v);
 	return (*ray);
 }
-

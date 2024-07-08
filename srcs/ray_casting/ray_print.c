@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 10:33:07 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 14:30:09 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/08 17:23:13 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "cub3d.h"
 
 static t_float	choose_img(t_info *info, t_data **img, t_ray ray);
-static	t_color	choose_pixel(t_data *data, t_float x, t_float y);
+static t_color	choose_pixel(t_data *data, t_float x, t_float y);
 
 static t_color	choose_color(char dir);
 
@@ -34,7 +34,6 @@ void	ray_print(t_data *data, t_info info, t_ray ray, int i)
 	val.min = (data->max.y / 2) - (size / 2);
 	val.max = (data->max.y / 2) + (size / 2);
 	x = choose_img(&info, &img, ray);
-	//printf("%f\n", x);
 	while (j < data->max.y)
 	{
 		if (j < val.min)
@@ -56,7 +55,7 @@ static t_float	choose_img(t_info *info, t_data **img, t_ray ray)
 	{
 		*img = &info->img_so;
 		return (wati_abs_f(ray.pos.x) - wati_abs(floorf(ray.pos.x)));
-	}	
+	}
 	else if (ray.dir == 'N')
 	{
 		*img = &info->img_no;
