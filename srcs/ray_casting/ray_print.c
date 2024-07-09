@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 10:33:07 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 17:23:13 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/09 08:51:50 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ static t_color	choose_color(char dir);
 void	ray_print(t_data *data, t_info info, t_ray ray, int i)
 {
 	t_data	*img;
-	t_float	x;
-	t_color	color;
 	int		size;
 	int		j;
 	t_range	val;
@@ -33,7 +31,6 @@ void	ray_print(t_data *data, t_info info, t_ray ray, int i)
 	size = data->max.y / ray.len;
 	val.min = (data->max.y / 2) - (size / 2);
 	val.max = (data->max.y / 2) + (size / 2);
-	x = choose_img(&info, &img, ray);
 	while (j < data->max.y)
 	{
 		if (j < val.min)
@@ -42,8 +39,10 @@ void	ray_print(t_data *data, t_info info, t_ray ray, int i)
 			wmlx_put_pixel(data, set_coord(i, j), info.color_f);
 		else
 		{
-			color = choose_pixel(img, x, (j - (t_float)val.min) / (t_float)(val.max - val.min));
-			wmlx_put_pixel(data, set_coord(i, j), color);
+			wmlx_put_pixel(data, set_coord(i, j),
+				choose_pixel(img,
+					choose_img(&info, &img, ray),
+					(j - (t_float)val.min) / (t_float)(val.max - val.min)));
 		}
 		j++;
 	}
