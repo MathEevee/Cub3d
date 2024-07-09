@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 14:35:31 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/09 15:14:59 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ int	main(int argc, char **argv)
 	joe_mama_init(&var);
 	var.mlx = wmlx_init();
 	begin_cub3d(fd, &var);
+	close(fd);
 	return (0);
 }
