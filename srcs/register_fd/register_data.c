@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:16:58 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/08 13:47:09 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/09 10:48:36 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,12 @@ int	map_register(char **file, int i, t_joe_mama *var)
 	return (0);
 }
 
+static void	free_data(t_joe_mama *var, char **file)
+{
+	wati_free_tab(file);
+	wati_free_tab(var->info.map);
+}
+
 int	set_info(char **file, t_joe_mama *var)
 {
 	int	i;
@@ -109,6 +115,7 @@ int	set_info(char **file, t_joe_mama *var)
 	if (count != 6)
 	{
 		wati_fprintf(2, "Wrong path or color\nError\n");
+		free_data(var, file);
 		return (-1);
 	}
 	if (check_img(var) == -1)
