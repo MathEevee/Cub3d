@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 19:55:30 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:37:42 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,42 @@ typedef struct s_range
 {
 	int	min;
 	int	max;
+	int	diff;
 }			t_range;
 
 typedef struct s_ray
 {
 	t_coord_f	pos;
-	t_coord		hit;
 	t_float		len;
-	t_coord_f	v;
-	t_coord_f	i;
-	t_float		i_len;
+	t_coord		screen;
 	char		dir;
 }			t_ray;
+
+typedef struct s_ray_incr
+{
+	t_coord		hit;
+	t_coord_f	i;
+	t_float		len;
+}			t_ray_incr;
+
+typedef struct s_ray_cast
+{
+	t_ray		r;
+	t_ray_incr	i;
+}			t_ray_cast;
 
 typedef struct s_trigo
 {
 	t_angle	cos;
 	t_angle	sin;
 }			t_trigo;
+
+typedef struct s_ray_alpha
+{
+	t_angle	fov;
+	t_angle	incr;
+	t_angle	alpha;
+}	t_ray_alpha;
 
 typedef struct s_cst
 {
@@ -75,6 +93,8 @@ typedef struct s_key_press
 	bool	key_a;
 	bool	key_s;
 	bool	key_d;
+	bool	key_left;
+	bool	key_right;
 }			t_key_press;
 
 typedef struct s_wdata

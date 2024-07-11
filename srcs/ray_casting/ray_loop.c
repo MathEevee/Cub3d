@@ -3,35 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ray_loop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:54:57 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 17:12:30 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/11 14:30:39 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
+
 #include "cub3d.h"
 
-t_ray	ray_loop(t_ray x, t_ray y, char **map, t_trigo trig)
+t_ray	ray_loop(t_ray_cast x, t_ray_cast y, char **map)
 {
-	t_ray	*ray;
+	t_ray_cast	*ray;
 
-	if (x.len < y.len)
+	if (x.r.len < y.r.len)
 		ray = &x;
 	else
 		ray = &y;
-	while (!check_map(ray->hit, map))
+	while (!check_map(ray->i.hit, map))
 	{
-		ray_incr(ray);
-		if (ray == &x && x.i.x < 0)
-			x.hit.x--;
-		else if (ray == &y && y.i.y < 0)
-			y.hit.y--;
-		if (x.len < y.len)
+		ray_incr(ray, &x, &y);
+		if (x.r.len < y.r.len)
 			ray = &x;
 		else
 			ray = &y;
 	}
-	ray->pos = sum_coord_f(ray->pos, ray->v);
-	return (*ray);
+	return (ray->r);
 }

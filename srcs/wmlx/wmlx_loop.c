@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 19:51:57 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/09 17:32:57 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ bool	wmlx_key_update(t_joe_mama *var)
 	last = actu;
 	mv = (MV_SPEED / FPS) * (diff / FMS);
 	rotate = (FOV_INCR * (M_PI / 180.0)) / FPS * (diff / FMS);
-	if (var->press.key_a)
+	if (var->press.key_left)
 		var->info.base.angle -= rotate;
-	if (var->press.key_d)
+	if (var->press.key_right)
 		var->info.base.angle += rotate;
 	if (var->press.key_w)
 		move_toward(&var->info.base, -mv, var->info.map);

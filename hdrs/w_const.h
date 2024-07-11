@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:25:29 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/04 15:52:54 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/11 15:17:03 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ typedef enum s_key
 	KEY_W = 119,
 	KEY_A = 97,
 	KEY_S = 115,
-	KEY_D = 100
+	KEY_D = 100,
+	KEY_LEFT = 65361,
+	KEY_RIGHT = 65363
 }	t_key;
 
 #endif // W_CONST_H

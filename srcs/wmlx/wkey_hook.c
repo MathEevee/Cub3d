@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:32:38 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 10:24:07 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/09 17:32:33 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	wkey_leave(t_joe_mama *var)
 	var->press.key_a = false;
 	var->press.key_s = false;
 	var->press.key_d = false;
+	var->press.key_left = false;
+	var->press.key_right = false;
 	return (0);
 }
 
@@ -45,6 +47,10 @@ int	wkey_hook_press(int keycode, t_joe_mama *var)
 		var->press.key_s = true;
 	else if (keycode == KEY_D)
 		var->press.key_d = true;
+	else if (keycode == KEY_LEFT)
+		var->press.key_left = true;
+	else if (keycode == KEY_RIGHT)
+		var->press.key_right = true;
 	else if (keycode == KEY_TAB)
 		change_mode(&var->mlx.pimg);
 	else
@@ -62,5 +68,9 @@ int	wkey_hook_release(int keycode, t_joe_mama *var)
 		var->press.key_s = false;
 	else if (keycode == KEY_D)
 		var->press.key_d = false;
+	else if (keycode == KEY_LEFT)
+		var->press.key_left = false;
+	else if (keycode == KEY_RIGHT)
+		var->press.key_right = false;
 	return (0);
 }
