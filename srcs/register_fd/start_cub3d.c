@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/08 17:21:57 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/09 14:40:09 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,14 @@ void	begin_cub3d(int fd, t_joe_mama *var)
 	file = format_fd_no_nl(fd);
 	if (file == NULL)
 	{
+		free_var(var);
 		wati_fprintf(2, "This file is empty\nError\n");
 		return ;
 	}
 	if (set_info(file, var) == -1)
 	{
-		//addfree
+		free_var(var);
+		wati_free_tab(file);
 		return ;
 	}
 	wati_free_tab(file);
@@ -57,8 +59,6 @@ void	begin_cub3d(int fd, t_joe_mama *var)
 		wmlx_update_win(var->mlx);
 		wkey_init_hook(var);
 		mlx_loop(var->mlx.ptr);
-		free_mlx(var->mlx.ptr, &var->info);
-		wmlx_destroy(var->mlx);
-		wati_free_tab(var->info.map);
 	}
+	free_var(var);
 }

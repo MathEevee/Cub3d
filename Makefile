@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
+#    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/06 10:36:06 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/09 14:29:20 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ SRCS = \
 	map_check/map_bool.c \
 	utils/cpy_tab.c \
 	clear/free_img.c \
+	clear/free_var.c \
 	struct_manager/key_manager.c \
 	struct_manager/joe_mama_manager.c \
 	struct_manager/tv_manager.c \
