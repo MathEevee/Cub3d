@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/09 17:32:57 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/12 10:55:11 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,32 @@ void	move_toward(t_player *player, t_float mv, char **map)
 
 	tmp.x = player->pos.x + (mv * cosf(player->angle));
 	tmp.y = player->pos.y + (mv * sinf(player->angle));
+	if (map[(int)player->pos.y][(int)tmp.x] != '1')
+		player->pos.x = tmp.x;
+	else
+	{
+		if (tmp.x > player->pos.x)
+			player->pos.x = (int)player->pos.x + (1 - HIT_BOX);
+		else if (tmp.x < player->pos.x)
+			player->pos.x = (int)player->pos.x + HIT_BOX;
+	}
+	if (map[(int)tmp.y][(int)player->pos.x] != '1')
+		player->pos.y = tmp.y;
+	else
+	{
+		if (tmp.y > player->pos.y)
+			player->pos.y = (int)player->pos.y + (1 - HIT_BOX);
+		else if (tmp.y < player->pos.y)
+			player->pos.y = (int)player->pos.y + HIT_BOX;
+	}
+}
+
+void	move_side(t_player *player, t_float mv, char **map)
+{
+	t_coord_f	tmp;
+
+	tmp.x = player->pos.x + (mv * cosf(player->angle + M_PI_2));
+	tmp.y = player->pos.y + (mv * sinf(player->angle + M_PI_2));
 	if (map[(int)player->pos.y][(int)tmp.x] != '1')
 		player->pos.x = tmp.x;
 	else
@@ -63,6 +89,10 @@ bool	wmlx_key_update(t_joe_mama *var)
 		move_toward(&var->info.base, -mv, var->info.map);
 	if (var->press.key_s)
 		move_toward(&var->info.base, mv, var->info.map);
+	if (var->press.key_d)
+		move_side(&var->info.base, -mv, var->info.map);
+	if (var->press.key_a)
+		move_side(&var->info.base, mv, var->info.map);
 	return (true);
 }
 
