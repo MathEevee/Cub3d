@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/12 10:55:11 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/12 11:05:09 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "cub3d.h"
 
-void	move_toward(t_player *player, t_float mv, char **map)
+static void	move_toward(t_player *player, t_float mv, char **map)
 {
 	t_coord_f	tmp;
 
@@ -40,7 +40,7 @@ void	move_toward(t_player *player, t_float mv, char **map)
 	}
 }
 
-void	move_side(t_player *player, t_float mv, char **map)
+static void	move_side(t_player *player, t_float mv, char **map)
 {
 	t_coord_f	tmp;
 
@@ -66,19 +66,29 @@ void	move_side(t_player *player, t_float mv, char **map)
 	}
 }
 
-bool	wmlx_key_update(t_joe_mama *var)
+static t_ltime	wmlx_fps_manager(void)
 {
 	static t_tv	last;
 	t_tv		actu;
 	t_ltime		diff;
-	t_float		mv;
-	t_angle		rotate;
 
 	gettimeofday(&actu, NULL);
 	diff = diff_timeval(actu, last);
 	if (diff < FMS)
-		return (false);
+		return (0);
 	last = actu;
+	return (diff);
+}
+
+static bool	wmlx_key_update(t_joe_mama *var)
+{
+	t_ltime		diff;
+	t_float		mv;
+	t_angle		rotate;
+
+	diff = wmlx_fps_manager();
+	if (!diff)
+		return (true);
 	mv = (MV_SPEED / FPS) * (diff / FMS);
 	rotate = (FOV_INCR * (M_PI / 180.0)) / FPS * (diff / FMS);
 	if (var->press.key_left)

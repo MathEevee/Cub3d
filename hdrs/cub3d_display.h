@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/11 14:30:33 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/12 11:06:30 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ t_coord		get_pixel_minimap(t_coord pos_map, t_coord_f coord);
 t_ltime		diff_timeval(t_tv t1, t_tv t2);
 bool		fps_manager(int fps);
 
-bool		wmlx_key_update(t_joe_mama *var);
 int			wmlx_loop(t_joe_mama *var);
 
 bool		check_map(t_coord hit, char **map);
