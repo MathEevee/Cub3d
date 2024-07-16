@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:26:05 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/11 14:37:42 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/15 16:57:58 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_range
 typedef struct s_ray
 {
 	t_coord_f	pos;
+	t_coord_f	vect;
 	t_float		len;
 	t_coord		screen;
 	char		dir;
@@ -66,16 +67,10 @@ typedef struct s_trigo
 typedef struct s_ray_alpha
 {
 	t_angle	fov;
-	t_angle	incr;
+	t_float	o_base;
+	t_float	incr;
 	t_angle	alpha;
 }	t_ray_alpha;
-
-typedef struct s_cst
-{
-	t_float	a;
-	t_float	o;
-	t_float	h;
-}			t_cst;
 
 typedef struct s_data
 {

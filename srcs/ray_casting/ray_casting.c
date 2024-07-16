@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/11 15:08:41 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/16 10:48:13 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,22 @@ void	ray_casting(t_pdata pdata, t_info info, t_coord map)
 	t_ray		pxl;
 
 	angle.fov = FOV * (M_PI / 180.0);
-	angle.alpha = info.base.angle - angle.fov / 2;
-	angle.incr = angle.fov / pdata.win->max.x;
 	wall = pdata.win->max.x / angle.fov;
+	angle.alpha = (angle.fov + M_PI) / 2;
+	angle.o_base = -2 * cosf(angle.alpha) / sinf(angle.alpha);
+	angle.incr = 2 * angle.o_base / pdata.win->max.x;
 	player = get_pixel_minimap(map, info.base.pos);
 	i = 0;
 	while (i < pdata.win->max.x)
 	{
+		angle.alpha = -atanf((angle.o_base - i * (angle.incr)) / 2)
+			+ M_PI_4 - angle.fov / 2 + info.base.angle;
 		pxl = ray(info.base.pos, info.map, angle.alpha);
 		pxl.len *= cosf(info.base.angle - angle.alpha);
 		pxl.screen.x = i;
 		wmlx_put_line(pdata.map, player,
 			get_pixel_minimap(map, pxl.pos), 0xff0000);
 		ray_print(pdata.win, info, pxl, wall);
-		angle.alpha += angle.incr;
 		i++;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_parsing.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:21:50 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/09 14:28:19 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/16 10:52:23 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ char	**copy_tab(char **tab);
 bool	color_check(char *str);
 int		check_img(t_joe_mama *var);
 void	free_mlx(t_wptr ptr, t_info *info);
-void    free_var(t_joe_mama *var);
+void	free_var(t_joe_mama *var);
 
 #endif // CUB3D_PARSING_H

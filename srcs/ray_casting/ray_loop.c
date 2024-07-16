@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:54:57 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/11 14:30:39 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/14 16:21:02 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ t_ray	ray_loop(t_ray_cast x, t_ray_cast y, char **map)
 		else
 			ray = &y;
 	}
+	ray->r.pos = sum_coord_f(ray->r.pos, ray->r.vect);
 	return (ray->r);
 }

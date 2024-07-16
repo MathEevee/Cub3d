@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   map_border.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:44:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/09 14:39:02 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/16 10:49:32 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "cub3d.h"
 
