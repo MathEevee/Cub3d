@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/19 10:06:21 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/19 16:36:00 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	ray_casting(t_pdata pdata, t_info info)
 	angle.fov = FOV * (M_PI / 180.0);
 	wall = pdata.win->max.x / angle.fov;
 	angle.alpha = (angle.fov + M_PI) / 2;
-	angle.o_base = -2 * cosf(angle.alpha) / sinf(angle.alpha);
+	angle.o_base = 2 * cosf(angle.alpha) / sinf(angle.alpha);
 	angle.incr = 2 * angle.o_base / pdata.win->max.x;
 	i = 0;
 	while (i < pdata.win->max.x)
 	{
-		angle.alpha = -atanf((angle.o_base - i * (angle.incr)) / 2)
+		angle.alpha = atanf((angle.o_base - i * (angle.incr)) / 2)
 			+ M_PI_4 - angle.fov / 2 + info.base.angle;
 		pxl = ray(info.base.pos, info.map, angle.alpha);
 		pxl.len *= cosf(info.base.angle - angle.alpha);
