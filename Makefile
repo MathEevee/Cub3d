@@ -6,12 +6,13 @@
 #    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/09 14:29:20 by matde-ol         ###   ########.fr        #
+#    Updated: 2024/07/19 11:28:21 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ##################################### NAME #####################################
-NAME := cub3d
+NAME := cub3D
+NAME_BONUS := cub3D_bonus
 
 WATI_HDRS := libwati.h
 WATI_NAME := libwati.a
@@ -25,7 +26,9 @@ MLX_RULES := mlx-
 EXT_RULES := ext-
 
 ################################### COMPILER ###################################
-CC := clang
+# CC := gcc -g --function-sections -Wl,--gc-sections -Wl,--print-gc-sections
+
+CC := cc
 
 ################################# DIRECTORIES ##################################
 
@@ -35,6 +38,7 @@ DIR_MLX := minilibx-linux/
 DIR_LIBS := libs/
 
 DIR_SRCS := srcs/
+DIR_SRCS_BONUS := srcs_bonus/
 DIR_HDRS := hdrs/
 DIR := \
 	$(DIR_SRCS) \
@@ -43,6 +47,42 @@ DIR := \
 #################################### FILES #####################################
 
 SRCS = \
+	struct_manager/coord_manager.c \
+	parsing/path_register.c \
+	parsing/check_color.c \
+	parsing/init_struct.c \
+	parsing/check_img.c \
+	register_fd/register_data.c \
+	register_fd/format_fd.c \
+	register_fd/start_cub3d.c \
+	map_check/check_map_params.c \
+	map_check/map_border.c \
+	map_check/map_bool.c \
+	utils/cpy_tab.c \
+	utils/map_coord.c \
+	clear/free_img.c \
+	clear/free_var.c \
+	struct_manager/key_manager.c \
+	struct_manager/joe_mama_manager.c \
+	struct_manager/tv_manager.c \
+	wmlx/wmlx_init.c \
+	wmlx/wkey_hook.c \
+	wmlx/wmlx_loop.c \
+	wmlx/wmlx_print.c \
+	wmlx/wmlx_update.c \
+	wmlx/wmlx_put_line.c \
+	ray_casting/ray_casting.c \
+	ray_casting/ray_loop.c \
+	ray_casting/ray_manager.c \
+	ray_casting/ray_print.c \
+	display/display.c \
+	display/display_map.c \
+	main.c
+OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
+
+################################# FILES BONUS ##################################
+
+SRCS_BONUS = \
 	struct_manager/coord_manager.c \
 	parsing/path_register.c \
 	parsing/check_color.c \
@@ -73,7 +113,7 @@ SRCS = \
 	display/display.c \
 	display/display_map.c \
 	main.c
-OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
+OBJS_BONUS = $(addprefix $(DIR_OBJS), $(SRCS_BONUS:%.c=%.o))
 
 #################################### FLAGS #####################################
 CFLAGS := -Wall -Wextra #-Werror
@@ -91,6 +131,10 @@ all:
 $(NAME): $(OBJS)
 	@printf "$(GREEN)compile $@                                         $(NC)\n"
 	@$(CC) $^ $(LFLAGS) -o $@
+
+bonus: $(OBJS_BONUS)
+	@printf "$(GREEN)compile $@                                         $(NC)\n"
+	@$(CC) $^ $(LFLAGS) -o $(NAME_BONUS)
 
 $(DIR_OBJS)%.o: $(DIR_SRCS)%.c
 	@printf "$(BROWN)compile $(notdir $<)                              $(NC) \r"

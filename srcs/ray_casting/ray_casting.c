@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/16 10:48:13 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:06:21 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@
 
 static t_ray	ray(t_coord_f player, char **map, t_angle angle);
 
-void	ray_casting(t_pdata pdata, t_info info, t_coord map)
+void	ray_casting(t_pdata pdata, t_info info)
 {
 	t_ray_alpha	angle;
 	t_float		wall;
-	t_coord		player;
 	int			i;
 	t_ray		pxl;
 
@@ -30,7 +29,6 @@ void	ray_casting(t_pdata pdata, t_info info, t_coord map)
 	angle.alpha = (angle.fov + M_PI) / 2;
 	angle.o_base = -2 * cosf(angle.alpha) / sinf(angle.alpha);
 	angle.incr = 2 * angle.o_base / pdata.win->max.x;
-	player = get_pixel_minimap(map, info.base.pos);
 	i = 0;
 	while (i < pdata.win->max.x)
 	{
@@ -39,8 +37,6 @@ void	ray_casting(t_pdata pdata, t_info info, t_coord map)
 		pxl = ray(info.base.pos, info.map, angle.alpha);
 		pxl.len *= cosf(info.base.angle - angle.alpha);
 		pxl.screen.x = i;
-		wmlx_put_line(pdata.map, player,
-			get_pixel_minimap(map, pxl.pos), 0xff0000);
 		ray_print(pdata.win, info, pxl, wall);
 		i++;
 	}

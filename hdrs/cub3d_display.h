@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_display.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/16 10:52:03 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:06:11 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void		wmlx_put_line(t_data *data, t_coord start, t_coord end,
 				t_color color);
 void		wmlx_clear_img(t_data *data);
 
-void		ray_casting(t_pdata pdata, t_info info, t_coord map);
+void		ray_casting(t_pdata pdata, t_info info);
 
 t_ray		ray_loop(t_ray_cast x, t_ray_cast y, char **map);
 

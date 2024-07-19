@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 17:06:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 12:27:27 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:41:19 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@ void	display(t_pdata pdata, t_info info)
 			+ pdata.map->max.x / 2 - SQRT_SIZE / 2,
 			-info.base.pos.y * SQRT_SIZE
 			+ pdata.map->max.y / 2 - SQRT_SIZE / 2);
-	display_minimap(pdata.map, pos_map, info);
-	ray_casting(pdata, info, pos_map);
+	ray_casting(pdata, info);
 }

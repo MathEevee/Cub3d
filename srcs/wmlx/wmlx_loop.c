@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wmlx_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/12 11:05:09 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/19 11:30:11 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,53 +17,33 @@
 static void	move_toward(t_player *player, t_float mv, char **map)
 {
 	t_coord_f	tmp;
+	t_coord		size;
 
+	size.x = 0;
+	size.y = 0;
+	size = map_coord(size, map);
 	tmp.x = player->pos.x + (mv * cosf(player->angle));
 	tmp.y = player->pos.y + (mv * sinf(player->angle));
-	if (map[(int)player->pos.y][(int)tmp.x] != '1')
+	if ((int)tmp.x < size.x && (int)tmp.x > 0)
 		player->pos.x = tmp.x;
-	else
-	{
-		if (tmp.x > player->pos.x)
-			player->pos.x = (int)player->pos.x + (1 - HIT_BOX);
-		else if (tmp.x < player->pos.x)
-			player->pos.x = (int)player->pos.x + HIT_BOX;
-	}
-	if (map[(int)tmp.y][(int)player->pos.x] != '1')
+	if ((int)tmp.y < size.y && (int)tmp.y > 0)
 		player->pos.y = tmp.y;
-	else
-	{
-		if (tmp.y > player->pos.y)
-			player->pos.y = (int)player->pos.y + (1 - HIT_BOX);
-		else if (tmp.y < player->pos.y)
-			player->pos.y = (int)player->pos.y + HIT_BOX;
-	}
 }
 
 static void	move_side(t_player *player, t_float mv, char **map)
 {
 	t_coord_f	tmp;
+	t_coord		size;
 
+	size.x = 0;
+	size.y = 0;
+	size = map_coord(size, map);
 	tmp.x = player->pos.x + (mv * cosf(player->angle + M_PI_2));
 	tmp.y = player->pos.y + (mv * sinf(player->angle + M_PI_2));
-	if (map[(int)player->pos.y][(int)tmp.x] != '1')
+	if ((int)tmp.x < size.x)
 		player->pos.x = tmp.x;
-	else
-	{
-		if (tmp.x > player->pos.x)
-			player->pos.x = (int)player->pos.x + (1 - HIT_BOX);
-		else if (tmp.x < player->pos.x)
-			player->pos.x = (int)player->pos.x + HIT_BOX;
-	}
-	if (map[(int)tmp.y][(int)player->pos.x] != '1')
+	if ((int)tmp.y < size.y)
 		player->pos.y = tmp.y;
-	else
-	{
-		if (tmp.y > player->pos.y)
-			player->pos.y = (int)player->pos.y + (1 - HIT_BOX);
-		else if (tmp.y < player->pos.y)
-			player->pos.y = (int)player->pos.y + HIT_BOX;
-	}
 }
 
 static t_ltime	wmlx_fps_manager(void)

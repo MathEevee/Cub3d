@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:44:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/09 14:22:15 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/19 11:37:08 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ bool	maps_params_accepted(char c)
 	return (false);
 }
 
-bool	is_player(int x, int y, char c, t_info *info)
+static bool	is_player(int x, int y, char c, t_info *info)
 {
 	if (maps_params_accepted(c) == true)
 	{
@@ -45,7 +45,7 @@ bool	is_player(int x, int y, char c, t_info *info)
 	return (false);
 }
 
-bool	check_line_map(t_info *info, int j)
+static bool	check_line_map(t_info *info, int j)
 {
 	int	i;
 

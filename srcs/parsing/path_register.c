@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 09:27:10 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/08 13:41:32 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/19 11:34:00 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static bool	register_path(char *line, t_joe_mama *var)
 	return (false);
 }
 
-bool	convert_color(char *line, t_color_def *color)
+static bool	convert_color(char *line, t_color_def *color)
 {
 	int	i;
 

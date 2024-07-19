@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:16:58 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/09 14:43:06 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/19 11:39:29 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int	loop_file(int *i, char **file, int count, t_joe_mama *var)
 	return (count);
 }
 
-int	map_register(char **file, int i, t_joe_mama *var)
+static int	map_register(char **file, int i, t_joe_mama *var)
 {
 	int	j;
 
