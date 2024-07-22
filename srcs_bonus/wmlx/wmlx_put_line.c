@@ -6,11 +6,11 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 10:33:40 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 14:03:45 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "./hdrs_bonus/cub3d.h"
 
 t_color	wmlx_get_pixel(t_data *data, t_coord coord)
 {

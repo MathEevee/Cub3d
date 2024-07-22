@@ -6,11 +6,11 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 17:06:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 12:27:27 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "./hdrs_bonus/cub3d.h"
 
 void	display(t_pdata pdata, t_info info)
 {

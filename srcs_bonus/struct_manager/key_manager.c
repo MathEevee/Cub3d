@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   key_manager.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 12:28:18 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/09 17:31:04 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "./hdrs_bonus/cub3d.h"
 
 t_key_press	key_press_init(void)
 {

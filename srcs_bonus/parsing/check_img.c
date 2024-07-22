@@ -6,12 +6,12 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 09:30:09 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/08 17:10:57 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libwati.h"
-#include "cub3d.h"
+#include "./hdrs_bonus/cub3d.h"
 
 static bool	check_size(t_coord coord, int *i)
 {

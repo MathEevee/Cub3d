@@ -6,11 +6,11 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:44:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/19 11:38:36 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "./hdrs_bonus/cub3d.h"
 
 static void	check_pos(char **map, int *x, int *y)
 {

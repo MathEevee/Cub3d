@@ -6,11 +6,11 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:32:24 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/08 13:42:27 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:39:51 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../hdrs/cub3d.h"
+#include "./hdrs_bonus/cub3d.h"
 
 void	init_player(t_info *info, int x, int y, t_angle radiant)
 {

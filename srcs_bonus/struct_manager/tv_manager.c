@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   tv_manager.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 13:26:53 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/06 10:24:50 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "./hdrs_bonus/cub3d.h"
 
 t_ltime	diff_timeval(t_tv t1, t_tv t2)
 {

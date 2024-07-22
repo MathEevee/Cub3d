@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ray_manager.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:57:02 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/14 15:50:22 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include <stdio.h>
 
-#include "cub3d.h"
+#include "./hdrs_bonus/cub3d.h"
 
 t_ray_cast	ray_init_x(t_coord_f coord, t_trigo trig)
 {
