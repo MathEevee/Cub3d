@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/23 15:20:48 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/23 15:45:12 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,7 @@ CC := cc
 
 ################################# DIRECTORIES ##################################
 
-DIR_OBJS := ../objs/
-
-DIR_HDRS := hdrs/
+DIR_HDRS := hdrs_bonus/
 DIR := \
 	$(DIR_SRCS) \
 	$(DIR_HDRS)
@@ -28,7 +26,7 @@ DIR := \
 
 include sources.mk
 
-OBJS = $(addprefix $(DIR_OBJS), $(SRCS_BONUS:%.c=%.o))
+OBJS_BONUS = $(addprefix ../$(DIR_OBJS_BONUS), $(SRCS_BONUS:%.c=%.o))
 
 #################################### FLAGS #####################################
 
@@ -40,14 +38,14 @@ IFLAGS := -I../$(DIR_HDRS)
 all:
 debug:
 
-$(DIR_OBJS)%.o: %.c
+../$(DIR_OBJS_BONUS)%.o: %.c
 	@printf "$(BROWN)compile $(notdir $<)                              $(NC) \r"
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
-all:	$(OBJS)
+all:	$(OBJS_BONUS)
 debug:	CFLAGS += -g
-debug:	$(OBJS)
+debug:	$(OBJS_BONUS)
 
 dir: $(DIR)
 	mkdir -p $^

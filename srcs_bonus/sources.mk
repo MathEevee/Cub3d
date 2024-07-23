@@ -1,3 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    sources.mk                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/07/23 15:29:01 by bedarenn          #+#    #+#              #
+#    Updated: 2024/07/23 15:31:07 by bedarenn         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+DIR_OBJS_BONUS := objs_bonus/
+
 SRCS_BONUS = \
 	struct_manager/coord_manager.c \
 	parsing/path_register.c \

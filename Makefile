@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/23 15:23:12 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/23 15:34:53 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ CC := cc
 
 ################################# DIRECTORIES ##################################
 
-DIR_OBJS := objs/
 DIR_WATI := libwati/
 DIR_MLX := minilibx-linux/
 DIR_LIBS := libs/
@@ -50,7 +49,7 @@ include $(DIR_SRCS)/sources.mk
 include $(DIR_SRCS_BONUS)/sources.mk
 
 OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
-OBJS_BONUS = $(addprefix $(DIR_OBJS), $(SRCS_BONUS:%.c=%.o))
+OBJS_BONUS = $(addprefix $(DIR_OBJS_BONUS), $(SRCS_BONUS:%.c=%.o))
 
 #################################### FLAGS #####################################
 CFLAGS := -Wall -Wextra -Werror
@@ -78,11 +77,11 @@ $(NAME_BONUS):
 
 clean: $(EXT_RULES)clean
 	@printf "$(RED)clean objs$(NC)\n"
-	@rm -rf $(DIR_OBJS)
+	@rm -rf $(DIR_OBJS) $(DIR_OBJS_BONUS)
 
 fclean: $(EXT_RULES)clean
 	@printf "$(RED)clean $(NAME)$(NC)\n"
-	@rm -rf $(DIR_OBJS)
+	@rm -rf $(DIR_OBJS) $(DIR_OBJS_BONUS)
 	@rm -f $(NAME)
 
 re: fclean all

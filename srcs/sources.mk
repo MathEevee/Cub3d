@@ -6,9 +6,11 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/23 14:40:44 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/23 14:40:48 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/23 15:31:34 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+DIR_OBJS := objs/
 
 SRCS = \
 	struct_manager/coord_manager.c \
