@@ -1,9 +1,11 @@
 .vscode
 *.o
 *.a
-cub3d
+cub3D*
 .nfs*
 hdrs/libwati.h
 hdrs/mlx_int.h
 hdrs/mlx.h
-*.cub
+hdrs_bonus/libwati.h
+hdrs_bonus/mlx_int.h
+hdrs_bonus/mlx.h

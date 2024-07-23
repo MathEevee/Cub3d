@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ray_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 10:33:07 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:20:04 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <math.h>
 
-#include "./hdrs_bonus/cub3d.h"
+#include "cub3d.h"
 
 static t_float	choose_img(t_info *info, t_data **img, t_ray ray);
 static t_color	choose_pixel(t_data *data, t_float x, t_float y);

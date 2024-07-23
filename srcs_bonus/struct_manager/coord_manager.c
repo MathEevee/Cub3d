@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   coord_manager.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:35:37 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:20:04 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./hdrs_bonus/cub3d.h"
+#include "cub3d.h"
 
 t_coord	set_coord(int x, int y)
 {

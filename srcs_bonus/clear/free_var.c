@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   free_var.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:24:06 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/22 11:39:29 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:20:04 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./hdrs_bonus/cub3d.h"
+#include "cub3d.h"
 
 void	free_var(t_joe_mama *var)
 {

@@ -1,0 +1,11 @@
+NO ./wall_no.xpm
+SO ./wall_so.xpm
+WE ./wall_we.xpm
+EA ./wall_ea.xpm
+
+F 0,192,96
+C 0,96,192
+
+111
+1W1
+111
