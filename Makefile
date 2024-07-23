@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/23 15:34:53 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/23 15:48:26 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,7 @@ clean: $(EXT_RULES)clean
 fclean: $(EXT_RULES)clean
 	@printf "$(RED)clean $(NAME)$(NC)\n"
 	@rm -rf $(DIR_OBJS) $(DIR_OBJS_BONUS)
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(NAME_BONUS)
 
 re: fclean all
 
