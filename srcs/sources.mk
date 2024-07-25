@@ -6,10 +6,13 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/23 14:40:44 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/23 15:31:34 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/24 16:18:01 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME := cub3D
+
+DIR_HDRS := hdrs/
 DIR_OBJS := objs/
 
 SRCS = \
@@ -44,3 +47,12 @@ SRCS = \
 	display/display.c \
 	display/display_map.c \
 	main.c
+
+OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
+
+IFLAGS := -I$(DIR_HDRS)
+
+$(DIR_OBJS)%.o: $(DIR_SRCS)%.c
+	@printf "$(BROWN)compile $(notdir $<)                              $(NC) \r"
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@

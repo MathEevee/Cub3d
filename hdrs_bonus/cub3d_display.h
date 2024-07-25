@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/16 10:52:03 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:07:36 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ int			wmlx_loop(t_joe_mama *var);
 
 bool		check_map(t_coord hit, char **map);
 bool		check_map_convert(t_coord_f hit, char **map);
+t_coord		map_coord(t_coord size, char **map);
 
 #endif // CUB3D_DISPLAY_H

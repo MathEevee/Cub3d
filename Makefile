@@ -6,13 +6,11 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/23 15:48:26 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/25 15:58:51 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ##################################### NAME #####################################
-NAME := cub3D
-NAME_BONUS := cub3D_bonus
 
 WATI_HDRS := libwati.h
 WATI_NAME := libwati.a
@@ -26,54 +24,51 @@ MLX_RULES := mlx-
 EXT_RULES := ext-
 
 ################################### COMPILER ###################################
-# CC := gcc -g --function-sections -Wl,--gc-sections -Wl,--print-gc-sections
 
 CC := cc
+# CC := gcc -g --function-sections -Wl,--gc-sections -Wl,--print-gc-sections
 
 ################################# DIRECTORIES ##################################
 
 DIR_WATI := libwati/
 DIR_MLX := minilibx-linux/
+
 DIR_LIBS := libs/
 
 DIR_SRCS := srcs/
 DIR_SRCS_BONUS := srcs_bonus/
-DIR_HDRS := hdrs/
+
 DIR := \
 	$(DIR_SRCS) \
 	$(DIR_HDRS)
 
-#################################### FILES #####################################
-
-include $(DIR_SRCS)/sources.mk
-include $(DIR_SRCS_BONUS)/sources.mk
-
-OBJS = $(addprefix $(DIR_OBJS), $(SRCS:%.c=%.o))
-OBJS_BONUS = $(addprefix $(DIR_OBJS_BONUS), $(SRCS_BONUS:%.c=%.o))
-
 #################################### FLAGS #####################################
+
 CFLAGS := -Wall -Wextra -Werror
 LFLAGS := -L$(DIR_LIBS) -lwati -lmlx -lXext -lX11 -lm -lz
-IFLAGS := -I$(DIR_HDRS)
+
+#################################### FILES #####################################
+
+include $(DIR_SRCS)sources.mk
+include $(DIR_SRCS_BONUS)sources.mk
 
 ##################################### MAKE #####################################
+
 MAKE := make --no-print-directory -C
 
 #################################### RULES #####################################
 
 all:
-debug:
 bonus:
+debug:
 
-$(NAME):
-	@$(MAKE) $(DIR_SRCS) -j
+$(NAME): $(OBJS)
 	@printf "$(GREEN)compile $@                                         $(NC)\n"
-	@$(CC) $(OBJS) $(LFLAGS) -o $@
+	@$(CC) $^ $(LFLAGS) -o $@
 
-$(NAME_BONUS):
-	@$(MAKE) $(DIR_SRCS_BONUS) -j
+$(NAME_BONUS): $(OBJS_BONUS)
 	@printf "$(GREEN)compile $@                                         $(NC)\n"
-	@$(CC) $(OBJS_BONUS) $(LFLAGS) -o $@
+	@$(CC) $^ $(LFLAGS) -o $@
 
 clean: $(EXT_RULES)clean
 	@printf "$(RED)clean objs$(NC)\n"
@@ -91,8 +86,6 @@ bonus:	$(MLX_NAME) $(WATI_NAME) $(NAME_BONUS)
 debug:	CFLAGS += -g
 debug:	$(EXT_RULES)debug $(NAME)
 
-dir: $(DIR)
-	mkdir -p $^
 
 ################################# EXT_RULES ###################################
 
@@ -116,6 +109,7 @@ $(WATI_RULES)debug:
 	@cp $(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS)$(WATI_HDRS)
 $(WATI_RULES)clean:
 	@$(MAKE) $(DIR_WATI) clean
+	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME)
 $(WATI_RULES)fclean:
 	@$(MAKE) $(DIR_WATI) fclean
 	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME)

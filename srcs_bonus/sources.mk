@@ -6,10 +6,13 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/23 15:29:01 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/23 15:31:07 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/24 16:18:00 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME_BONUS := cub3D_bonus
+
+DIR_HDRS_BONUS := hdrs_bonus/
 DIR_OBJS_BONUS := objs_bonus/
 
 SRCS_BONUS = \
@@ -43,3 +46,12 @@ SRCS_BONUS = \
 	display/display.c \
 	display/display_map.c \
 	main.c
+
+OBJS_BONUS = $(addprefix $(DIR_OBJS_BONUS), $(SRCS_BONUS:%.c=%.o))
+
+IFLAGS_BONUS := -I$(DIR_HDRS_BONUS)
+
+$(DIR_OBJS_BONUS)%.o: $(DIR_SRCS_BONUS)%.c
+	@printf "$(BROWN)compile $(notdir $<)                              $(NC) \r"
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) $(IFLAGS_BONUS) -c $< -o $@
