@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/25 15:58:51 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/26 11:45:45 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,10 +109,10 @@ $(WATI_RULES)debug:
 	@cp $(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS)$(WATI_HDRS)
 $(WATI_RULES)clean:
 	@$(MAKE) $(DIR_WATI) clean
-	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME)
+	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME) $(DIR_HDRS_BONUS)$(WATI_HDRS)
 $(WATI_RULES)fclean:
 	@$(MAKE) $(DIR_WATI) fclean
-	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME)
+	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME) $(DIR_HDRS_BONUS)$(WATI_HDRS)
 $(WATI_RULES)re:
 	@$(MAKE) $(DIR_WATI) re
 $(WATI_RULES)git:
@@ -130,7 +130,7 @@ $(MLX_NAME):
 	@cp $(DIR_MLX)$(MLX_INT) $(DIR_HDRS)$(MLX_INT)
 $(MLX_RULES)clean:
 	@$(MAKE) $(DIR_MLX) clean
-	@rm -f $(DIR_HDRS)$(MLX_HDRS) $(DIR_HDRS)$(MLX_INT) $(DIR_LIBS)$(WATI_NAME)
+	@rm -f $(DIR_HDRS)$(MLX_HDRS) $(DIR_HDRS)$(MLX_INT) $(DIR_HDRS_BONUS)$(MLX_HDRS) $(DIR_HDRS_BONUS)$(MLX_INT) $(DIR_LIBS)$(WATI_NAME)
 $(MLX_RULES)re:
 	@$(MAKE) $(DIR_MLX) re
 $(MLX_RULES)git:
