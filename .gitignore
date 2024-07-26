@@ -1,7 +1,8 @@
 .vscode
 *.o
 *.a
-cub3D*
+cub3D
+cub3D_bonus
 .nfs*
 hdrs/libwati.h
 hdrs/mlx_int.h

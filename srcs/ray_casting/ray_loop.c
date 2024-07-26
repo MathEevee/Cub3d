@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:54:57 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/14 16:21:02 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:20:15 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "cub3d.h"
 
-t_ray	ray_loop(t_ray_cast x, t_ray_cast y, char **map)
+t_ray	ray_loop(t_ray_cast x, t_ray_cast y, t_map map)
 {
 	t_ray_cast	*ray;
 
@@ -22,7 +22,7 @@ t_ray	ray_loop(t_ray_cast x, t_ray_cast y, char **map)
 		ray = &x;
 	else
 		ray = &y;
-	while (!check_map(ray->i.hit, map))
+	while (!check_map(map, ray->i.hit))
 	{
 		ray_incr(ray, &x, &y);
 		if (x.r.len < y.r.len)

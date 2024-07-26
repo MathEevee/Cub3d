@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/24 16:08:19 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:20:07 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void		wmlx_clear_img(t_data *data);
 
 void		ray_casting(t_pdata pdata, t_info info);
 
-t_ray		ray_loop(t_ray_cast x, t_ray_cast y, char **map);
+t_ray		ray_loop(t_ray_cast x, t_ray_cast y, t_map map);
 
 t_ray_cast	ray_init_x(t_coord_f coord, t_trigo trig);
 t_ray_cast	ray_init_y(t_coord_f coord, t_trigo trig);
@@ -61,6 +61,7 @@ void		wmlx_update_win(t_mlx mlx);
 
 void		display(t_pdata pdata, t_info info);
 void		display_minimap(t_data *data, t_coord pos_map, t_info info);
+char		map_getter(t_map map, t_coord coord);
 t_coord		get_pixel_minimap(t_coord pos_map, t_coord_f coord);
 
 t_ltime		diff_timeval(t_tv t1, t_tv t2);
@@ -68,7 +69,7 @@ bool		fps_manager(int fps);
 
 int			wmlx_loop(t_joe_mama *var);
 
-bool		check_map(t_coord hit, char **map);
+bool		check_map(t_map map, t_coord hit);
 bool		check_map_convert(t_coord_f hit, char **map);
 
 #endif // CUB3D_DISPLAY_H
