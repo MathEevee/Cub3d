@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 14:52:06 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 15:06:56 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	move_toward(t_player *player, t_float mv, t_map map)
 
 	tmp.x = player->pos.x + (mv * cosf(player->angle));
 	tmp.y = player->pos.y + (mv * sinf(player->angle));
-	if (map_getter(map, set_coord(tmp.x, player->pos.y)) != '1')
+	if (check_map(map, set_coord(tmp.x, player->pos.y)))
 		player->pos.x = tmp.x;
 	else
 	{
@@ -28,7 +28,7 @@ static void	move_toward(t_player *player, t_float mv, t_map map)
 		else if (tmp.x < player->pos.x)
 			player->pos.x = (int)player->pos.x + HIT_BOX;
 	}
-	if (map_getter(map, set_coord(player->pos.x, tmp.y)) != '1')
+	if (check_map(map, set_coord(player->pos.x, tmp.y)))
 		player->pos.y = tmp.y;
 	else
 	{
@@ -45,7 +45,7 @@ static void	move_side(t_player *player, t_float mv, t_map map)
 
 	tmp.x = player->pos.x + (mv * cosf(player->angle + M_PI_2));
 	tmp.y = player->pos.y + (mv * sinf(player->angle + M_PI_2));
-	if (map_getter(map, set_coord(tmp.x, player->pos.y)) != '1')
+	if (check_map(map, set_coord(tmp.x, player->pos.y)))
 		player->pos.x = tmp.x;
 	else
 	{
@@ -54,7 +54,7 @@ static void	move_side(t_player *player, t_float mv, t_map map)
 		else if (tmp.x < player->pos.x)
 			player->pos.x = (int)player->pos.x + HIT_BOX;
 	}
-	if (map_getter(map, set_coord(player->pos.x, tmp.y)) != '1')
+	if (check_map(map, set_coord(player->pos.x, tmp.y)))
 		player->pos.y = tmp.y;
 	else
 	{

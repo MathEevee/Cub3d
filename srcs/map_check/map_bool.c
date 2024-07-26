@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 11:37:12 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 11:16:44 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 15:03:39 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 bool	check_map(t_map map, t_coord hit)
 {
-	return (map_getter(map, hit) != '0');
+	return (map_getter(map, hit) == '0');
 }

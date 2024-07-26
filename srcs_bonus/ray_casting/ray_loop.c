@@ -6,7 +6,7 @@
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:54:57 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 14:49:48 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 15:00:34 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_ray	ray_loop(t_ray_cast x, t_ray_cast y, t_map map)
 		ray = &x;
 	else
 		ray = &y;
-	while (!check_map(map, ray->i.hit))
+	while (check_map(map, ray->i.hit))
 	{
 		ray_incr(ray, &x, &y);
 		if (x.r.len < y.r.len)
