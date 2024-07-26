@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/25 15:58:51 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/26 11:49:56 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,8 +81,8 @@ fclean: $(EXT_RULES)clean
 
 re: fclean all
 
-all:	$(MLX_NAME) $(WATI_NAME) $(NAME)
-bonus:	$(MLX_NAME) $(WATI_NAME) $(NAME_BONUS)
+all:	$(EXT_RULES)all $(NAME)
+bonus:	$(EXT_RULES)bonus $(NAME_BONUS)
 debug:	CFLAGS += -g
 debug:	$(EXT_RULES)debug $(NAME)
 
@@ -90,6 +90,13 @@ debug:	$(EXT_RULES)debug $(NAME)
 ################################# EXT_RULES ###################################
 
 $(EXT_RULES)all: $(MLX_RULES)all $(WATI_RULES)all
+	@cp $(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS)
+	@cp $(DIR_MLX)$(MLX_HDRS) $(DIR_HDRS)$(MLX_HDRS)
+	@cp $(DIR_MLX)$(MLX_INT) $(DIR_HDRS)$(MLX_INT)
+$(EXT_RULES)bonus: $(MLX_RULES)all $(WATI_RULES)all
+	@cp $(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS_BONUS)
+	@cp $(DIR_MLX)$(MLX_HDRS) $(DIR_HDRS_BONUS)$(MLX_HDRS)
+	@cp $(DIR_MLX)$(MLX_INT) $(DIR_HDRS_BONUS)$(MLX_INT)
 $(EXT_RULES)debug: 	$(MLX_RULES)all $(WATI_RULES)debug
 $(EXT_RULES)clean: $(MLX_RULES)clean $(WATI_RULES)fclean
 $(EXT_RULES)re: $(MLX_RULES)re $(WATI_RULES)re
@@ -102,17 +109,16 @@ $(WATI_NAME):
 	@$(MAKE) $(DIR_WATI) -j
 	@mkdir -p $(DIR_LIBS)
 	@cp $(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
-	@cp $(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS)
 $(WATI_RULES)debug:
 	@$(MAKE) $(DIR_WATI) debug -j
 	@cp $(DIR_WATI)$(WATI_NAME) $(DIR_LIBS)
 	@cp $(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS)$(WATI_HDRS)
 $(WATI_RULES)clean:
 	@$(MAKE) $(DIR_WATI) clean
-	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME)
+	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME) $(DIR_HDRS_BONUS)$(WATI_HDRS)
 $(WATI_RULES)fclean:
 	@$(MAKE) $(DIR_WATI) fclean
-	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME)
+	@rm -f $(DIR_HDRS)$(WATI_HDRS) $(DIR_LIBS)$(WATI_NAME) $(DIR_HDRS_BONUS)$(WATI_HDRS)
 $(WATI_RULES)re:
 	@$(MAKE) $(DIR_WATI) re
 $(WATI_RULES)git:
@@ -126,11 +132,9 @@ $(MLX_NAME):
 	@$(MAKE) $(DIR_MLX) -j
 	@mkdir -p $(DIR_LIBS)
 	@cp $(DIR_MLX)$(MLX_NAME) $(DIR_LIBS)
-	@cp $(DIR_MLX)$(MLX_HDRS) $(DIR_HDRS)$(MLX_HDRS)
-	@cp $(DIR_MLX)$(MLX_INT) $(DIR_HDRS)$(MLX_INT)
 $(MLX_RULES)clean:
 	@$(MAKE) $(DIR_MLX) clean
-	@rm -f $(DIR_HDRS)$(MLX_HDRS) $(DIR_HDRS)$(MLX_INT) $(DIR_LIBS)$(WATI_NAME)
+	@rm -f $(DIR_HDRS)$(MLX_HDRS) $(DIR_HDRS)$(MLX_INT) $(DIR_HDRS_BONUS)$(MLX_HDRS) $(DIR_HDRS_BONUS)$(MLX_INT) $(DIR_LIBS)$(WATI_NAME)
 $(MLX_RULES)re:
 	@$(MAKE) $(DIR_MLX) re
 $(MLX_RULES)git:

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   wkey_hook.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 12:32:38 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/23 15:20:04 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:58:41 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
 #include "cub3d.h"
 #include "mlx.h"
 

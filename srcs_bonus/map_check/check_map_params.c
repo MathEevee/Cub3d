@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_params.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:44:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/23 15:20:04 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:58:01 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
-
 #include "cub3d.h"
 
 bool	maps_params_accepted(char c)

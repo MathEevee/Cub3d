@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ray_loop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 13:54:57 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/23 15:20:04 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:58:18 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
-
 #include "cub3d.h"
 
 t_ray	ray_loop(t_ray_cast x, t_ray_cast y, char **map)

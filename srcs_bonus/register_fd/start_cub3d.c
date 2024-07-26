@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   start_cub3d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/23 15:20:04 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:58:29 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
-
 #include "cub3d.h"
 
 void	begin_cub3d(int fd, t_joe_mama *var)

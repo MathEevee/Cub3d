@@ -6,35 +6,23 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 11:38:02 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:53:58 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "cub3d.h"
 
-static void	move_toward(t_player *player, t_float mv, t_map map)
+static void	move_toward(t_player *player, t_float mv)
 {
-	t_coord_f	tmp;
-
-	tmp.x = player->pos.x + (mv * cosf(player->angle));
-	tmp.y = player->pos.y + (mv * sinf(player->angle));
-	if ((int)tmp.x < map.size.x && (int)tmp.x > 0)
-		player->pos.x = tmp.x;
-	if ((int)tmp.y < map.size.y && (int)tmp.y > 0)
-		player->pos.y = tmp.y;
+	player->pos.x += (mv * cosf(player->angle));
+	player->pos.y += (mv * sinf(player->angle));
 }
 
-static void	move_side(t_player *player, t_float mv, t_map map)
+static void	move_side(t_player *player, t_float mv)
 {
-	t_coord_f	tmp;
-
-	tmp.x = player->pos.x + (mv * cosf(player->angle + M_PI_2));
-	tmp.y = player->pos.y + (mv * sinf(player->angle + M_PI_2));
-	if ((int)tmp.x < map.size.x)
-		player->pos.x = tmp.x;
-	if ((int)tmp.y < map.size.y)
-		player->pos.y = tmp.y;
+	player->pos.x += (mv * cosf(player->angle + M_PI_2));
+	player->pos.y += (mv * sinf(player->angle + M_PI_2));
 }
 
 static t_ltime	wmlx_fps_manager(void)
@@ -67,13 +55,13 @@ static bool	wmlx_key_update(t_joe_mama *var)
 	if (var->press.key_right)
 		var->info.base.angle += rotate;
 	if (var->press.key_w)
-		move_toward(&var->info.base, -mv, var->info.map);
+		move_toward(&var->info.base, -mv);
 	if (var->press.key_s)
-		move_toward(&var->info.base, mv, var->info.map);
+		move_toward(&var->info.base, mv);
 	if (var->press.key_d)
-		move_side(&var->info.base, -mv, var->info.map);
+		move_side(&var->info.base, -mv);
 	if (var->press.key_a)
-		move_side(&var->info.base, mv, var->info.map);
+		move_side(&var->info.base, mv);
 	return (true);
 }
 

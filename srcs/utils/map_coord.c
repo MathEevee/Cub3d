@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 10:19:51 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/26 10:54:30 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:57:30 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,12 @@ t_coord	map_coord(t_map map)
 		size.y++;
 	}
 	return (size);
+}
+
+char	map_getter(t_map map, t_coord coord)
+{
+	if (coord.x < 0 || coord.y < 0
+		|| coord.x >= map.size.x || coord.y >= map.size.y)
+		return ('\0');
+	return (map.map[coord.x][coord.y]);
 }

@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_bool.c                                         :+:      :+:    :+:   */
+/*   w_struct_parsing.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 11:37:12 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 11:16:44 by bedarenn         ###   ########.fr       */
+/*   Created: 2024/06/03 13:26:43 by bedarenn          #+#    #+#             */
+/*   Updated: 2024/06/03 13:27:25 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef W_STRUCT_PARSING_H
+# define W_STRUCT_PARSING_H
 
-bool	check_map(t_map map, t_coord hit)
-{
-	return (map_getter(map, hit) != '0');
-}
+# include "w_typedef.h"
+# include "w_const.h"
+
+#endif // W_STRUCT_PARSING_H
