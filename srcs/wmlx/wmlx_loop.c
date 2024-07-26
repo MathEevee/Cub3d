@@ -6,12 +6,11 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 10:58:00 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:38:02 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
-
 #include "cub3d.h"
 
 static void	move_toward(t_player *player, t_float mv, t_map map)

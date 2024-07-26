@@ -6,12 +6,11 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/19 11:35:37 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:37:44 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
-
 #include "cub3d.h"
 
 void	begin_cub3d(int fd, t_joe_mama *var)
