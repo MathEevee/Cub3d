@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 11:00:29 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:19:10 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	display_map(t_data *data, t_coord base, t_coord_part part, t_info info)
 
 	pos.y = base.y + SQRT_SIZE / 2 + part.min.y * SQRT_SIZE;
 	i.strs = info.map.map;
+	wati_putstrs_fd(info.map.map, 2);
 	while (*i.strs && i.strs < info.map.map + part.min.y)
 		i.strs++;
 	while (*i.strs && i.strs < info.map.map + part.max.y)

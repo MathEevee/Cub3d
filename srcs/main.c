@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 13:28:44 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 11:14:22 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:16:54 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
-
 #include "cub3d.h"
 #include "mlx.h"
 
-int	check_ac(int ac)
+static int	check_ac(int ac)
 {
 	if (ac != 2)
 	{
@@ -30,7 +29,7 @@ int	check_ac(int ac)
 	return (0);
 }
 
-int	check_fd(char *str)
+static int	check_fd(char *str)
 {
 	int	len;
 	int	fd;

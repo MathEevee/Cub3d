@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:24:01 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 10:43:52 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:39:46 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define W_STRUCT_H
 
 # include "w_struct_display.h"
-# include "w_struct_parsing.h"
 
 typedef struct s_map
 {

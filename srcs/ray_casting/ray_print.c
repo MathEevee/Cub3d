@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ray_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 10:33:07 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/16 10:47:54 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 11:37:34 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <math.h>
-
 #include "cub3d.h"
 
 static t_float	choose_img(t_info *info, t_data **img, t_ray ray);
