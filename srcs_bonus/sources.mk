@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
+#    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/23 15:29:01 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/24 16:18:00 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/26 12:50:09 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS_BONUS = \
 	map_check/map_border.c \
 	map_check/map_bool.c \
 	utils/cpy_tab.c \
+	utils/map_coord.c \
 	clear/free_img.c \
 	clear/free_var.c \
 	struct_manager/key_manager.c \

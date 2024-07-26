@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:24:01 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 11:48:20 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:38:16 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define W_STRUCT_H
 
 # include "w_struct_display.h"
+
+typedef struct s_map
+{
+	t_coord	size;
+	char	**map;
+}			t_map;
 
 typedef struct s_player
 {
@@ -23,7 +29,7 @@ typedef struct s_player
 
 typedef struct s_info
 {
-	char		**map;
+	t_map		map;
 	t_player	base;
 	t_data		img_no;
 	t_data		img_so;

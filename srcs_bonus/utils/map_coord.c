@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   map_coord.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 10:19:51 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/26 12:32:43 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 14:45:37 by bedarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 #include "cub3d.h"
 
