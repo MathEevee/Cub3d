@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:21:50 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/19 11:41:42 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 10:55:23 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ bool	color_check(char *str);
 
 int		check_img(t_joe_mama *var);
 
-t_coord	map_coord(t_coord size, char **map);
+t_coord	map_coord(t_map map);
 
 void	free_mlx(t_wptr ptr, t_info *info);
 

@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/19 11:30:11 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 10:58:00 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,27 @@
 
 #include "cub3d.h"
 
-static void	move_toward(t_player *player, t_float mv, char **map)
+static void	move_toward(t_player *player, t_float mv, t_map map)
 {
 	t_coord_f	tmp;
-	t_coord		size;
 
-	size.x = 0;
-	size.y = 0;
-	size = map_coord(size, map);
 	tmp.x = player->pos.x + (mv * cosf(player->angle));
 	tmp.y = player->pos.y + (mv * sinf(player->angle));
-	if ((int)tmp.x < size.x && (int)tmp.x > 0)
+	if ((int)tmp.x < map.size.x && (int)tmp.x > 0)
 		player->pos.x = tmp.x;
-	if ((int)tmp.y < size.y && (int)tmp.y > 0)
+	if ((int)tmp.y < map.size.y && (int)tmp.y > 0)
 		player->pos.y = tmp.y;
 }
 
-static void	move_side(t_player *player, t_float mv, char **map)
+static void	move_side(t_player *player, t_float mv, t_map map)
 {
 	t_coord_f	tmp;
-	t_coord		size;
 
-	size.x = 0;
-	size.y = 0;
-	size = map_coord(size, map);
 	tmp.x = player->pos.x + (mv * cosf(player->angle + M_PI_2));
 	tmp.y = player->pos.y + (mv * sinf(player->angle + M_PI_2));
-	if ((int)tmp.x < size.x)
+	if ((int)tmp.x < map.size.x)
 		player->pos.x = tmp.x;
-	if ((int)tmp.y < size.y)
+	if ((int)tmp.y < map.size.y)
 		player->pos.y = tmp.y;
 }
 

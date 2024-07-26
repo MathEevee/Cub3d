@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/19 16:36:00 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 10:59:30 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ray_casting(t_pdata pdata, t_info info)
 	{
 		angle.alpha = atanf((angle.o_base - i * (angle.incr)) / 2)
 			+ M_PI_4 - angle.fov / 2 + info.base.angle;
-		pxl = ray(info.base.pos, info.map, angle.alpha);
+		pxl = ray(info.base.pos, info.map.map, angle.alpha);
 		pxl.len *= cosf(info.base.angle - angle.alpha);
 		pxl.screen.x = i;
 		ray_print(pdata.win, info, pxl, wall);
