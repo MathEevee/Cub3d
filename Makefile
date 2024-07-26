@@ -6,7 +6,7 @@
 #    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/26 11:49:56 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/26 12:21:42 by bedarenn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,6 +98,9 @@ $(EXT_RULES)bonus: $(MLX_RULES)all $(WATI_RULES)all
 	@cp $(DIR_MLX)$(MLX_HDRS) $(DIR_HDRS_BONUS)$(MLX_HDRS)
 	@cp $(DIR_MLX)$(MLX_INT) $(DIR_HDRS_BONUS)$(MLX_INT)
 $(EXT_RULES)debug: 	$(MLX_RULES)all $(WATI_RULES)debug
+	@cp $(DIR_WATI)$(WATI_HDRS) $(DIR_HDRS)
+	@cp $(DIR_MLX)$(MLX_HDRS) $(DIR_HDRS)$(MLX_HDRS)
+	@cp $(DIR_MLX)$(MLX_INT) $(DIR_HDRS)$(MLX_INT)
 $(EXT_RULES)clean: $(MLX_RULES)clean $(WATI_RULES)fclean
 $(EXT_RULES)re: $(MLX_RULES)re $(WATI_RULES)re
 $(EXT_RULES)git: $(MLX_RULES)git $(WATI_RULES)git
