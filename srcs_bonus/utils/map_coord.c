@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_var.c                                         :+:      :+:    :+:   */
+/*   map_coord.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/09 14:24:06 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/26 12:42:13 by matde-ol         ###   ########.fr       */
+/*   Created: 2024/07/19 10:19:51 by matde-ol          #+#    #+#             */
+/*   Updated: 2024/07/26 11:57:30 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	free_var(t_joe_mama *var)
+t_coord	map_coord(t_map map)
 {
-	free_mlx(var->mlx.ptr, &var->info);
-	wmlx_destroy(var->mlx);
-	wati_free_tab(var->info.map.map);
+	t_coord	size;
+
+	size.x = 0;
+	size.y = 0;
+	while (map.map[size.y])
+	{
+		size.x = 0;
+		while (map.map[size.y][size.x])
+			size.x++;
+		size.y++;
+	}
+	return (size);
+}
+
+char	map_getter(t_map map, t_coord coord)
+{
+	if (coord.x < 0 || coord.y < 0
+		|| coord.x >= map.size.x || coord.y >= map.size.y)
+		return ('\0');
+	return (map.map[coord.x][coord.y]);
 }

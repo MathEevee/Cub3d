@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:12:03 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/23 15:20:04 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:46:52 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	display_map(t_data *data, t_coord base, t_coord_part part, t_info info)
 	t_tab_str_incr	i;
 
 	pos.y = base.y + SQRT_SIZE / 2 + part.min.y * SQRT_SIZE;
-	i.strs = info.map;
-	while (*i.strs && i.strs < info.map + part.min.y)
+	i.strs = info.map.map;
+	while (*i.strs && i.strs < info.map.map + part.min.y)
 		i.strs++;
-	while (*i.strs && i.strs < info.map + part.max.y)
+	while (*i.strs && i.strs < info.map.map + part.max.y)
 	{
 		pos.x = base.x + SQRT_SIZE / 2 + part.min.x * SQRT_SIZE;
 		i.str = *i.strs;

@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 09:44:11 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/26 11:58:01 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:42:00 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ bool	check_line_map(t_info *info, int j)
 	int	i;
 
 	i = 0;
-	while (info->map[j][i] != '\0')
+	while (info->map.map[j][i] != '\0')
 	{
-		if (is_player(i, j, info->map[j][i], info) == false)
+		if (is_player(i, j, info->map.map[j][i], info) == false)
 			return (false);
 		i++;
 	}
@@ -63,7 +63,7 @@ bool	map_checker(t_info *info)
 	int		j;
 
 	j = 0;
-	while (info->map[j] != NULL)
+	while (info->map.map[j] != NULL)
 	{
 		if (check_line_map(info, j) == false)
 			return (false);
@@ -74,7 +74,7 @@ bool	map_checker(t_info *info)
 		wati_fprintf(2, "Please add one character\nError\n");
 		return (false);
 	}
-	if (map_close(info->map) == false)
+	if (map_close(info->map.map) == false)
 		return (false);
 	return (true);
 }

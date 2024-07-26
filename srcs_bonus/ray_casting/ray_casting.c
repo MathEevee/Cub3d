@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 14:25:32 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 11:58:14 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:46:24 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ray_casting(t_pdata pdata, t_info info, t_coord map)
 	{
 		angle.alpha = -atanf((angle.o_base - i * (angle.incr)) / 2)
 			+ M_PI_4 - angle.fov / 2 + info.base.angle;
-		pxl = ray(info.base.pos, info.map, angle.alpha);
+		pxl = ray(info.base.pos, info.map.map, angle.alpha);
 		pxl.len *= cosf(info.base.angle - angle.alpha);
 		pxl.screen.x = i;
 		wmlx_put_line(pdata.map, player,

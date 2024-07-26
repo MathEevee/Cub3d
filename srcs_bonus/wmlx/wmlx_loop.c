@@ -6,20 +6,20 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:07:21 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 11:58:46 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:52:48 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "cub3d.h"
 
-static void	move_toward(t_player *player, t_float mv, char **map)
+static void	move_toward(t_player *player, t_float mv, t_map map)
 {
 	t_coord_f	tmp;
 
 	tmp.x = player->pos.x + (mv * cosf(player->angle));
 	tmp.y = player->pos.y + (mv * sinf(player->angle));
-	if (map[(int)player->pos.y][(int)tmp.x] != '1')
+	if (map_getter(map, set_coord(tmp.x, player->pos.y)) != '1')
 		player->pos.x = tmp.x;
 	else
 	{
@@ -28,7 +28,7 @@ static void	move_toward(t_player *player, t_float mv, char **map)
 		else if (tmp.x < player->pos.x)
 			player->pos.x = (int)player->pos.x + HIT_BOX;
 	}
-	if (map[(int)tmp.y][(int)player->pos.x] != '1')
+	if (map_getter(map, set_coord(player->pos.x, tmp.y)) != '1')
 		player->pos.y = tmp.y;
 	else
 	{
@@ -39,13 +39,13 @@ static void	move_toward(t_player *player, t_float mv, char **map)
 	}
 }
 
-static void	move_side(t_player *player, t_float mv, char **map)
+static void	move_side(t_player *player, t_float mv, t_map map)
 {
 	t_coord_f	tmp;
 
 	tmp.x = player->pos.x + (mv * cosf(player->angle + M_PI_2));
 	tmp.y = player->pos.y + (mv * sinf(player->angle + M_PI_2));
-	if (map[(int)player->pos.y][(int)tmp.x] != '1')
+	if (map_getter(map, set_coord(tmp.x, player->pos.y)) != '1')
 		player->pos.x = tmp.x;
 	else
 	{
@@ -54,7 +54,7 @@ static void	move_side(t_player *player, t_float mv, char **map)
 		else if (tmp.x < player->pos.x)
 			player->pos.x = (int)player->pos.x + HIT_BOX;
 	}
-	if (map[(int)tmp.y][(int)player->pos.x] != '1')
+	if (map_getter(map, set_coord(player->pos.x, tmp.y)) != '1')
 		player->pos.y = tmp.y;
 	else
 	{
