@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:16:58 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/19 11:39:29 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 10:47:42 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,22 @@ static void	map_copy(int i, int j, t_joe_mama *var, char **file)
 
 	len = map_size(i, file);
 	map_j = 0;
-	var->info.map = malloc(sizeof(char *) * (j + 1));
+	var->info.map.map = malloc(sizeof(char *) * (j + 1));
 	while (file[i] != NULL)
 	{
-		var->info.map[map_j] = malloc(sizeof(char) * (len + 1));
-		wati_strlcpy(var->info.map[map_j], file[i], wati_strlen(file[i]) + 1);
+		var->info.map.map[map_j] = malloc(sizeof(char) * (len + 1));
+		wati_strlcpy(var->info.map.map[map_j], file[i], wati_strlen(file[i]) + 1);
 		map_i = wati_strlen(file[i]);
 		while (map_i < len)
 		{
-			var->info.map[map_j][map_i] = ' ';
+			var->info.map.map[map_j][map_i] = ' ';
 			map_i++;
 		}
-		var->info.map[map_j][map_i] = '\0';
+		var->info.map.map[map_j][map_i] = '\0';
 		map_j++;
 		i++;
 	}
-	var->info.map[map_j] = NULL;
+	var->info.map.map[map_j] = NULL;
 }
 
 static int	loop_file(int *i, char **file, int count, t_joe_mama *var)

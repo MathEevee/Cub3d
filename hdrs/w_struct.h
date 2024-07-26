@@ -6,7 +6,7 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:24:01 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/08 13:12:06 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 10:43:52 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include "w_struct_display.h"
 # include "w_struct_parsing.h"
 
+typedef struct s_map
+{
+	t_coord	size;
+	char	**map;
+}			t_map;
+
 typedef struct s_player
 {
 	t_coord_f	pos;
@@ -24,7 +30,7 @@ typedef struct s_player
 
 typedef struct s_info
 {
-	char		**map;
+	t_map		map;
 	t_player	base;
 	t_data		img_no;
 	t_data		img_so;

@@ -6,27 +6,24 @@
 /*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 10:19:51 by matde-ol          #+#    #+#             */
-/*   Updated: 2024/07/19 10:34:59 by matde-ol         ###   ########.fr       */
+/*   Updated: 2024/07/26 10:54:30 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_coord	map_coord(t_coord size, char **map)
+t_coord	map_coord(t_map map)
 {
-	int	x;
-	int	y;
+	t_coord	size;
 
-	x = 0;
-	y = 0;
-	while (map[y])
+	size.x = 0;
+	size.y = 0;
+	while (map.map[size.y])
 	{
-		x = 0;
-		while (map[y][x])
-			x++;
-		y++;
+		size.x = 0;
+		while (map.map[size.y][size.x])
+			size.x++;
+		size.y++;
 	}
-	size.x = x;
-	size.y = y;
 	return (size);
 }
