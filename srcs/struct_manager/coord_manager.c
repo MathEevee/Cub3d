@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   coord_manager.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:35:37 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/09 13:13:00 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/26 15:44:16 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,6 @@ t_coord_f	set_coord_f(t_float x, t_float y)
 
 	coord.x = x;
 	coord.y = y;
-	return (coord);
-}
-
-t_coord_f	cast_to_coord_f(t_coord pos)
-{
-	t_coord_f	coord;
-
-	coord.x = pos.x;
-	coord.y = pos.y;
 	return (coord);
 }
 

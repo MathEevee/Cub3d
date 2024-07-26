@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+         #
+#    By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/02 13:24:32 by bedarenn          #+#    #+#              #
-#    Updated: 2024/07/26 12:21:42 by bedarenn         ###   ########.fr        #
+#    Updated: 2024/07/26 15:41:04 by matde-ol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,8 @@ EXT_RULES := ext-
 
 ################################### COMPILER ###################################
 
-CC := cc
-# CC := gcc -g --function-sections -Wl,--gc-sections -Wl,--print-gc-sections
+# CC := cc
+CC := gcc -g --function-sections -Wl,--gc-sections -Wl,--print-gc-sections
 
 ################################# DIRECTORIES ##################################
 
