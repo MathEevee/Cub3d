@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_bool.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 11:37:12 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 15:00:50 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/28 12:07:45 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,4 @@
 bool	check_map(t_map map, t_coord hit)
 {
 	return (map_getter(map, hit) == '0');
-}
-
-bool	check_map_convert(t_coord_f hit, char **map)
-{
-	return (map[(int)hit.y][(int)hit.x] == '1');
 }

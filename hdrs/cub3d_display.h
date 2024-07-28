@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_display.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bedarenn <bedarenn@student.42angouleme.fr> +#+  +:+       +#+        */
+/*   By: matde-ol <matde-ol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:23:04 by bedarenn          #+#    #+#             */
-/*   Updated: 2024/07/26 11:20:07 by bedarenn         ###   ########.fr       */
+/*   Updated: 2024/07/28 12:08:57 by matde-ol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 t_coord		set_coord(int x, int y);
 t_coord_f	set_coord_f(t_float x, t_float y);
 t_coord		cast_to_coord(t_coord_f pos);
-t_coord_f	cast_to_coord_f(t_coord pos);
 t_coord_f	sum_coord_f(t_coord_f a, t_coord_f b);
 
 t_mlx		wmlx_init(void);
@@ -70,6 +69,5 @@ bool		fps_manager(int fps);
 int			wmlx_loop(t_joe_mama *var);
 
 bool		check_map(t_map map, t_coord hit);
-bool		check_map_convert(t_coord_f hit, char **map);
 
 #endif // CUB3D_DISPLAY_H
