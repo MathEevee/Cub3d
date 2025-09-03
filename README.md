@@ -22,12 +22,10 @@ Projet graphique basé sur la même méthode 3D que Wolfenstein. On peut se dép
 ## 🎮 Jouer
 ## 📝 Les déplacements
 
-| Commandes | Description |
+| Commandes | Descriptions |
 |-----------|-------------|
 |   **W**   |   Avancer   |
 |   **S**   |   Reculer   |
-|   **A**   |   Gauche    |
-|   **D**   |   Droite    |
 |   **A**   |   Gauche    |
 |   **D**   |   Droite    |
 |  **➡️**   | Tourner la caméra à droite |
