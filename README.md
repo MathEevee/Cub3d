@@ -33,4 +33,4 @@ Projet graphique basé sur la même méthode 3D que Wolfenstein. On peut se dép
 
 ## 🎥 Visuel
 
-![Démo](assets/manda1.gif)
+![Démo](Cub3d/assets/manda1.gif)
