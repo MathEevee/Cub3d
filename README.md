@@ -39,6 +39,22 @@ Projet graphique basé sur la même méthode 3D que Wolfenstein. On peut se dép
 On peut traverser les murs en se déplaçant et en bougeant la caméra.
 
 ## ⭐ Partie bonus
+
+## 🚀 Lancer le programme bonus
+
+1. **Compiler** le programme :
+   ```bash
+   make bonus
+   ```
+   (dans le dossier où se situe le `Makefile`)
+
+2. **Exécuter** le serveur :
+   ```bash
+   ./Cub3D_bonus <map>
+   ```
+
+---
+
 ## 🎥 Visuel
 
 ![bonus1](https://github.com/user-attachments/assets/5fad19f3-4063-4408-9a86-9ad642d5edc4)
