@@ -30,6 +30,7 @@ Projet graphique basé sur la même méthode 3D que Wolfenstein. On peut se dép
 |   **D**   |   Droite    |
 |  **➡️**   | Tourner la caméra à droite |
 |  **⬅️**   | Tourner la caméra à gauche |
+| **(tab)** | Interchanger mini carte et vision de jeu (partie bonus)|
 
 ## 🗒️ Partie Mandatory
 ## 🎥 Visuel
