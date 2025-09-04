@@ -31,11 +31,18 @@ Projet graphique basé sur la même méthode 3D que Wolfenstein. On peut se dép
 |  **➡️**   | Tourner la caméra à droite |
 |  **⬅️**   | Tourner la caméra à gauche |
 
+## 🗒️ Partie Mandatory
 ## 🎥 Visuel
 
-![manda1](https://github.com/user-attachments/assets/c67da25d-b0cd-4171-88e8-da296d184be5)
-
-## 🗒️ Partie Mandatory
+![manda1](https://github.com/user-attachments/assets/c67da25d-b0cd-4171-88e8-da296d184be5
 
 On peut traverser les murs en se déplaçant et en bougeant la caméra.
 
+## ⭐ Partie bonus
+## 🎥 Visuel
+
+![bonus1](https://github.com/user-attachments/assets/5fad19f3-4063-4408-9a86-9ad642d5edc4)
+
+Quelques ajouts ont été faits :
+-Colisions ajoutées
+-Mini carte en haut de l'écran (avec la touche "tab", on peut échanger la vision de jeu pour avoir la carte en grand)
