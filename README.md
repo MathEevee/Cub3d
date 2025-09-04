@@ -44,5 +44,9 @@ On peut traverser les murs en se déplaçant et en bougeant la caméra.
 ![bonus1](https://github.com/user-attachments/assets/5fad19f3-4063-4408-9a86-9ad642d5edc4)
 
 Quelques ajouts ont été faits :
+
 -Colisions ajoutées
+
 -Mini carte en haut de l'écran (avec la touche "tab", on peut échanger la vision de jeu pour avoir la carte en grand)
+
+-Optimisation pour les grandes cartes (la mini carte se charge autour du joueur seulement et pas entièrement)
