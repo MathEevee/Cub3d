@@ -12,7 +12,7 @@ Projet graphique basé sur la même méthode 3D que Wolfenstein. On peut se dép
    ```
    (dans le dossier où se situe le `Makefile`)
 
-2. **Exécuter** le serveur :
+2. **Exécuter** le programme :
    ```bash
    ./Cub3D <map>
    ```
