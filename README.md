@@ -66,4 +66,4 @@ Quelques ajouts ont été faits :
 
 -Mini carte en haut de l'écran (avec la touche "tab", on peut échanger la vision de jeu pour avoir la carte en grand)
 
--Optimisation pour les grandes cartes (la mini carte se charge autour du joueur seulement et pas entièrement)
+-Optimisation pour les grandes cartes (la mini carte se charge autour du joueur)
