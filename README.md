@@ -34,3 +34,8 @@ Projet graphique basé sur la même méthode 3D que Wolfenstein. On peut se dép
 ## 🎥 Visuel
 
 ![manda1](https://github.com/user-attachments/assets/c67da25d-b0cd-4171-88e8-da296d184be5)
+
+## 🗒️ Partie Mandatory
+
+On peut traverser les murs en se déplaçant et en bougeant la caméra.
+
